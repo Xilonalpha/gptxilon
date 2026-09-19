@@ -183,7 +183,9 @@ class GeminiLearningEngine(
 
             append("Fără grounding: ")
             append(records.size - grounded)
-            append('\n\n')
+            append("
+
+")
 
             append("Memoria este stocată local, în spațiul privat al aplicației.\n")
             append("Motorul învață din răspunsul final Gemini, sursele disponibile și reutilizarea informației.\n")
