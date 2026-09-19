@@ -7,7 +7,6 @@ import android.os.Build
 import android.os.Bundle
 import android.speech.RecognizerIntent
 import android.speech.tts.TextToSpeech
-import android.view.View
 import android.widget.EditText
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
@@ -27,6 +26,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var workspaces: WorkspaceManager
     private lateinit var watchers: WatchManager
     private lateinit var secureStore: SecureStore
+    private lateinit var webFallback: WebFallbackEngine
     private var apiKey = ""
     private var personaIndex = 0
     private var thinkingMode = false
@@ -61,7 +61,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding=ActivityMainBinding.inflate(layoutInflater); setContentView(binding.root)
-        brain=Brain(this); sessions=SessionManager(this); intelligence=IntelligenceEngine(filesDir); workspaces=WorkspaceManager(this); watchers=WatchManager(this); secureStore=SecureStore(this)
+        brain=Brain(this); sessions=SessionManager(this); intelligence=IntelligenceEngine(filesDir); workspaces=WorkspaceManager(this); watchers=WatchManager(this); secureStore=SecureStore(this); webFallback=WebFallbackEngine(this)
         adapter=ChatAdapter(); binding.recyclerView.layoutManager=LinearLayoutManager(this); binding.recyclerView.adapter=adapter
         apiKey=secureStore.get()
         if (apiKey.isBlank()) getSharedPreferences("ai_prefs",MODE_PRIVATE).getString("api_key","")?.takeIf { it.isNotBlank() }?.let { apiKey=it; secureStore.put(it); getSharedPreferences("ai_prefs",MODE_PRIVATE).edit().remove("api_key").apply() }
@@ -106,7 +106,12 @@ class MainActivity : AppCompatActivity() {
         val history=adapter.getMessages().dropLast(1);val attachment=pendingAttachment;pendingAttachment=null;binding.tvAttachment.text=""
         thread {
             try {
-                val reply=if(apiKey.isNotBlank()) GeminiClient(apiKey).askWithAttachmentOrNormal(history,attachment,brain,personaIndex,thinkingMode,agentMode,powerMode,intelligence) else AiResponse(OfflineBrain.reply(text),emptyList())
+                val reply=if(apiKey.isNotBlank()) {
+                    GeminiClient(apiKey).askWithAttachmentOrNormal(history,attachment,brain,personaIndex,thinkingMode,agentMode,powerMode,intelligence)
+                } else {
+                    val web=webFallback.ask(text)
+                    AiResponse(web.answer,web.evidence.map{"${it.title} — ${it.url}"},0)
+                }
                 brain.observe(text,reply.text,reply.tokens);lastCodeBlocks=FileSaver.extractCodeBlocks(reply.text);intelligence.remember("last_query",text);val evidence=intelligence.evidence(reply.sources,reply.text)
                 val decorated=reply.text+"\n\n🔎 Evidence: ${evidence.label} ${evidence.confidence}%\n${evidence.explanation}"
                 runOnUiThread { adapter.updateLastMessage(decorated,reply.sources,reply.tokens);currentWorkspace?.let{workspaces.appendMessage(it,ChatMessage(decorated,false,reply.sources))};binding.recyclerView.scrollToPosition(adapter.itemCount-1) }
