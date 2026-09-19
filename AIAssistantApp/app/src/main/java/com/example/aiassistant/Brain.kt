@@ -31,15 +31,15 @@ class Brain(context: Context) {
         tokensTotal += tokens
 
         Regex("(?:mă numesc|numele meu este) ([A-ZĂÂÎȘȚ][a-zăâîșț]+)").find(userMsg)?.let {
-            val fact = "Utilizatorul se numește ${it.group(1)}"
+            val fact = "Utilizatorul se numește ${it.groupValues[1]}"
             if (fact !in facts) { facts.add(fact); log("Am învățat: $fact") }
         }
         Regex("îmi (?:place|plac) ([a-zăâîșț0-9 ]{2,30})").find(userMsg.lowercase())?.let {
-            val fact = "Utilizatorului îi place ${it.group(1).trim()}"
+            val fact = "Utilizatorului îi place ${it.groupValues[1].trim()}"
             if (fact !in facts) { facts.add(fact); log("Am învățat: $fact") }
         }
         Regex("sunt din ([a-zăâîșț ]{2,30})").find(userMsg.lowercase())?.let {
-            val fact = "Utilizatorul este din ${it.group(1).trim()}"
+            val fact = "Utilizatorul este din ${it.groupValues[1].trim()}"
             if (fact !in facts) { facts.add(fact); log("Am învățat: $fact") }
         }
         save()

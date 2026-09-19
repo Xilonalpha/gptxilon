@@ -28,7 +28,7 @@ object OfflineBrain {
         val expr = msg.replace("calculează", "").replace("calc", "")
             .replace("x", "*").replace("×", "*").replace("÷", "/").trim()
         return try {
-            if (!expr.matches(Regex("[0-9+\-*/(). ]+"))) return "Doar expresii matematice."
+            if (!expr.matches(Regex("[0-9+*/(). -]+"))) return "Doar expresii matematice."
             "Rezultat: $expr = ${eval(expr)}"
         } catch (e: Exception) { "Încearcă: calculează 12*(3+4)" }
     }
