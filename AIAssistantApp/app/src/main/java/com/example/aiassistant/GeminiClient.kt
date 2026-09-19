@@ -44,6 +44,7 @@ class GeminiClient(private val apiKey: String) {
         val contents = JSONArray()
         history.takeLast(24).forEach { msg ->
             contents.put(JSONObject().put("parts", JSONArray().put(JSONObject().put("text", msg.text))).put("role", if (msg.isUser) "user" else "model"))
+        }
         if (attachment != null && history.isNotEmpty()) {
             val last = contents.optJSONObject(contents.length() - 1)
             if (last != null && last.optString("role") == "user") {
