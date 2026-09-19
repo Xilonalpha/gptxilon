@@ -27,6 +27,9 @@ class MainActivity : AppCompatActivity() {
     private lateinit var watchers: WatchManager
     private lateinit var secureStore: SecureStore
     private lateinit var webFallback: WebFallbackEngine
+    private lateinit var researchEngine: ResearchEngine
+    private lateinit var memoryEngine: MemoryEngine
+    private var lastWebEvidence: List<WebEvidence> = emptyList()
     private var apiKey = ""
     private var personaIndex = 0
     private var thinkingMode = false
@@ -61,7 +64,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding=ActivityMainBinding.inflate(layoutInflater); setContentView(binding.root)
-        brain=Brain(this); sessions=SessionManager(this); intelligence=IntelligenceEngine(filesDir); workspaces=WorkspaceManager(this); watchers=WatchManager(this); secureStore=SecureStore(this); webFallback=WebFallbackEngine(this)
+        brain=Brain(this); sessions=SessionManager(this); intelligence=IntelligenceEngine(filesDir); workspaces=WorkspaceManager(this); watchers=WatchManager(this); secureStore=SecureStore(this); webFallback=WebFallbackEngine(this); researchEngine=ResearchEngine(webFallback); memoryEngine=MemoryEngine(brain,intelligence)
         adapter=ChatAdapter(); binding.recyclerView.layoutManager=LinearLayoutManager(this); binding.recyclerView.adapter=adapter
         apiKey=secureStore.get()
         if (apiKey.isBlank()) getSharedPreferences("ai_prefs",MODE_PRIVATE).getString("api_key","")?.takeIf { it.isNotBlank() }?.let { apiKey=it; secureStore.put(it); getSharedPreferences("ai_prefs",MODE_PRIVATE).edit().remove("api_key").apply() }
@@ -98,6 +101,29 @@ class MainActivity : AppCompatActivity() {
         binding.btnChipExplain.setOnClickListener { val x=adapter.getMessages().lastOrNull{!it.isUser&&it.text.length>80}; if(x!=null){binding.etMessage.setText("Explică simplu și verifică afirmațiile: ${x.text.take(700)}");sendMessage()}else toast("Trimite mai întâi o întrebare") }
         binding.btnChipCode.setOnClickListener { binding.etMessage.setText("Construiește un proiect complet și returnează fiecare fișier cu markerul [file:path]");binding.etMessage.requestFocus() }
         binding.btnChipSummarize.setOnClickListener { val x=adapter.getMessages().filter{!it.isUser}.joinToString("\n"){it.text.take(600)};if(x.isNotBlank()){binding.etMessage.setText("Analizează și rezumă aceste informații, marcând FAPT/INFERENȚĂ/NECUNOSCUT:\n$x");sendMessage()}else toast("Nimic de rezumat") }
+        binding.btnResearch.setOnClickListener { binding.etMessage.setText("Cercetează în profunzime această întrebare, caută surse independente și oficiale, compară informațiile și marchează incertitudinile."); binding.etMessage.requestFocus() }
+        binding.btnVerify.setOnClickListener {
+            val last=adapter.getMessages().lastOrNull{!it.isUser}
+            if(last==null){toast("Nu există încă un răspuns de verificat")} else if(lastWebEvidence.isNotEmpty()){
+                val check=FactCheckEngine.check(last.text,lastWebEvidence)
+                AlertDialog.Builder(this).setTitle("🔎 Fact Check").setMessage(check.report).setPositiveButton("OK",null).show()
+            } else {
+                binding.etMessage.setText("Verifică factual acest răspuns și caută surse publice independente:\n${last.text.take(1800)}")
+                sendMessage()
+            }
+        }
+        binding.btnAudit.setOnClickListener {
+            val attachment=pendingAttachment
+            if(attachment?.text != null){
+                AlertDialog.Builder(this).setTitle("⌨️ Code Intelligence").setMessage(CodeIntelligenceEngine.audit(attachment.text)).setPositiveButton("OK",null).show()
+            } else {
+                val last=adapter.getMessages().lastOrNull{it.isUser}
+                if(last!=null && (last.text.contains("fun ") || last.text.contains("class ") || last.text.contains("{"))){
+                    AlertDialog.Builder(this).setTitle("⌨️ Code Intelligence").setMessage(CodeIntelligenceEngine.audit(last.text)).setPositiveButton("OK",null).show()
+                } else toast("Atașează cod/text sau pune codul în mesaj.")
+            }
+        }
+        binding.btnMemory.setOnClickListener { AlertDialog.Builder(this).setTitle("🧠 Structured Memory").setMessage(memoryEngine.dashboard()+"\n\n"+memoryEngine.context("")).setPositiveButton("OK",null).show() }
     }
 
     private fun sendMessage(){
@@ -106,14 +132,21 @@ class MainActivity : AppCompatActivity() {
         val history=adapter.getMessages().dropLast(1);val attachment=pendingAttachment;pendingAttachment=null;binding.tvAttachment.text=""
         thread {
             try {
+                val collectedEvidence=mutableListOf<WebEvidence>()
+                val plan=SupremeEngine.route(text,attachment,agentMode,powerMode)
                 val reply=if(apiKey.isNotBlank()) {
                     GeminiClient(apiKey).askWithAttachmentOrNormal(history,attachment,brain,personaIndex,thinkingMode,agentMode,powerMode,intelligence)
                 } else {
-                    val web=webFallback.ask(text)
-                    AiResponse(web.answer,web.evidence.map{"${it.title} — ${it.url}"},0)
+                    val report=researchEngine.research(text,plan.deep)
+                    collectedEvidence.addAll(report.evidence)
+                    AiResponse(report.answer,report.evidence.map{"${it.title} — ${it.url}"},0)
                 }
-                brain.observe(text,reply.text,reply.tokens);lastCodeBlocks=FileSaver.extractCodeBlocks(reply.text);intelligence.remember("last_query",text);val evidence=intelligence.evidence(reply.sources,reply.text)
-                val decorated=reply.text+"\n\n🔎 Evidence: ${evidence.label} ${evidence.confidence}%\n${evidence.explanation}"
+                lastWebEvidence=collectedEvidence.toList()
+                memoryEngine.observe(text,reply.text);lastCodeBlocks=FileSaver.extractCodeBlocks(reply.text);intelligence.remember("last_query",text)
+                val evidence=intelligence.evidence(reply.sources,reply.text)
+                val fact=if(collectedEvidence.isNotEmpty()) FactCheckEngine.check(reply.text,collectedEvidence) else null
+                val factLine=fact?.let{"\n\n🔎 Fact Check: ${it.supported} multi-source • ${it.weak} limited • ${it.conflict} conflict • ${it.unknown} unknown"} ?: ""
+                val decorated=reply.text+"\n\n🔎 Evidence: ${evidence.label} ${evidence.confidence}%\n${evidence.explanation}"+factLine
                 runOnUiThread { adapter.updateLastMessage(decorated,reply.sources,reply.tokens);currentWorkspace?.let{workspaces.appendMessage(it,ChatMessage(decorated,false,reply.sources))};binding.recyclerView.scrollToPosition(adapter.itemCount-1) }
             }catch(e:Exception){runOnUiThread{adapter.updateLastMessage("⚠️ ${e.message ?: "Eroare necunoscută"}");binding.recyclerView.scrollToPosition(adapter.itemCount-1)}}
         }
