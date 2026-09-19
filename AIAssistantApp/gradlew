@@ -1,0 +1,7 @@
+#!/bin/sh
+set -e
+if command -v gradle >/dev/null 2>&1; then
+  exec gradle "$@"
+fi
+printf '%s\n' 'Gradle is not installed. Use GitHub Actions workflow android-build.yml or install Gradle 9.6.0.' >&2
+exit 1

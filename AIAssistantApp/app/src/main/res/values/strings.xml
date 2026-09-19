@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">AI Assistant Pro Intelligence Edition</string>
+    <string name="hint_message">Scrie sau vorbește… (cod:, cauta:)</string>
+    <string name="send">Trimite</string>
+    <string name="api_key_hint">Cheie Gemini API (opțional)</string>
+    <string name="save">OK</string>
+    <string name="export_chat">Export</string>
+    <string name="save_code">Salvează codul</string>
+    <string name="chip_news">📰 Știri live</string>
+    <string name="chip_explain">💡 Explică</string>
+    <string name="chip_code">⌨️ Cod</string>
+    <string name="chip_summarize">📝 Rezumă</string>
+    <string name="chip_new">✚ Nou</string>
+</resources>
