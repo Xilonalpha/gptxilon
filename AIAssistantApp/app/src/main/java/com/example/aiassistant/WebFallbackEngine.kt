@@ -33,6 +33,7 @@ class WebFallbackEngine(private val activity: Activity) {
 
     fun ask(query: String): Result {
         val q = query.trim()
+
         if (q.isBlank()) {
             return Result(
                 "Nu există o întrebare de căutat.",
@@ -63,7 +64,7 @@ class WebFallbackEngine(private val activity: Activity) {
 
             hits += parseSearchPage(page, name)
 
-            if (hits.size >= 12) break
+            if (hits.size >= 15) break
         }
 
         val seen = LinkedHashSet<String>()
@@ -74,13 +75,14 @@ class WebFallbackEngine(private val activity: Activity) {
                 normalized.isNotBlank() && seen.add(normalized)
             }
             .filter { isUsefulResultUrl(it.url) }
-            .take(8)
+            .take(10)
 
         if (selected.isEmpty()) {
             return Result(
-                "Web Fallback nu a obținut articole sau documente publice verificabile. " +
-                    "Nu voi transforma paginile Google/Bing/DuckDuckGo, cookie pages " +
-                    "sau paginile de căutare în surse de evidență.",
+                "Motoarele de căutare au răspuns, dar extractorul " +
+                    "nu a găsit URL-uri externe de articole/documente. " +
+                    "Paginile Google/Bing/DuckDuckGo nu sunt tratate " +
+                    "ca surse.",
                 emptyList(),
                 true,
                 tried
@@ -90,7 +92,11 @@ class WebFallbackEngine(private val activity: Activity) {
         val evidence = mutableListOf<WebEvidence>()
 
         for (hit in selected) {
-            val page = loadPage(hit.url, 15_000L)
+            val page = loadPage(
+                hit.url,
+                15_000L
+            )
+
             if (page.isBlank()) continue
 
             val finalUrl = jsonField(page, "url")
@@ -102,6 +108,7 @@ class WebFallbackEngine(private val activity: Activity) {
             val text = extractReadableText(page)
 
             if (text.length < 180) continue
+
             if (isNoiseContent(text, hit.title)) continue
 
             evidence += WebEvidence(
@@ -115,8 +122,10 @@ class WebFallbackEngine(private val activity: Activity) {
 
         if (evidence.isEmpty()) {
             return Result(
-                "Motoarele de căutare au răspuns, dar nu au fost găsite pagini publice " +
-                    "cu conținut verificabil. Rezultatele de căutare nu sunt tratate ca surse.",
+                "Au fost găsite rezultate externe, dar paginile " +
+                    "nu au furnizat suficient conținut public " +
+                    "verificabil. Nu voi transforma paginile " +
+                    "motoarelor de căutare în dovezi.",
                 emptyList(),
                 true,
                 tried
@@ -131,7 +140,11 @@ class WebFallbackEngine(private val activity: Activity) {
         )
     }
 
-    private fun loadPage(url: String, timeoutMs: Long): String {
+    private fun loadPage(
+        url: String,
+        timeoutMs: Long
+    ): String {
+
         val latch = CountDownLatch(1)
         var result = ""
 
@@ -143,6 +156,7 @@ class WebFallbackEngine(private val activity: Activity) {
 
             fun finish(value: String) {
                 if (done) return
+
                 done = true
                 result = value
 
@@ -167,25 +181,42 @@ class WebFallbackEngine(private val activity: Activity) {
                     }
 
                     handler.postDelayed({
+
                         if (done) return@postDelayed
 
                         val js = """
                             (function() {
                                 try {
+                                    var links = [];
+
+                                    document.querySelectorAll("a").forEach(function(a) {
+                                        var href = a.href || "";
+                                        var text = (a.innerText || a.textContent || "").trim();
+
+                                        if (href && text) {
+                                            links.push({
+                                                href: href,
+                                                text: text
+                                            });
+                                        }
+                                    });
+
                                     return JSON.stringify({
                                         title: document.title || "",
                                         url: location.href || "",
                                         html: document.documentElement
                                             ? document.documentElement.outerHTML : "",
                                         text: document.body
-                                            ? document.body.innerText : ""
+                                            ? document.body.innerText : "",
+                                        links: links
                                     });
                                 } catch(e) {
                                     return JSON.stringify({
                                         title: "",
                                         url: location.href || "",
                                         html: "",
-                                        text: ""
+                                        text: "",
+                                        links: []
                                     });
                                 }
                             })();
@@ -194,7 +225,8 @@ class WebFallbackEngine(private val activity: Activity) {
                         view.evaluateJavascript(js) { raw ->
                             finish(decodeJavascriptString(raw))
                         }
-                    }, 900L)
+
+                    }, 800L)
                 }
 
                 override fun onReceivedError(
@@ -211,7 +243,11 @@ class WebFallbackEngine(private val activity: Activity) {
             webView.loadUrl(url)
         }
 
-        latch.await(timeoutMs, TimeUnit.MILLISECONDS)
+        latch.await(
+            timeoutMs,
+            TimeUnit.MILLISECONDS
+        )
+
         return result
     }
 
@@ -226,59 +262,43 @@ class WebFallbackEngine(private val activity: Activity) {
             "Mozilla/5.0 (Linux; Android 15) AppleWebKit/537.36 " +
                 "(KHTML, like Gecko) Chrome/140.0 Mobile Safari/537.36"
 
-        CookieManager.getInstance().setAcceptCookie(true)
+        CookieManager.getInstance()
+            .setAcceptCookie(true)
     }
 
     private fun parseSearchPage(
         raw: String,
         engine: String
     ): List<SearchHit> {
-        val html = jsonField(raw, "html")
+
         val result = mutableListOf<SearchHit>()
 
-        val anchors = Regex(
-            """<a[^>]+href=["']([^"']+)["'][^>]*>(.*?)</a>""",
-            setOf(
-                RegexOption.IGNORE_CASE,
-                RegexOption.DOT_MATCHES_ALL
-            )
+        val linksJson = extractJsonArray(
+            raw,
+            "links"
         )
 
-        for (m in anchors.findAll(html).take(220)) {
-            var href = decodeHtml(m.groupValues[1])
-            val title = cleanText(m.groupValues[2])
+        val linkPattern = Regex(
+            """\{"href":"(.*?)","text":"(.*?)"\}""",
+            setOf(RegexOption.DOT_MATCHES_ALL)
+        )
 
-            href = when {
-                href.startsWith("/url?") -> {
-                    val parsed = Uri.parse(
-                        "https://www.google.com$href"
-                    )
+        for (match in linkPattern.findAll(linksJson)) {
 
-                    parsed.getQueryParameter("q")
-                        ?: parsed.getQueryParameter("url")
-                        ?: ""
-                }
+            var href = decodeEscaped(
+                match.groupValues[1]
+            )
 
-                href.startsWith(
-                    "https://www.google.com/url?"
-                ) -> {
-                    val parsed = Uri.parse(href)
+            val title = cleanText(
+                decodeEscaped(
+                    match.groupValues[2]
+                )
+            )
 
-                    parsed.getQueryParameter("q")
-                        ?: parsed.getQueryParameter("url")
-                        ?: ""
-                }
-
-                href.startsWith("/l/?uddg=") -> {
-                    Uri.parse(
-                        "https://html.duckduckgo.com$href"
-                    )
-                        .getQueryParameter("uddg")
-                        .orEmpty()
-                }
-
-                else -> href
-            }
+            href = resolveSearchUrl(
+                href,
+                engine
+            )
 
             if (!isUsefulResultUrl(href)) continue
             if (title.length < 3) continue
@@ -290,20 +310,193 @@ class WebFallbackEngine(private val activity: Activity) {
                 engine = engine
             )
 
-            if (result.size >= 10) break
+            if (result.size >= 12) break
+        }
+
+        /*
+         * Fallback pentru motoarele care nu expun corect
+         * lista JS de linkuri.
+         */
+        if (result.isEmpty()) {
+            result += parseHtmlLinks(
+                raw,
+                engine
+            )
         }
 
         return result
     }
 
-    private fun extractReadableText(raw: String): String {
+    private fun parseHtmlLinks(
+        raw: String,
+        engine: String
+    ): List<SearchHit> {
+
+        val html = jsonField(
+            raw,
+            "html"
+        )
+
+        val result = mutableListOf<SearchHit>()
+
+        val pattern = Regex(
+            """<a\b[^>]*href\s*=\s*["']([^"']+)["'][^>]*>(.*?)</a>""",
+            setOf(
+                RegexOption.IGNORE_CASE,
+                RegexOption.DOT_MATCHES_ALL
+            )
+        )
+
+        for (match in pattern.findAll(html)) {
+
+            var href = decodeHtml(
+                match.groupValues[1]
+            )
+
+            val title = cleanText(
+                match.groupValues[2]
+            )
+
+            href = resolveSearchUrl(
+                href,
+                engine
+            )
+
+            if (!isUsefulResultUrl(href)) continue
+            if (title.length < 3) continue
+
+            result += SearchHit(
+                title = title,
+                url = href,
+                snippet = "",
+                engine = engine
+            )
+
+            if (result.size >= 12) break
+        }
+
+        return result
+    }
+
+    private fun resolveSearchUrl(
+        original: String,
+        engine: String
+    ): String {
+
+        var href = original.trim()
+
+        if (href.startsWith("//")) {
+            href = "https:$href"
+        }
+
+        if (href.startsWith("/")) {
+            href = when (engine) {
+                "Google" ->
+                    "https://www.google.com$href"
+
+                "Bing" ->
+                    "https://www.bing.com$href"
+
+                "DuckDuckGo" ->
+                    "https://html.duckduckgo.com$href"
+
+                else ->
+                    href
+            }
+        }
+
+        try {
+            val uri = Uri.parse(href)
+
+            if (
+                engine == "Google" &&
+                (
+                    href.contains("/url?") ||
+                        href.contains("google.com/url?")
+                    )
+            ) {
+                val target =
+                    uri.getQueryParameter("q")
+                        ?: uri.getQueryParameter("url")
+                        ?: uri.getQueryParameter("u")
+
+                if (!target.isNullOrBlank()) {
+                    href = Uri.decode(target)
+                }
+            }
+
+            if (
+                engine == "DuckDuckGo" &&
+                (
+                    href.contains("uddg=") ||
+                        href.contains("/l/?")
+                )
+            ) {
+                val target =
+                    uri.getQueryParameter("uddg")
+
+                if (!target.isNullOrBlank()) {
+                    href = Uri.decode(target)
+                }
+            }
+
+            if (
+                engine == "Bing" &&
+                href.contains("bing.com/ck/a")
+            ) {
+                val target =
+                    uri.getQueryParameter("u")
+
+                if (!target.isNullOrBlank()) {
+                    href = decodeBingUrl(target)
+                }
+            }
+
+        } catch (_: Exception) {
+        }
+
+        return href
+    }
+
+    private fun decodeBingUrl(
+        value: String
+    ): String {
+        return try {
+            val decoded = Uri.decode(value)
+
+            if (decoded.startsWith("a1")) {
+                val body = decoded.substring(2)
+                val bytes = android.util.Base64.decode(
+                    body,
+                    android.util.Base64.URL_SAFE or
+                        android.util.Base64.NO_WRAP
+                )
+
+                String(bytes)
+            } else {
+                decoded
+            }
+        } catch (_: Exception) {
+            Uri.decode(value)
+        }
+    }
+
+    private fun extractReadableText(
+        raw: String
+    ): String {
+
         if (raw.isBlank()) return ""
 
-        return jsonField(raw, "text")
+        return jsonField(
+            raw,
+            "text"
+        )
             .replace('\u00A0', ' ')
             .lines()
             .map(::cleanText)
-            .filter { it.length >= 25 }
+            .filter {
+                it.length >= 25
+            }
             .filterNot {
                 val value = it.lowercase()
 
@@ -327,9 +520,11 @@ class WebFallbackEngine(private val activity: Activity) {
         text: String,
         title: String
     ): Boolean {
+
         val combined = (
-            title + " " + text.take(5000)
-        ).lowercase()
+            title + " " +
+                text.take(5000)
+            ).lowercase()
 
         val noiseSignals = listOf(
             "before you continue to google",
@@ -357,12 +552,11 @@ class WebFallbackEngine(private val activity: Activity) {
         query: String,
         evidence: List<WebEvidence>
     ): String {
-        if (evidence.isEmpty()) {
-            return "Nu am obținut conținut web utilizabil pentru: $query"
-        }
 
         return buildString {
+
             append("🌐 WEB FALLBACK LIVE\n\n")
+
             append("Căutare: ")
                 .append(query)
                 .append('\n')
@@ -371,9 +565,10 @@ class WebFallbackEngine(private val activity: Activity) {
                 .append(evidence.size)
                 .append("\n\n")
 
-            evidence.forEachIndexed { i, item ->
+            evidence.forEachIndexed { index, item ->
+
                 append("[")
-                    .append(i + 1)
+                    .append(index + 1)
                     .append("] ")
                     .append(item.title)
                     .append('\n')
@@ -389,18 +584,67 @@ class WebFallbackEngine(private val activity: Activity) {
                     .append("\n\n")
             }
 
-            append("⚠️ Conținut colectat live prin WebView. ")
             append(
-                "Paginile blocate, cookie pages și paginile motoarelor " +
-                    "de căutare nu sunt considerate surse."
+                "⚠️ Sunt considerate surse doar paginile externe " +
+                    "cu conținut public suficient. Paginile " +
+                    "Google/Bing/DuckDuckGo, cookie, privacy, " +
+                    "terms și login sunt excluse."
             )
         }
+    }
+
+    private fun extractJsonArray(
+        raw: String,
+        field: String
+    ): String {
+
+        val marker = "\"$field\":["
+
+        val start = raw.indexOf(marker)
+
+        if (start < 0) return ""
+
+        val from = start + marker.length
+
+        var depth = 1
+        var escaped = false
+
+        for (i in from until raw.length) {
+
+            val c = raw[i]
+
+            if (escaped) {
+                escaped = false
+                continue
+            }
+
+            if (c == '\\') {
+                escaped = true
+                continue
+            }
+
+            if (c == '[') depth++
+
+            if (c == ']') {
+                depth--
+
+                if (depth == 0) {
+                    return raw.substring(
+                        from,
+                        i
+                    )
+                }
+            }
+        }
+
+        return ""
     }
 
     private fun jsonField(
         raw: String,
         field: String
     ): String {
+
         val key = "\"$field\":"
         val start = raw.indexOf(key)
 
@@ -408,11 +652,19 @@ class WebFallbackEngine(private val activity: Activity) {
 
         var i = start + key.length
 
-        while (i < raw.length && raw[i].isWhitespace()) {
+        while (
+            i < raw.length &&
+            raw[i].isWhitespace()
+        ) {
             i++
         }
 
-        if (i >= raw.length || raw[i] != '"') return ""
+        if (
+            i >= raw.length ||
+            raw[i] != '"'
+        ) {
+            return ""
+        }
 
         i++
 
@@ -420,9 +672,11 @@ class WebFallbackEngine(private val activity: Activity) {
         var escaped = false
 
         while (i < raw.length) {
+
             val c = raw[i++]
 
             if (escaped) {
+
                 out.append(
                     when (c) {
                         'n' -> '\n'
@@ -433,16 +687,42 @@ class WebFallbackEngine(private val activity: Activity) {
                         '/' -> '/'
                         'b' -> '\b'
                         'f' -> '\u000C'
+                        'u' -> {
+                            if (i + 4 <= raw.length) {
+                                val hex =
+                                    raw.substring(
+                                        i,
+                                        i + 4
+                                    )
+
+                                i += 4
+
+                                try {
+                                    hex.toInt(16).toChar()
+                                } catch (_: Exception) {
+                                    'u'
+                                }
+                            } else {
+                                'u'
+                            }
+                        }
+
                         else -> c
                     }
                 )
 
                 escaped = false
+
             } else if (c == '\\') {
+
                 escaped = true
+
             } else if (c == '"') {
+
                 break
+
             } else {
+
                 out.append(c)
             }
         }
@@ -452,17 +732,31 @@ class WebFallbackEngine(private val activity: Activity) {
 
     private fun decodeJavascriptString(
         raw: String
-    ): String =
-        if (raw == "null") {
-            ""
-        } else {
-            jsonField(
-                """{"value":$raw}""",
-                "value"
-            )
-        }
+    ): String {
 
-    private fun cleanText(value: String): String =
+        if (raw == "null") return ""
+
+        return jsonField(
+            """{"value":$raw}""",
+            "value"
+        )
+    }
+
+    private fun decodeEscaped(
+        value: String
+    ): String =
+        value
+            .replace("\\/", "/")
+            .replace("\\\"", "\"")
+            .replace("\\\\", "\\")
+            .replace("\\n", "\n")
+            .replace("\\u0026", "&")
+            .replace("\\u003d", "=")
+            .replace("\\u002f", "/")
+
+    private fun cleanText(
+        value: String
+    ): String =
         decodeHtml(value)
             .replace(
                 Regex("""<[^>]+>"""),
@@ -474,7 +768,9 @@ class WebFallbackEngine(private val activity: Activity) {
             )
             .trim()
 
-    private fun decodeHtml(value: String): String =
+    private fun decodeHtml(
+        value: String
+    ): String =
         value
             .replace("&amp;", "&")
             .replace("&quot;", "\"")
@@ -484,7 +780,9 @@ class WebFallbackEngine(private val activity: Activity) {
             .replace("&#x27;", "'")
             .replace("&#x2F;", "/")
 
-    private fun normalizeUrl(url: String): String =
+    private fun normalizeUrl(
+        url: String
+    ): String =
         url.substringBefore("#")
             .trimEnd('/')
             .lowercase()
@@ -492,10 +790,11 @@ class WebFallbackEngine(private val activity: Activity) {
     private fun isUsefulResultUrl(
         url: String
     ): Boolean {
-        if (!(
-            url.startsWith("http://") ||
-                url.startsWith("https://")
-        )) {
+
+        if (
+            !url.startsWith("http://") &&
+            !url.startsWith("https://")
+        ) {
             return false
         }
 
@@ -536,7 +835,7 @@ class WebFallbackEngine(private val activity: Activity) {
 
         if (path.isBlank()) return false
 
-        val blockedPathSignals = listOf(
+        val blocked = listOf(
             "/search",
             "/privacy",
             "/privacy-policy",
@@ -550,8 +849,9 @@ class WebFallbackEngine(private val activity: Activity) {
         )
 
         if (
-            blockedPathSignals.any {
-                path == it || path.startsWith("$it/")
+            blocked.any {
+                path == it ||
+                    path.startsWith("$it/")
             }
         ) {
             return false
