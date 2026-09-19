@@ -1,37 +1,401 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:background="@color/bg" android:padding="8dp">
-    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:background="@color/toolbar_bg" android:gravity="center_vertical" android:padding="3dp">
-        <Button android:id="@+id/btnBrain" android:layout_width="0dp" android:layout_height="42dp" android:layout_weight="1" android:text="🧠" android:contentDescription="Intelligence Core"/>
-        <Button android:id="@+id/btnPower" android:layout_width="0dp" android:layout_height="42dp" android:layout_weight="1" android:text="🚀" android:contentDescription="Supreme Power Mode"/>
-        <Button android:id="@+id/btnAgent" android:layout_width="0dp" android:layout_height="42dp" android:layout_weight="1" android:text="⚡" android:contentDescription="Agent Mode"/>
-        <Button android:id="@+id/btnThink" android:layout_width="0dp" android:layout_height="42dp" android:layout_weight="1" android:text="🧭" android:contentDescription="Pași"/>
-        <Button android:id="@+id/btnPersona" android:layout_width="0dp" android:layout_height="42dp" android:layout_weight="1" android:text="🎭"/>
-        <Button android:id="@+id/btnHistory" android:layout_width="0dp" android:layout_height="42dp" android:layout_weight="1" android:text="📚"/>
-        <Button android:id="@+id/btnWorkspace" android:layout_width="0dp" android:layout_height="42dp" android:layout_weight="1" android:text="🧩"/>
-        <Button android:id="@+id/btnWatcher" android:layout_width="0dp" android:layout_height="42dp" android:layout_weight="1" android:text="🛰️"/>
-        <Button android:id="@+id/btnExport" android:layout_width="0dp" android:layout_height="42dp" android:layout_weight="1" android:text="↗"/>
-        <Button android:id="@+id/btnZip" android:layout_width="0dp" android:layout_height="42dp" android:layout_weight="1" android:text="📦"/>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/bg"
+    android:paddingStart="10dp"
+    android:paddingEnd="10dp"
+    android:paddingTop="6dp"
+    android:paddingBottom="6dp">
+
+    <!-- HEADER -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="@color/toolbar_bg"
+        android:paddingStart="6dp"
+        android:paddingEnd="6dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:text="🧠  AI Assistant"
+            android:textColor="@color/text_main"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:maxLines="1" />
+
+        <Button
+            android:id="@+id/btnBrain"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:padding="0dp"
+            android:text="🧠"
+            android:textSize="18sp"
+            android:contentDescription="Intelligence Core" />
+
     </LinearLayout>
-    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical" android:padding="4dp">
-        <TextView android:id="@+id/tvWorkspace" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="🧩 Global Workspace" android:textColor="@color/text_main" android:textSize="12sp"/>
-        <TextView android:id="@+id/tvAttachment" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="@color/accent2" android:textSize="11sp"/>
+
+    <!-- TOOLBAR SCROLLABIL -->
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_marginTop="5dp"
+        android:scrollbars="none"
+        android:overScrollMode="never">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <Button
+                android:id="@+id/btnPower"
+                android:layout_width="46dp"
+                android:layout_height="42dp"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                android:layout_marginEnd="4dp"
+                android:padding="0dp"
+                android:text="🚀"
+                android:textSize="18sp"
+                android:contentDescription="Supreme Power Mode" />
+
+            <Button
+                android:id="@+id/btnAgent"
+                android:layout_width="46dp"
+                android:layout_height="42dp"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                android:layout_marginEnd="4dp"
+                android:padding="0dp"
+                android:text="⚡"
+                android:textSize="18sp"
+                android:contentDescription="Agent Mode" />
+
+            <Button
+                android:id="@+id/btnThink"
+                android:layout_width="46dp"
+                android:layout_height="42dp"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                android:layout_marginEnd="4dp"
+                android:padding="0dp"
+                android:text="🧭"
+                android:textSize="18sp"
+                android:contentDescription="Pași rezumați" />
+
+            <Button
+                android:id="@+id/btnPersona"
+                android:layout_width="46dp"
+                android:layout_height="42dp"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                android:layout_marginEnd="4dp"
+                android:padding="0dp"
+                android:text="🎭"
+                android:textSize="18sp"
+                android:contentDescription="Persona" />
+
+            <Button
+                android:id="@+id/btnHistory"
+                android:layout_width="46dp"
+                android:layout_height="42dp"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                android:layout_marginEnd="4dp"
+                android:padding="0dp"
+                android:text="📚"
+                android:textSize="18sp"
+                android:contentDescription="Istoric" />
+
+            <Button
+                android:id="@+id/btnWorkspace"
+                android:layout_width="46dp"
+                android:layout_height="42dp"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                android:layout_marginEnd="4dp"
+                android:padding="0dp"
+                android:text="🧩"
+                android:textSize="18sp"
+                android:contentDescription="Workspace" />
+
+            <Button
+                android:id="@+id/btnWatcher"
+                android:layout_width="46dp"
+                android:layout_height="42dp"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                android:layout_marginEnd="4dp"
+                android:padding="0dp"
+                android:text="🛰️"
+                android:textSize="18sp"
+                android:contentDescription="AI Watcher" />
+
+            <Button
+                android:id="@+id/btnExport"
+                android:layout_width="46dp"
+                android:layout_height="42dp"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                android:layout_marginEnd="4dp"
+                android:padding="0dp"
+                android:text="↗"
+                android:textSize="20sp"
+                android:contentDescription="Export conversație" />
+
+            <Button
+                android:id="@+id/btnZip"
+                android:layout_width="46dp"
+                android:layout_height="42dp"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                android:padding="0dp"
+                android:text="📦"
+                android:textSize="18sp"
+                android:contentDescription="Export proiect" />
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
+    <!-- WORKSPACE STATUS -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="38dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingStart="4dp"
+        android:paddingEnd="4dp">
+
+        <TextView
+            android:id="@+id/tvWorkspace"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="🧩 Global Workspace"
+            android:textColor="@color/text_main"
+            android:textSize="14sp"
+            android:maxLines="1" />
+
+        <TextView
+            android:id="@+id/tvAttachment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/accent2"
+            android:textSize="11sp"
+            android:maxLines="1" />
+
     </LinearLayout>
-    <HorizontalScrollView android:layout_width="match_parent" android:layout_height="wrap_content" android:scrollbars="none"><LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal">
-        <Button android:id="@+id/btnChipNew" android:layout_width="wrap_content" android:layout_height="38dp" android:text="✚ Nou"/>
-        <Button android:id="@+id/btnChipNews" android:layout_width="wrap_content" android:layout_height="38dp" android:text="📰 Verifică"/>
-        <Button android:id="@+id/btnChipExplain" android:layout_width="wrap_content" android:layout_height="38dp" android:text="💡 Explică"/>
-        <Button android:id="@+id/btnChipCode" android:layout_width="wrap_content" android:layout_height="38dp" android:text="⌨️ Proiect"/>
-        <Button android:id="@+id/btnChipSummarize" android:layout_width="wrap_content" android:layout_height="38dp" android:text="📝 Rezumă"/>
-    </LinearLayout></HorizontalScrollView>
-    <androidx.recyclerview.widget.RecyclerView android:id="@+id/recyclerView" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:clipToPadding="false" android:paddingBottom="4dp"/>
-    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical">
-        <Button android:id="@+id/btnAttach" android:layout_width="44dp" android:layout_height="44dp" android:text="📎"/>
-        <Button android:id="@+id/btnMic" android:layout_width="44dp" android:layout_height="44dp" android:text="🎤"/>
-        <EditText android:id="@+id/etMessage" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:hint="Întreabă AI-ul…" android:textColor="@color/text_main" android:textColorHint="@color/text_hint" android:background="@color/bubble_ai" android:padding="12dp" android:inputType="textCapSentences|textMultiLine"/>
-        <Button android:id="@+id/btnSend" android:layout_width="48dp" android:layout_height="44dp" android:text="➤"/>
+
+    <!-- QUICK ACTIONS -->
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:scrollbars="none"
+        android:overScrollMode="never">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <Button
+                android:id="@+id/btnChipNew"
+                android:layout_width="105dp"
+                android:layout_height="40dp"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                android:layout_marginEnd="5dp"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:text="✚ Nou"
+                android:textSize="13sp" />
+
+            <Button
+                android:id="@+id/btnChipNews"
+                android:layout_width="115dp"
+                android:layout_height="40dp"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                android:layout_marginEnd="5dp"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:text="📰 Verifică"
+                android:textSize="13sp" />
+
+            <Button
+                android:id="@+id/btnChipExplain"
+                android:layout_width="110dp"
+                android:layout_height="40dp"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                android:layout_marginEnd="5dp"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:text="💡 Explică"
+                android:textSize="13sp" />
+
+            <Button
+                android:id="@+id/btnChipCode"
+                android:layout_width="110dp"
+                android:layout_height="40dp"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                android:layout_marginEnd="5dp"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:text="⌨️ Proiect"
+                android:textSize="13sp" />
+
+            <Button
+                android:id="@+id/btnChipSummarize"
+                android:layout_width="110dp"
+                android:layout_height="40dp"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:text="📝 Rezumă"
+                android:textSize="13sp" />
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
+    <!-- CHAT -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:clipToPadding="false"
+        android:paddingTop="6dp"
+        android:paddingBottom="6dp"
+        android:overScrollMode="ifContentScrolls" />
+
+    <!-- ATTACHMENT INDICATOR -->
+    <TextView
+        android:id="@+id/tvInputStatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:textColor="@color/accent2"
+        android:textSize="12sp"
+        android:paddingStart="6dp"
+        android:paddingEnd="6dp"
+        android:paddingBottom="3dp" />
+
+    <!-- MESSAGE BAR -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <Button
+            android:id="@+id/btnAttach"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:padding="0dp"
+            android:text="📎"
+            android:textSize="18sp"
+            android:contentDescription="Atașează fișier" />
+
+        <Button
+            android:id="@+id/btnMic"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:layout_marginStart="4dp"
+            android:padding="0dp"
+            android:text="🎤"
+            android:textSize="18sp"
+            android:contentDescription="Dictare vocală" />
+
+        <EditText
+            android:id="@+id/etMessage"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:layout_marginStart="6dp"
+            android:layout_marginEnd="6dp"
+            android:background="@color/bubble_ai"
+            android:hint="Întreabă AI-ul…"
+            android:textColor="@color/text_main"
+            android:textColorHint="@color/text_hint"
+            android:textSize="16sp"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:gravity="center_vertical"
+            android:inputType="textCapSentences|textMultiLine"
+            android:maxLines="4" />
+
+        <Button
+            android:id="@+id/btnSend"
+            android:layout_width="50dp"
+            android:layout_height="44dp"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:padding="0dp"
+            android:text="➤"
+            android:textSize="20sp"
+            android:contentDescription="Trimite" />
+
     </LinearLayout>
-    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical" android:layout_marginTop="4dp">
-        <EditText android:id="@+id/etApiKey" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:hint="Cheie Gemini — stocată criptat" android:textSize="11sp" android:textColor="@color/text_main" android:textColorHint="@color/text_hint" android:background="@color/bubble_ai" android:padding="8dp"/>
-        <Button android:id="@+id/btnSaveKey" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="🔐"/>
+
+    <!-- GEMINI KEY -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:layout_marginTop="4dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <EditText
+            android:id="@+id/etApiKey"
+            android:layout_width="0dp"
+            android:layout_height="42dp"
+            android:layout_weight="1"
+            android:background="@color/bubble_ai"
+            android:hint="🔐 Cheie Gemini — stocată criptat"
+            android:textSize="12sp"
+            android:textColor="@color/text_main"
+            android:textColorHint="@color/text_hint"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:singleLine="true"
+            android:inputType="textPassword" />
+
+        <Button
+            android:id="@+id/btnSaveKey"
+            android:layout_width="50dp"
+            android:layout_height="42dp"
+            android:layout_marginStart="6dp"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:padding="0dp"
+            android:text="🔐"
+            android:textSize="18sp"
+            android:contentDescription="Salvează cheia Gemini" />
+
     </LinearLayout>
+
 </LinearLayout>
