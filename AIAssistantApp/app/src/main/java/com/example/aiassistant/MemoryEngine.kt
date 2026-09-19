@@ -2,9 +2,14 @@ package com.example.aiassistant
 
 class MemoryEngine(
     private val brain: Brain,
-    private val intelligence: IntelligenceEngine
+    private val intelligence: IntelligenceEngine,
+    private val geminiLearning: GeminiLearningEngine? = null
 ) {
-    fun observe(userText: String, aiText: String) {
+    fun observe(
+        userText: String,
+        aiText: String,
+        geminiResponse: AiResponse? = null
+    ) {
         val normalized = userText.trim()
         if (normalized.isBlank()) return
 
@@ -39,16 +44,40 @@ class MemoryEngine(
             )
         }
 
+        /*
+         * Învățarea specială Gemini se activează numai când există
+         * un AiResponse real venit de la Gemini.
+         *
+         * Răspunsurile offline/web fallback nu intră în această memorie.
+         */
+        if (geminiResponse != null) {
+            geminiLearning?.learn(normalized, geminiResponse)
+        }
+
         brain.observe(normalized, aiText)
     }
 
-    fun context(query: String): String =
-        intelligence.graphText(query).take(7000)
+    fun context(query: String): String {
+        val graph = intelligence.graphText(query).take(4500)
+        val learned = geminiLearning?.context(query).orEmpty().take(2500)
+
+        return buildString {
+            if (graph.isNotBlank()) {
+                append(graph)
+            }
+
+            if (learned.isNotBlank()) {
+                if (isNotEmpty()) append("\n\n")
+                append(learned)
+            }
+        }.take(7000)
+    }
 
     fun dashboard(): String =
-        "🧠 Structured Memory\n" +
+        "🧠 STRUCTURED MEMORY\n" +
             "• Brain facts + corrections\n" +
             "• Project/preferences memory\n" +
             "• Temporal updates\n" +
-            "• Confidence + source metadata"
+            "• Confidence + source metadata\n\n" +
+            geminiLearning?.dashboard().orEmpty()
 }
