@@ -29,6 +29,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var webFallback: WebFallbackEngine
     private lateinit var researchEngine: ResearchEngine
     private lateinit var memoryEngine: MemoryEngine
+    private lateinit var geminiLearning: GeminiLearningEngine
     private var lastWebEvidence: List<WebEvidence> = emptyList()
     private var apiKey = ""
     private var personaIndex = 0
@@ -64,7 +65,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding=ActivityMainBinding.inflate(layoutInflater); setContentView(binding.root)
-        brain=Brain(this); sessions=SessionManager(this); intelligence=IntelligenceEngine(filesDir); workspaces=WorkspaceManager(this); watchers=WatchManager(this); secureStore=SecureStore(this); webFallback=WebFallbackEngine(this); researchEngine=ResearchEngine(webFallback); memoryEngine=MemoryEngine(brain,intelligence)
+        brain=Brain(this); sessions=SessionManager(this); intelligence=IntelligenceEngine(filesDir); workspaces=WorkspaceManager(this); watchers=WatchManager(this); secureStore=SecureStore(this); webFallback=WebFallbackEngine(this); researchEngine=ResearchEngine(webFallback); geminiLearning=GeminiLearningEngine(filesDir); memoryEngine=MemoryEngine(brain,intelligence,geminiLearning)
         adapter=ChatAdapter(); binding.recyclerView.layoutManager=LinearLayoutManager(this); binding.recyclerView.adapter=adapter
         apiKey=secureStore.get()
         if (apiKey.isBlank()) getSharedPreferences("ai_prefs",MODE_PRIVATE).getString("api_key","")?.takeIf { it.isNotBlank() }?.let { apiKey=it; secureStore.put(it); getSharedPreferences("ai_prefs",MODE_PRIVATE).edit().remove("api_key").apply() }
@@ -142,7 +143,7 @@ class MainActivity : AppCompatActivity() {
                     AiResponse(report.answer,report.evidence.map{"${it.title} — ${it.url}"},0)
                 }
                 lastWebEvidence=collectedEvidence.toList()
-                memoryEngine.observe(text,reply.text);lastCodeBlocks=FileSaver.extractCodeBlocks(reply.text);intelligence.remember("last_query",text)
+                memoryEngine.observe(text,reply.text,if(apiKey.isNotBlank()) reply else null);lastCodeBlocks=FileSaver.extractCodeBlocks(reply.text);intelligence.remember("last_query",text)
                 val evidence=intelligence.evidence(reply.sources,reply.text)
                 val fact=if(collectedEvidence.isNotEmpty()) FactCheckEngine.check(reply.text,collectedEvidence) else null
                 val factLine=fact?.let{"\n\n🔎 Fact Check: ${it.supported} multi-source • ${it.weak} limited • ${it.conflict} conflict • ${it.unknown} unknown"} ?: ""
