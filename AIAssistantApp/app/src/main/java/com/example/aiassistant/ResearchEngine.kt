@@ -5,6 +5,7 @@ import java.util.LinkedHashMap
 import java.util.Locale
 
 class ResearchEngine(private val web: WebFallbackEngine) {
+
     data class Report(
         val answer: String,
         val evidence: List<WebEvidence>,
@@ -12,47 +13,91 @@ class ResearchEngine(private val web: WebFallbackEngine) {
         val engines: List<String>
     )
 
-    fun research(query: String, deep: Boolean = true): Report {
+    fun research(
+        query: String,
+        deep: Boolean = true
+    ): Report {
         val q = query.trim()
-        if (q.isBlank()) return Report("Întrebarea este goală.", emptyList(), emptyList(), emptyList())
+
+        if (q.isBlank()) {
+            return Report(
+                "Întrebarea este goală.",
+                emptyList(),
+                emptyList(),
+                emptyList()
+            )
+        }
 
         val queries = buildQueries(q, deep)
         val all = mutableListOf<WebEvidence>()
         val engines = linkedSetOf<String>()
 
         for (candidate in queries) {
-            val result = try { web.ask(candidate) } catch (_: Exception) { null } ?: continue
+            val result = try {
+                web.ask(candidate)
+            } catch (_: Exception) {
+                null
+            } ?: continue
+
             engines += result.enginesTried
             all += result.evidence
         }
 
         val unique = LinkedHashMap<String, WebEvidence>()
+
         all.forEach { item ->
+            if (!isUsableEvidence(item)) return@forEach
+
             val normalized = normalizeUrl(item.url)
-            if (normalized.isNotBlank() && !unique.containsKey(normalized)) {
+
+            if (
+                normalized.isNotBlank() &&
+                !unique.containsKey(normalized)
+            ) {
                 unique[normalized] = item
             }
         }
 
         val evidence = unique.values
             .sortedWith(
-                compareByDescending<WebEvidence> { sourceQuality(it) }
-                    .thenByDescending { it.content.length }
-                    .thenBy { it.title.lowercase(Locale.ROOT) }
+                compareByDescending<WebEvidence> {
+                    sourceQuality(it)
+                }
+                    .thenByDescending {
+                        it.content.length
+                    }
+                    .thenBy {
+                        it.title.lowercase(Locale.ROOT)
+                    }
             )
             .take(if (deep) 20 else 12)
 
-        val reasoning = EvidenceReasoningEngine.analyze(q, evidence)
+        val reasoning =
+            EvidenceReasoningEngine.analyze(
+                q,
+                evidence
+            )
+
         return Report(
-            buildAnswer(q, evidence, queries, engines.toList(), reasoning),
+            buildAnswer(
+                q,
+                evidence,
+                queries,
+                engines.toList(),
+                reasoning
+            ),
             evidence,
             queries,
             engines.toList()
         )
     }
 
-    private fun buildQueries(q: String, deep: Boolean): List<String> {
+    private fun buildQueries(
+        q: String,
+        deep: Boolean
+    ): List<String> {
         val list = mutableListOf(q)
+
         if (deep) {
             list += "$q surse oficiale primare"
             list += "$q date studii documente originale"
@@ -62,6 +107,7 @@ class ResearchEngine(private val web: WebFallbackEngine) {
             list += "$q surse oficiale"
             list += "$q verificare"
         }
+
         return list.distinct()
     }
 
@@ -72,56 +118,238 @@ class ResearchEngine(private val web: WebFallbackEngine) {
         engines: List<String>,
         reasoning: EvidenceReasoningEngine.Analysis
     ): String = buildString {
+
         append("🔬 DEEP RESEARCH MODE\n\n")
-        append("Întrebare: ").append(query).append('\n')
-        append("Treceri de cercetare: ").append(queries.size).append('\n')
-        append("Motoare încercate: ").append(if (engines.isEmpty()) "—" else engines.joinToString(", ")).append('\n')
-        append("Surse unice analizate: ").append(evidence.size).append('\n')
-        append("Surse distincte: ").append(reasoning.distinctDomains).append('\n')
-        append("Acoperire de evidență: ").append(reasoning.coverage).append("%\n")
-        append("Independență estimată: ").append(reasoning.independence).append("%\n\n")
+
+        append("Întrebare: ")
+            .append(query)
+            .append('\n')
+
+        append("Treceri de cercetare: ")
+            .append(queries.size)
+            .append('\n')
+
+        append("Motoare încercate: ")
+            .append(
+                if (engines.isEmpty()) {
+                    "—"
+                } else {
+                    engines.joinToString(", ")
+                }
+            )
+            .append('\n')
+
+        append("Surse unice analizate: ")
+            .append(evidence.size)
+            .append('\n')
+
+        append("Surse distincte: ")
+            .append(reasoning.distinctDomains)
+            .append('\n')
+
+        append("Acoperire de evidență: ")
+            .append(reasoning.coverage)
+            .append("%\n")
+
+        append("Independență estimată: ")
+            .append(reasoning.independence)
+            .append("%\n\n")
 
         if (evidence.isEmpty()) {
-            append("Nu am obținut surse publice utilizabile. Nu voi inventa un răspuns.\n")
+            append(
+                "Nu am obținut suficiente articole sau documente " +
+                    "publice verificabile. Nu voi inventa un răspuns " +
+                    "din paginile motoarelor de căutare.\n"
+            )
+
             return@buildString
         }
 
         append("🧠 ANALIZĂ A EVIDENȚEI\n")
-        append(reasoning.summary).append("\n\n")
+        append(reasoning.summary)
+            .append("\n\n")
 
         if (reasoning.conflicts.isNotEmpty()) {
             append("⚠️ POSIBILE CONTRADICȚII\n")
-            reasoning.conflicts.take(5).forEach { append("• ").append(it).append('\n') }
+
+            reasoning.conflicts
+                .take(5)
+                .forEach {
+                    append("• ")
+                        .append(it)
+                        .append('\n')
+                }
+
             append('\n')
         }
 
         append("📚 SURSE ANALIZATE\n")
-        evidence.take(if (evidence.size > 8) 12 else evidence.size).forEachIndexed { index, item ->
-            append("[").append(index + 1).append("] ")
-            append(item.title).append('\n')
-            append(item.url).append('\n')
-            append(item.content.ifBlank { item.snippet }.take(1000)).append("\n\n")
-        }
 
-        append("📌 Metodă: sursele sunt deduplicate, grupate după domeniu și evaluate după "
-            + "acoperirea termenilor, independența domeniilor, semnale de conflict și disponibilitatea "
-            + "conținutului. Scorurile sunt euristice și nu reprezintă o dovadă matematică.")
+        evidence
+            .take(
+                if (evidence.size > 8) {
+                    12
+                } else {
+                    evidence.size
+                }
+            )
+            .forEachIndexed { index, item ->
+
+                append("[")
+                    .append(index + 1)
+                    .append("] ")
+
+                append(item.title)
+                    .append('\n')
+
+                append(item.url)
+                    .append('\n')
+
+                append(
+                    item.content
+                        .ifBlank { item.snippet }
+                        .take(1000)
+                )
+                    .append("\n\n")
+            }
+
+        append(
+            "📌 Metodă: sunt acceptate doar pagini publice " +
+                "cu URL extern, conținut suficient și care nu " +
+                "sunt pagini ale motoarelor de căutare, cookie, " +
+                "privacy, terms sau login. Sursele sunt deduplicate " +
+                "și evaluate euristic după acoperirea termenilor, " +
+                "diversitatea domeniilor, semnale de conflict și " +
+                "disponibilitatea conținutului. Scorurile nu reprezintă " +
+                "o dovadă matematică."
+        )
     }
 
-    private fun sourceQuality(item: WebEvidence): Int {
-        val u = item.url.lowercase(Locale.ROOT)
+    private fun isUsableEvidence(
+        item: WebEvidence
+    ): Boolean {
+        val uri = try {
+            URI(item.url)
+        } catch (_: Exception) {
+            return false
+        }
+
+        val host = uri.host
+            ?.lowercase(Locale.ROOT)
+            .orEmpty()
+
+        if (host.isBlank()) return false
+
+        val searchHosts = setOf(
+            "google.com",
+            "www.google.com",
+            "bing.com",
+            "www.bing.com",
+            "duckduckgo.com",
+            "www.duckduckgo.com",
+            "html.duckduckgo.com"
+        )
+
+        if (
+            host in searchHosts ||
+            host.endsWith(".google.com") ||
+            host.endsWith(".bing.com")
+        ) {
+            return false
+        }
+
+        val path = uri.path
+            ?.lowercase(Locale.ROOT)
+            .orEmpty()
+            .trimEnd('/')
+
+        if (path.isBlank()) return false
+
+        val text = (
+            item.title + " " +
+                item.snippet + " " +
+                item.content
+        ).lowercase(Locale.ROOT)
+
+        val noise = listOf(
+            "before you continue to google",
+            "prima di continuare su google",
+            "about duckduckgo",
+            "informazioni su duckduckgo",
+            "microsoft e i suoi fornitori",
+            "cookie policy",
+            "cookie settings",
+            "privacy policy",
+            "terms of service"
+        )
+
+        if (
+            noise.count { text.contains(it) } >= 2
+        ) {
+            return false
+        }
+
+        return item.content.trim().length >= 180
+    }
+
+    private fun sourceQuality(
+        item: WebEvidence
+    ): Int {
+        val host = try {
+            URI(item.url)
+                .host
+                .orEmpty()
+                .lowercase(Locale.ROOT)
+        } catch (_: Exception) {
+            ""
+        }
+
         var score = 0
-        if (u.contains(".gov") || u.contains(".edu") || u.contains(".int")) score += 40
-        if (u.contains("who.int") || u.contains("nasa.gov") || u.contains("esa.int")) score += 15
-        if (item.content.length > 1000) score += 20
-        if (item.snippet.length > 120) score += 5
+
+        if (
+            host.endsWith(".gov") ||
+            host.contains(".gov.") ||
+            host.endsWith(".edu") ||
+            host.contains(".edu.") ||
+            host.endsWith(".int")
+        ) {
+            score += 40
+        }
+
+        if (
+            host == "who.int" ||
+            host.endsWith(".who.int") ||
+            host.endsWith("nasa.gov") ||
+            host.endsWith("esa.int")
+        ) {
+            score += 15
+        }
+
+        if (item.content.length > 1000) {
+            score += 20
+        }
+
+        if (item.snippet.length > 120) {
+            score += 5
+        }
+
         return score
     }
 
-    private fun normalizeUrl(url: String): String = try {
-        val u = URI(url)
-        (u.host.orEmpty().lowercase(Locale.ROOT) + u.path.orEmpty().trimEnd('/')).trim()
-    } catch (_: Exception) {
-        url.substringBefore("#").trimEnd('/').lowercase(Locale.ROOT)
-    }
+    private fun normalizeUrl(
+        url: String
+    ): String =
+        try {
+            val u = URI(url)
+
+            (
+                u.host.orEmpty()
+                    .lowercase(Locale.ROOT) +
+                    u.path.orEmpty().trimEnd('/')
+            ).trim()
+        } catch (_: Exception) {
+            url.substringBefore("#")
+                .trimEnd('/')
+                .lowercase(Locale.ROOT)
+        }
 }
