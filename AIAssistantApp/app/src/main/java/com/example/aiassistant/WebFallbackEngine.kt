@@ -270,7 +270,7 @@ class WebFallbackEngine(private val activity: Activity) {
     }
 
     private fun jsonField(raw: String, field: String): String {
-        val key = ""$field":"
+        val key = "\"$field\":"
         val start = raw.indexOf(key)
         if (start < 0) return ""
 
@@ -324,7 +324,7 @@ class WebFallbackEngine(private val activity: Activity) {
     private fun decodeHtml(value: String): String =
         value
             .replace("&amp;", "&")
-            .replace("&quot;", """)
+            .replace("&quot;", "\"")
             .replace("&#39;", "'")
             .replace("&lt;", "<")
             .replace("&gt;", ">")
