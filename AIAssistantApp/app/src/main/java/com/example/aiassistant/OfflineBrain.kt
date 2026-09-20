@@ -128,14 +128,15 @@ object OfflineBrain {
                 95
             )
         }
-        when(p.intent.type){
-            IntentEngine.Type.CAUSAL->{val r=CausalReasoningEngine.answer(input);if(r.handled)return Execution(r.answer,listOf("causal"),r.confidence)}
-            IntentEngine.Type.HYPOTHESIS->{val r=HypothesisEngine.generate(input);if(r.handled){p.hypotheses.clear();p.hypotheses.addAll(r.hypotheses.map{it.text});return Execution(r.answer,listOf("hypothesis"),68)}}
-            IntentEngine.Type.PLANNING->{val r=AdvancedPlanningEngine.plan(input);if(r.handled)return Execution(r.answer,listOf("advanced-planning"),86)}
-            IntentEngine.Type.VERIFICATION->return Execution(VerificationEngine.answer(input),listOf("verification"),82)
-            else->Unit
-        }
-
+        /*
+         * Autonomous Agent Swarm is the central execution layer.
+         *
+         * Specialized engines such as causal reasoning, hypothesis,
+         * planning and verification are now invoked by the swarm itself.
+         * This prevents OfflineBrain from bypassing the swarm and keeps
+         * Planning -> ToolChain -> ToolRegistry -> Agents ->
+         * Verification -> Confidence -> SelfReflection in one pipeline.
+         */
         val swarm = AutonomousAgentSwarmEngine.run(input,p.intent.type)
         if (swarm.handled) {
             return Execution(
