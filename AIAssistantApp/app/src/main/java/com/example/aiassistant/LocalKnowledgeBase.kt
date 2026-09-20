@@ -99,21 +99,84 @@ object LocalKnowledgeBase {
 
         val q = normalize(input)
 
+        // 1. Exact alias match.
         normalized
-            .firstOrNull { q.contains(it.first) }
+            .firstOrNull { q == it.first }
             ?.second
             ?.let { return it }
 
-        val tokens = q
-            .split(' ')
-            .filter { it.length >= 3 }
-            .toSet()
+        // 2. Multi-word aliases may match as complete phrases.
+        normalized
+            .asSequence()
+            .filter { it.first.contains(" ") }
+            .firstOrNull { q.containsPhrase(it.first) }
+            ?.second
+            ?.let { return it }
 
-        return normalized
-            .map { it.second to score(tokens, normalize(it.first)) }
-            .filter { it.second >= 0.72 }
-            .maxByOrNull { it.second }
-            ?.first
+        // 3. Single-word aliases require an actual knowledge-question
+        //    structure. A random occurrence of "atom", "gold", etc.
+        //    must NOT trigger a factual answer.
+        normalized
+            .asSequence()
+            .filter { !it.first.contains(" ") }
+            .firstOrNull { isKnowledgeTargetQuestion(q, it.first) }
+            ?.second
+            ?.let { return it }
+
+        return null
+    }
+
+    private fun isKnowledgeTargetQuestion(
+        query: String,
+        alias: String
+    ): Boolean {
+        val q = " ${query.trim()} "
+        val a = " ${alias.trim()} "
+
+        if (!q.contains(a)) return false
+
+        val patterns = listOf(
+            "what is",
+            "what are",
+            "what was",
+            "who is",
+            "who was",
+            "where is",
+            "where was",
+            "when was",
+            "define",
+            "explain",
+            "tell me about",
+            "information about",
+            "what do you know about",
+            "ce este",
+            "ce sunt",
+            "cine este",
+            "cine a fost",
+            "unde este",
+            "cand a fost",
+            "definește",
+            "defineste",
+            "explica",
+            "explică",
+            "spune-mi despre",
+            "ce știi despre",
+            "ce stii despre",
+            "capital of",
+            "capitala",
+            "chemical symbol for",
+            "symbol for",
+            "simbolul chimic",
+            "simbolul pentru"
+        )
+
+        return patterns.any { q.contains(" $it ") }
+    }
+
+    private fun String.containsPhrase(phrase: String): Boolean {
+        val paddedQuery = " ${trim()} "
+        val paddedPhrase = " ${phrase.trim()} "
+        return paddedQuery.contains(paddedPhrase)
     }
 
     fun canHandle(input: String): Boolean =
