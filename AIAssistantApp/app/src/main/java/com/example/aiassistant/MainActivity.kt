@@ -209,11 +209,20 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun GeminiClient.askWithAttachmentOrNormal(history:List<ChatMessage>,a:Attachment?,brain:Brain,p:Int,think:Boolean,agent:Boolean,power:Boolean,intel:IntelligenceEngine):AiResponse{
-        return if(a!=null) askWithAttachment(history,a,brain.brainContext(),p,false,intel.graphText()) else {
-            val last=history.lastOrNull{it.isUser}?.text.orEmpty()
+        val last=history.lastOrNull{it.isUser}?.text.orEmpty()
+        val learnedContext=memoryEngine.context(last)
+        val promptMemory=buildString {
+            append(brain.brainContext())
+            if(learnedContext.isNotBlank()){
+                append("\n\n")
+                append(learnedContext)
+            }
+        }
+
+        return if(a!=null) askWithAttachment(history,a,promptMemory,p,false,"") else {
             val plan=SupremeEngine.route(last,null,agent,power)
             val web=plan.useWeb
-            val base=ask(history,brain.brainContext()+" "+SupremeEngine.systemDirective(plan),p,think,web,agent,intel.graphText(last))
+            val base=ask(history,promptMemory+" "+SupremeEngine.systemDirective(plan),p,think,web,agent,"")
             if(!power) base else {
                 val critique=ask(listOf(ChatMessage("Evaluează critic acest răspuns. Identifică doar erori, afirmații neverificate, contradicții și lucruri lipsă. Răspunsul este:\n${base.text}",true)),brain.brainContext(),4,false,web,false,intel.graphText(last))
                 ask(listOf(ChatMessage("Răspuns inițial:\n${base.text}\n\nCritică independentă:\n${critique.text}\n\nRefă răspunsul final: păstrează doar informația susținută, repară erorile și marchează clar incertitudinea.",true)),brain.brainContext(),p,false,web,true,intel.graphText(last))
