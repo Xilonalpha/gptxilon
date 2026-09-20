@@ -35,6 +35,14 @@ class SecureStore(context: Context) {
         prefs.edit().putString("v", Base64.encodeToString(cipher.iv + encrypted, Base64.NO_WRAP)).apply()
     }
 
+    fun clear() {
+        prefs.edit().remove("v").apply()
+    }
+
+    fun clear() {
+        prefs.edit().remove("v").apply()
+    }
+
     fun get(): String {
         val raw = prefs.getString("v", null) ?: return ""
         return try {

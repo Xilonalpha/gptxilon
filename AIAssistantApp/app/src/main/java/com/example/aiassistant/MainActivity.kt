@@ -81,8 +81,19 @@ class MainActivity : AppCompatActivity() {
         adapter.onFeedback={position,positive-> val msgs=adapter.getMessages(); val u=msgs.take(position).lastOrNull{it.isUser}?.text ?: ""; brain.learnFromFeedback(u,msgs[position].text,positive); adapter.markRated(position); toast("🧠 Feedback învățat") }
         adapter.onSpeak={text-> tts?.stop(); tts?.speak(text.take(3500),TextToSpeech.QUEUE_FLUSH,null,"ai_reply") }
         binding.btnSaveKey.setOnClickListener {
-            val value=binding.etApiKey.text.toString().trim().takeIf { !it.startsWith("••") }.orEmpty()
-            if(value.isNotBlank()){apiKey=value;secureStore.put(value);binding.etApiKey.setText("••••••••••••••••");toast("🔐 Cheia este stocată criptat")}
+            val typed=binding.etApiKey.text.toString().trim()
+
+            if (apiKey.isNotBlank() && typed.startsWith("••")) {
+                secureStore.clear()
+                apiKey=""
+                binding.etApiKey.setText("")
+                toast("🗑️ Cheia Gemini a fost ștearsă. Motorul local este activ.")
+            } else if (typed.isNotBlank() && !typed.startsWith("••")) {
+                apiKey=typed
+                secureStore.put(typed)
+                binding.etApiKey.setText("••••••••••••••••")
+                toast("🔐 Cheia este stocată criptat")
+            }
         }
         binding.btnBrain.setOnClickListener { showIntelligence() }
         binding.btnThink.setOnClickListener { thinkingMode=!thinkingMode; updateModes(); toast(if(thinkingMode) "🧭 Pași rezumați activi" else "Pașii rezumați opriți") }
@@ -136,11 +147,44 @@ class MainActivity : AppCompatActivity() {
                 val collectedEvidence=mutableListOf<WebEvidence>()
                 val plan=SupremeEngine.route(text,attachment,agentMode,powerMode)
                 val reply=if(apiKey.isNotBlank()) {
-                    GeminiClient(apiKey).askWithAttachmentOrNormal(history,attachment,brain,personaIndex,thinkingMode,agentMode,powerMode,intelligence)
+                    try {
+                        GeminiClient(apiKey).askWithAttachmentOrNormal(
+                            history,
+                            attachment,
+                            brain,
+                            personaIndex,
+                            thinkingMode,
+                            agentMode,
+                            powerMode,
+                            intelligence
+                        )
+                    } catch (e: Exception) {
+                        val message=e.message.orEmpty()
+
+                        if (message.startsWith("Eroare API 401")) {
+                            secureStore.clear()
+                            apiKey=""
+
+                            runOnUiThread {
+                                binding.etApiKey.setText("")
+                                toast("⚠️ Cheia Gemini este invalidă. Am trecut automat pe motorul local.")
+                            }
+
+                            AiResponse(
+                                OfflineBrain.reply(text),
+                                emptyList(),
+                                0
+                            )
+                        } else {
+                            throw e
+                        }
+                    }
                 } else {
-                    val report=researchEngine.research(text,plan.deep)
-                    collectedEvidence.addAll(report.evidence)
-                    AiResponse(report.answer,report.evidence.map{"${it.title} — ${it.url}"},0)
+                    AiResponse(
+                        OfflineBrain.reply(text),
+                        emptyList(),
+                        0
+                    )
                 }
                 lastWebEvidence=collectedEvidence.toList()
                 memoryEngine.observe(text,reply.text,if(apiKey.isNotBlank()) reply else null);lastCodeBlocks=FileSaver.extractCodeBlocks(reply.text);intelligence.remember("last_query",text)
