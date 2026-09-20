@@ -22,7 +22,9 @@ object MathEngine {
         return try {
             val normalized = normalize(input)
 
-            if (normalized.contains("procent din")) {
+            if (Regex("""[0-9]+(?:[.,][0-9]+)?\s*%\s*din\s*[0-9]+(?:[.,][0-9]+)?""").containsMatchIn(normalized) ||
+                normalized.contains("procent din")
+            ) {
                 return percentage(normalized)
             }
 

@@ -11,7 +11,6 @@ object LogicEngine {
                 s.contains("mai mic decât") ||
                 s.contains("egal cu") ||
                 s.contains("compară") ||
-                s.contains("compară") ||
                 s.contains("adevărat sau fals")
     }
 
