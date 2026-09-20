@@ -1,0 +1,2593 @@
+{
+  "version": 1,
+  "description": "AI Assistant deterministic offline knowledge dataset",
+  "entries": [
+    {
+      "topic": "Australia capital",
+      "aliases": [
+        "capital of australia",
+        "australia capital",
+        "capitala australiei"
+      ],
+      "answer": "The capital of Australia is Canberra.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Romania capital",
+      "aliases": [
+        "capital of romania",
+        "romania capital",
+        "capitala romaniei"
+      ],
+      "answer": "The capital of Romania is Bucharest.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Italy capital",
+      "aliases": [
+        "capital of italy",
+        "italy capital",
+        "capitala italiei"
+      ],
+      "answer": "The capital of Italy is Rome.",
+      "domain": "geography"
+    },
+    {
+      "topic": "France capital",
+      "aliases": [
+        "capital of france",
+        "france capital",
+        "capitala frantei",
+        "capitala franței"
+      ],
+      "answer": "The capital of France is Paris.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Germany capital",
+      "aliases": [
+        "capital of germany",
+        "germany capital",
+        "capitala germaniei"
+      ],
+      "answer": "The capital of Germany is Berlin.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Spain capital",
+      "aliases": [
+        "capital of spain",
+        "spain capital",
+        "capitala spaniei"
+      ],
+      "answer": "The capital of Spain is Madrid.",
+      "domain": "geography"
+    },
+    {
+      "topic": "UK capital",
+      "aliases": [
+        "capital of united kingdom",
+        "uk capital",
+        "capitala regatului unit"
+      ],
+      "answer": "The capital of the United Kingdom is London.",
+      "domain": "geography"
+    },
+    {
+      "topic": "USA capital",
+      "aliases": [
+        "capital of united states",
+        "usa capital",
+        "us capital"
+      ],
+      "answer": "The capital of the United States is Washington, D.C.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Canada capital",
+      "aliases": [
+        "capital of canada",
+        "canada capital",
+        "capitala canadei"
+      ],
+      "answer": "The capital of Canada is Ottawa.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Japan capital",
+      "aliases": [
+        "capital of japan",
+        "japan capital",
+        "capitala japoniei"
+      ],
+      "answer": "The capital of Japan is Tokyo.",
+      "domain": "geography"
+    },
+    {
+      "topic": "China capital",
+      "aliases": [
+        "capital of china",
+        "china capital",
+        "capitala chinei"
+      ],
+      "answer": "The capital of China is Beijing.",
+      "domain": "geography"
+    },
+    {
+      "topic": "India capital",
+      "aliases": [
+        "capital of india",
+        "india capital",
+        "capitala indiei"
+      ],
+      "answer": "The capital of India is New Delhi.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Brazil capital",
+      "aliases": [
+        "capital of brazil",
+        "brazil capital",
+        "capitala braziliei"
+      ],
+      "answer": "The capital of Brazil is Brasília.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Egypt capital",
+      "aliases": [
+        "capital of egypt",
+        "egypt capital",
+        "capitala egiptului"
+      ],
+      "answer": "The capital of Egypt is Cairo.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Greece capital",
+      "aliases": [
+        "capital of greece",
+        "greece capital",
+        "capitala greciei"
+      ],
+      "answer": "The capital of Greece is Athens.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Portugal capital",
+      "aliases": [
+        "capital of portugal",
+        "portugal capital",
+        "capitala portugaliei"
+      ],
+      "answer": "The capital of Portugal is Lisbon.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Pacific Ocean",
+      "aliases": [
+        "pacific ocean",
+        "pacific vs atlantic",
+        "pacific larger atlantic"
+      ],
+      "answer": "The Pacific Ocean is larger than the Atlantic Ocean.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Earth",
+      "aliases": [
+        "what is earth",
+        "ce este pamantul",
+        "ce este pământul"
+      ],
+      "answer": "Earth is the third planet from the Sun and the only astronomical object currently known to support life.",
+      "domain": "astronomy"
+    },
+    {
+      "topic": "Moon",
+      "aliases": [
+        "what is the moon",
+        "ce este luna"
+      ],
+      "answer": "The Moon is Earth's natural satellite.",
+      "domain": "astronomy"
+    },
+    {
+      "topic": "Sun",
+      "aliases": [
+        "what is the sun",
+        "ce este soarele"
+      ],
+      "answer": "The Sun is the star at the center of the Solar System.",
+      "domain": "astronomy"
+    },
+    {
+      "topic": "Gold symbol",
+      "aliases": [
+        "chemical symbol for gold",
+        "gold symbol",
+        "symbol for gold",
+        "simbol chimic aur",
+        "simbolul aurului"
+      ],
+      "answer": "The chemical symbol for gold is Au.",
+      "domain": "chemistry"
+    },
+    {
+      "topic": "Silver symbol",
+      "aliases": [
+        "chemical symbol for silver",
+        "silver symbol",
+        "simbol chimic argint"
+      ],
+      "answer": "The chemical symbol for silver is Ag.",
+      "domain": "chemistry"
+    },
+    {
+      "topic": "Iron symbol",
+      "aliases": [
+        "chemical symbol for iron",
+        "iron symbol",
+        "simbol chimic fier"
+      ],
+      "answer": "The chemical symbol for iron is Fe.",
+      "domain": "chemistry"
+    },
+    {
+      "topic": "Copper symbol",
+      "aliases": [
+        "chemical symbol for copper",
+        "copper symbol",
+        "simbol chimic cupru"
+      ],
+      "answer": "The chemical symbol for copper is Cu.",
+      "domain": "chemistry"
+    },
+    {
+      "topic": "Sodium symbol",
+      "aliases": [
+        "chemical symbol for sodium",
+        "sodium symbol",
+        "simbol chimic sodiu"
+      ],
+      "answer": "The chemical symbol for sodium is Na.",
+      "domain": "chemistry"
+    },
+    {
+      "topic": "Potassium symbol",
+      "aliases": [
+        "chemical symbol for potassium",
+        "potassium symbol",
+        "simbol chimic potasiu"
+      ],
+      "answer": "The chemical symbol for potassium is K.",
+      "domain": "chemistry"
+    },
+    {
+      "topic": "Oxygen symbol",
+      "aliases": [
+        "chemical symbol for oxygen",
+        "oxygen symbol",
+        "simbol chimic oxigen"
+      ],
+      "answer": "The chemical symbol for oxygen is O.",
+      "domain": "chemistry"
+    },
+    {
+      "topic": "Hydrogen symbol",
+      "aliases": [
+        "chemical symbol for hydrogen",
+        "hydrogen symbol",
+        "simbol chimic hidrogen"
+      ],
+      "answer": "The chemical symbol for hydrogen is H.",
+      "domain": "chemistry"
+    },
+    {
+      "topic": "Carbon symbol",
+      "aliases": [
+        "chemical symbol for carbon",
+        "carbon symbol",
+        "simbol chimic carbon"
+      ],
+      "answer": "The chemical symbol for carbon is C.",
+      "domain": "chemistry"
+    },
+    {
+      "topic": "Nitrogen symbol",
+      "aliases": [
+        "chemical symbol for nitrogen",
+        "nitrogen symbol",
+        "simbol chimic azot"
+      ],
+      "answer": "The chemical symbol for nitrogen is N.",
+      "domain": "chemistry"
+    },
+    {
+      "topic": "Water",
+      "aliases": [
+        "chemical formula for water",
+        "water formula",
+        "formula apei"
+      ],
+      "answer": "The chemical formula for water is H₂O.",
+      "domain": "chemistry"
+    },
+    {
+      "topic": "Carbon dioxide",
+      "aliases": [
+        "formula for carbon dioxide",
+        "carbon dioxide formula",
+        "formula dioxidului de carbon"
+      ],
+      "answer": "The chemical formula for carbon dioxide is CO₂.",
+      "domain": "chemistry"
+    },
+    {
+      "topic": "Atom",
+      "aliases": [
+        "what is an atom",
+        "ce este un atom",
+        "atom"
+      ],
+      "answer": "An atom has a nucleus containing protons and usually neutrons, surrounded by electrons.",
+      "domain": "chemistry"
+    },
+    {
+      "topic": "Periodic table",
+      "aliases": [
+        "what is the periodic table",
+        "ce este tabelul periodic"
+      ],
+      "answer": "The periodic table organizes chemical elements by atomic number and recurring chemical properties.",
+      "domain": "chemistry"
+    },
+    {
+      "topic": "pH",
+      "aliases": [
+        "what is ph",
+        "ce este ph"
+      ],
+      "answer": "pH is a logarithmic measure related to hydrogen-ion activity; lower values are more acidic and higher values more basic.",
+      "domain": "chemistry"
+    },
+    {
+      "topic": "Gravity",
+      "aliases": [
+        "what is gravity",
+        "ce este gravitatia",
+        "ce este gravitația"
+      ],
+      "answer": "Gravity is the interaction associated with mass and energy that governs attraction and motion.",
+      "domain": "physics"
+    },
+    {
+      "topic": "Speed of light",
+      "aliases": [
+        "speed of light",
+        "viteza luminii"
+      ],
+      "answer": "The speed of light in vacuum is exactly 299,792,458 metres per second.",
+      "domain": "physics"
+    },
+    {
+      "topic": "Newton second law",
+      "aliases": [
+        "newton second law",
+        "second law of motion",
+        "a doua lege a lui newton"
+      ],
+      "answer": "Newton's second law relates net force, mass and acceleration as F = ma in its classical form.",
+      "domain": "physics"
+    },
+    {
+      "topic": "Energy conservation",
+      "aliases": [
+        "conservation of energy",
+        "conservarea energiei"
+      ],
+      "answer": "In an isolated system, total energy is conserved; it can change form but is not created or destroyed.",
+      "domain": "physics"
+    },
+    {
+      "topic": "Relativity",
+      "aliases": [
+        "what is relativity",
+        "ce este relativitatea"
+      ],
+      "answer": "Relativity describes relationships among space, time, motion and gravity.",
+      "domain": "physics"
+    },
+    {
+      "topic": "Black hole",
+      "aliases": [
+        "what is a black hole",
+        "ce este o gaura neagra",
+        "ce este o gaură neagră"
+      ],
+      "answer": "A black hole is a region of spacetime bounded by an event horizon from which signals cannot escape to distant observers.",
+      "domain": "astronomy"
+    },
+    {
+      "topic": "Quantum mechanics",
+      "aliases": [
+        "what is quantum mechanics",
+        "ce este mecanica cuantica",
+        "ce este mecanica cuantică"
+      ],
+      "answer": "Quantum mechanics is the physical theory used to describe matter and radiation at microscopic scales.",
+      "domain": "physics"
+    },
+    {
+      "topic": "Photosynthesis",
+      "aliases": [
+        "what is photosynthesis",
+        "ce este fotosinteza"
+      ],
+      "answer": "Photosynthesis converts light energy into chemical energy; oxygenic photosynthesis uses carbon dioxide and water and releases oxygen.",
+      "domain": "biology"
+    },
+    {
+      "topic": "Cell",
+      "aliases": [
+        "what is a cell biology",
+        "ce este o celula",
+        "ce este o celulă"
+      ],
+      "answer": "A cell is the basic structural and functional unit of living organisms.",
+      "domain": "biology"
+    },
+    {
+      "topic": "DNA",
+      "aliases": [
+        "what is dna",
+        "ce este adn",
+        "ce este dna"
+      ],
+      "answer": "DNA stores hereditary genetic information in living organisms and some viruses.",
+      "domain": "biology"
+    },
+    {
+      "topic": "RNA",
+      "aliases": [
+        "what is rna",
+        "ce este arn",
+        "ce este rna"
+      ],
+      "answer": "RNA is a nucleic acid involved in information transfer, gene regulation and sometimes catalysis.",
+      "domain": "biology"
+    },
+    {
+      "topic": "Protein",
+      "aliases": [
+        "what is a protein",
+        "ce este o proteina",
+        "ce este o proteină"
+      ],
+      "answer": "Proteins are biological polymers made from amino acids that perform structural, catalytic, transport and signaling functions.",
+      "domain": "biology"
+    },
+    {
+      "topic": "Evolution",
+      "aliases": [
+        "what is evolution biology",
+        "ce este evolutia biologica",
+        "ce este evoluția biologică"
+      ],
+      "answer": "Biological evolution is change in heritable characteristics of populations across generations.",
+      "domain": "biology"
+    },
+    {
+      "topic": "Natural selection",
+      "aliases": [
+        "what is natural selection",
+        "ce este selectia naturala",
+        "ce este selecția naturală"
+      ],
+      "answer": "Natural selection is a process in which heritable differences affect reproductive success, changing trait frequencies across generations.",
+      "domain": "biology"
+    },
+    {
+      "topic": "Virus",
+      "aliases": [
+        "what is a virus",
+        "ce este un virus"
+      ],
+      "answer": "A virus is an infectious biological entity that replicates using a host cell's molecular machinery.",
+      "domain": "biology"
+    },
+    {
+      "topic": "Solar System",
+      "aliases": [
+        "what is the solar system",
+        "ce este sistemul solar"
+      ],
+      "answer": "The Solar System consists of the Sun and objects gravitationally bound to it, including planets, moons, asteroids and comets.",
+      "domain": "astronomy"
+    },
+    {
+      "topic": "Milky Way",
+      "aliases": [
+        "what is the milky way",
+        "ce este calea lactee"
+      ],
+      "answer": "The Milky Way is the barred spiral galaxy that contains the Solar System.",
+      "domain": "astronomy"
+    },
+    {
+      "topic": "Mars",
+      "aliases": [
+        "what is mars",
+        "ce este marte"
+      ],
+      "answer": "Mars is the fourth planet from the Sun and a terrestrial planet.",
+      "domain": "astronomy"
+    },
+    {
+      "topic": "Jupiter",
+      "aliases": [
+        "what is jupiter",
+        "ce este jupiter"
+      ],
+      "answer": "Jupiter is the largest planet in the Solar System and a gas giant.",
+      "domain": "astronomy"
+    },
+    {
+      "topic": "Saturn",
+      "aliases": [
+        "what is saturn",
+        "ce este saturn"
+      ],
+      "answer": "Saturn is a gas giant known for its prominent ring system.",
+      "domain": "astronomy"
+    },
+    {
+      "topic": "Venus",
+      "aliases": [
+        "what is venus",
+        "ce este venus"
+      ],
+      "answer": "Venus is the second planet from the Sun and has a dense carbon-dioxide-rich atmosphere.",
+      "domain": "astronomy"
+    },
+    {
+      "topic": "Mercury",
+      "aliases": [
+        "what is mercury planet",
+        "ce este mercur planeta"
+      ],
+      "answer": "Mercury is the smallest and innermost planet of the Solar System.",
+      "domain": "astronomy"
+    },
+    {
+      "topic": "Neptune",
+      "aliases": [
+        "what is neptune",
+        "ce este neptun"
+      ],
+      "answer": "Neptune is the eighth and most distant recognized planet from the Sun.",
+      "domain": "astronomy"
+    },
+    {
+      "topic": "CPU",
+      "aliases": [
+        "what does cpu stand for",
+        "cpu meaning",
+        "ce inseamna cpu",
+        "ce înseamnă cpu"
+      ],
+      "answer": "CPU stands for Central Processing Unit.",
+      "domain": "computing"
+    },
+    {
+      "topic": "GPU",
+      "aliases": [
+        "what does gpu stand for",
+        "gpu meaning",
+        "ce inseamna gpu",
+        "ce înseamnă gpu"
+      ],
+      "answer": "GPU stands for Graphics Processing Unit.",
+      "domain": "computing"
+    },
+    {
+      "topic": "RAM",
+      "aliases": [
+        "what does ram stand for",
+        "ram meaning",
+        "ce inseamna ram",
+        "ce înseamnă ram"
+      ],
+      "answer": "RAM stands for Random Access Memory.",
+      "domain": "computing"
+    },
+    {
+      "topic": "ROM",
+      "aliases": [
+        "what does rom stand for computing",
+        "rom meaning computing"
+      ],
+      "answer": "ROM stands for Read-Only Memory.",
+      "domain": "computing"
+    },
+    {
+      "topic": "HTTP",
+      "aliases": [
+        "what does http stand for",
+        "http meaning",
+        "ce inseamna http",
+        "ce înseamnă http"
+      ],
+      "answer": "HTTP stands for Hypertext Transfer Protocol.",
+      "domain": "computing"
+    },
+    {
+      "topic": "HTTPS",
+      "aliases": [
+        "what does https stand for",
+        "https meaning"
+      ],
+      "answer": "HTTPS is HTTP protected by a cryptographic transport layer, normally TLS.",
+      "domain": "computing"
+    },
+    {
+      "topic": "JSON",
+      "aliases": [
+        "what is json",
+        "ce este json"
+      ],
+      "answer": "JSON is a text-based data interchange format for structured data.",
+      "domain": "computing"
+    },
+    {
+      "topic": "Algorithm",
+      "aliases": [
+        "what is an algorithm",
+        "ce este un algoritm"
+      ],
+      "answer": "An algorithm is a finite, defined procedure for solving a problem or performing a computation.",
+      "domain": "computing"
+    },
+    {
+      "topic": "Database",
+      "aliases": [
+        "what is a database",
+        "ce este o baza de date",
+        "ce este o bază de date"
+      ],
+      "answer": "A database is an organized collection of data managed so it can be stored, queried and updated.",
+      "domain": "computing"
+    },
+    {
+      "topic": "Operating system",
+      "aliases": [
+        "what is an operating system",
+        "ce este un sistem de operare"
+      ],
+      "answer": "An operating system manages computer hardware and provides services and interfaces for applications.",
+      "domain": "computing"
+    },
+    {
+      "topic": "Android",
+      "aliases": [
+        "what is android operating system",
+        "ce este android"
+      ],
+      "answer": "Android is a mobile operating system and software platform built around the Linux kernel and related components.",
+      "domain": "computing"
+    },
+    {
+      "topic": "Git",
+      "aliases": [
+        "what is git",
+        "ce este git"
+      ],
+      "answer": "Git is a distributed version-control system used to track changes to files and coordinate software development.",
+      "domain": "computing"
+    },
+    {
+      "topic": "GitHub",
+      "aliases": [
+        "what is github",
+        "ce este github"
+      ],
+      "answer": "GitHub is a platform for hosting and collaborating on software repositories and development workflows.",
+      "domain": "computing"
+    },
+    {
+      "topic": "Machine learning",
+      "aliases": [
+        "what is machine learning",
+        "ce este machine learning",
+        "ce este invatarea automata",
+        "ce este învățarea automată"
+      ],
+      "answer": "Machine learning is a field in which algorithms learn patterns from data to make predictions, decisions or representations.",
+      "domain": "ai"
+    },
+    {
+      "topic": "Artificial intelligence",
+      "aliases": [
+        "what is artificial intelligence",
+        "what is ai",
+        "ce este inteligenta artificiala",
+        "ce este inteligența artificială"
+      ],
+      "answer": "Artificial intelligence is the field of computing concerned with systems that perform tasks associated with perception, reasoning, learning, language or decision-making.",
+      "domain": "ai"
+    },
+    {
+      "topic": "Neural network",
+      "aliases": [
+        "what is a neural network",
+        "ce este o retea neuronala",
+        "ce este o rețea neuronală"
+      ],
+      "answer": "An artificial neural network is a parameterized computational model whose parameters are adjusted to model patterns in data.",
+      "domain": "ai"
+    },
+    {
+      "topic": "Pi",
+      "aliases": [
+        "what is pi",
+        "valoarea lui pi",
+        "pi number"
+      ],
+      "answer": "π is the ratio of a circle's circumference to its diameter; approximately 3.141592653589793.",
+      "domain": "mathematics"
+    },
+    {
+      "topic": "Prime number",
+      "aliases": [
+        "what is a prime number",
+        "ce este un numar prim",
+        "ce este un număr prim"
+      ],
+      "answer": "A prime number is an integer greater than 1 with exactly two positive divisors: 1 and itself.",
+      "domain": "mathematics"
+    },
+    {
+      "topic": "Pythagorean theorem",
+      "aliases": [
+        "pythagorean theorem",
+        "teorema lui pitagora"
+      ],
+      "answer": "For a right triangle, a² + b² = c².",
+      "domain": "mathematics"
+    },
+    {
+      "topic": "Derivative",
+      "aliases": [
+        "what is a derivative calculus",
+        "ce este derivata"
+      ],
+      "answer": "A derivative measures the instantaneous rate of change of a function with respect to its variable.",
+      "domain": "mathematics"
+    },
+    {
+      "topic": "Integral",
+      "aliases": [
+        "what is an integral calculus",
+        "ce este o integrala",
+        "ce este o integrală"
+      ],
+      "answer": "An integral represents accumulation and, under appropriate conditions, is related to an antiderivative by the fundamental theorem of calculus.",
+      "domain": "mathematics"
+    },
+    {
+      "topic": "Atmosphere",
+      "aliases": [
+        "what is earth atmosphere",
+        "ce este atmosfera"
+      ],
+      "answer": "Earth's atmosphere is the layer of gases surrounding Earth, dominated by nitrogen and oxygen.",
+      "domain": "earth-science"
+    },
+    {
+      "topic": "Climate",
+      "aliases": [
+        "what is climate",
+        "ce este clima"
+      ],
+      "answer": "Climate describes long-term statistical patterns of weather and environmental conditions.",
+      "domain": "earth-science"
+    },
+    {
+      "topic": "Weather",
+      "aliases": [
+        "what is weather",
+        "ce este vremea"
+      ],
+      "answer": "Weather describes the short-term state of the atmosphere at a place and time.",
+      "domain": "earth-science"
+    },
+    {
+      "topic": "Water cycle",
+      "aliases": [
+        "water cycle",
+        "ciclul apei"
+      ],
+      "answer": "The water cycle describes movement of water through evaporation, condensation, precipitation, infiltration and runoff.",
+      "domain": "earth-science"
+    },
+    {
+      "topic": "United Nations",
+      "aliases": [
+        "what is the united nations",
+        "ce este onu",
+        "ce este organizatia natiunilor unite",
+        "ce este organizația națiunilor unite"
+      ],
+      "answer": "The United Nations is an international organization founded in 1945 for international cooperation and collective action.",
+      "domain": "history"
+    },
+    {
+      "topic": "World War II",
+      "aliases": [
+        "when was world war ii",
+        "al doilea razboi mondial",
+        "al doilea război mondial"
+      ],
+      "answer": "World War II was a global war fought from 1939 to 1945.",
+      "domain": "history"
+    },
+    {
+      "topic": "World War I",
+      "aliases": [
+        "when was world war i",
+        "primul razboi mondial",
+        "primul război mondial"
+      ],
+      "answer": "World War I was a global conflict fought mainly from 1914 to 1918.",
+      "domain": "history"
+    },
+    {
+      "topic": "Democracy",
+      "aliases": [
+        "what is democracy",
+        "ce este democratia",
+        "ce este democrația"
+      ],
+      "answer": "Democracy is a system of government in which political authority is ultimately derived from the people.",
+      "domain": "civics"
+    },
+    {
+      "topic": "Constitution",
+      "aliases": [
+        "what is a constitution",
+        "ce este o constitutie",
+        "ce este o constituție"
+      ],
+      "answer": "A constitution is a fundamental framework defining governmental institutions, powers, procedures and often rights.",
+      "domain": "civics"
+    },
+    {
+      "topic": "Noun",
+      "aliases": [
+        "what is a noun",
+        "ce este un substantiv"
+      ],
+      "answer": "A noun typically refers to a person, place, thing, concept or entity.",
+      "domain": "language"
+    },
+    {
+      "topic": "Verb",
+      "aliases": [
+        "what is a verb",
+        "ce este un verb"
+      ],
+      "answer": "A verb typically expresses an action, occurrence, state or relation.",
+      "domain": "language"
+    },
+    {
+      "topic": "Adjective",
+      "aliases": [
+        "what is an adjective",
+        "ce este un adjectiv"
+      ],
+      "answer": "An adjective typically modifies a noun or noun phrase by describing a property or quality.",
+      "domain": "language"
+    },
+    {
+      "topic": "Translation",
+      "aliases": [
+        "what is translation",
+        "ce este traducerea"
+      ],
+      "answer": "Translation expresses the meaning of a source text in another language.",
+      "domain": "language"
+    },
+    {
+      "topic": "Inflation",
+      "aliases": [
+        "what is inflation",
+        "ce este inflatia",
+        "ce este inflația"
+      ],
+      "answer": "Inflation is a sustained increase in the general price level of goods and services.",
+      "domain": "economics"
+    },
+    {
+      "topic": "GDP",
+      "aliases": [
+        "what does gdp stand for",
+        "what is gdp",
+        "ce inseamna pib",
+        "ce este pib"
+      ],
+      "answer": "GDP stands for Gross Domestic Product and measures the monetary value of final goods and services produced within an economy over a period.",
+      "domain": "economics"
+    },
+    {
+      "topic": "Supply and demand",
+      "aliases": [
+        "supply and demand",
+        "cerere si oferta",
+        "cerere și ofertă"
+      ],
+      "answer": "Supply and demand is an economic framework relating quantities offered and wanted to prices and other conditions.",
+      "domain": "economics"
+    },
+    {
+      "topic": "Scientific method",
+      "aliases": [
+        "what is the scientific method",
+        "ce este metoda stiintifica",
+        "ce este metoda științifică"
+      ],
+      "answer": "The scientific method uses observation, measurement, hypotheses, predictions and empirical checks to evaluate explanations.",
+      "domain": "science"
+    },
+    {
+      "topic": "Hypothesis",
+      "aliases": [
+        "what is a hypothesis",
+        "ce este o ipoteza",
+        "ce este o ipoteză"
+      ],
+      "answer": "A hypothesis is a proposed explanation or prediction that can be tested against evidence.",
+      "domain": "science"
+    },
+    {
+      "topic": "Theory",
+      "aliases": [
+        "what is a scientific theory",
+        "ce este o teorie stiintifica",
+        "ce este o teorie științifică"
+      ],
+      "answer": "In science, a theory is a well-supported explanatory framework that accounts for observations and makes testable predictions.",
+      "domain": "science"
+    },
+    {
+      "topic": "Evidence",
+      "aliases": [
+        "what is evidence",
+        "ce este o dovada",
+        "ce este o dovadă"
+      ],
+      "answer": "Evidence is information or observations used to support, challenge or evaluate a claim.",
+      "domain": "science"
+    },
+    {
+      "topic": "Afghanistan capital",
+      "aliases": [
+        "capital of afghanistan",
+        "afghanistan capital",
+        "capitala afganistanului"
+      ],
+      "answer": "The capital of Afghanistan is Kabul.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Albania capital",
+      "aliases": [
+        "capital of albania",
+        "albania capital",
+        "capitala albaniеi"
+      ],
+      "answer": "The capital of Albania is Tirana.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Algeria capital",
+      "aliases": [
+        "capital of algeria",
+        "algeria capital",
+        "capitala algeriei"
+      ],
+      "answer": "The capital of Algeria is Algiers.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Argentina capital",
+      "aliases": [
+        "capital of argentina",
+        "argentina capital",
+        "capitala argentinei"
+      ],
+      "answer": "The capital of Argentina is Buenos Aires.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Armenia capital",
+      "aliases": [
+        "capital of armenia",
+        "armenia capital"
+      ],
+      "answer": "The capital of Armenia is Yerevan.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Austria capital",
+      "aliases": [
+        "capital of austria",
+        "austria capital",
+        "capitala austriei"
+      ],
+      "answer": "The capital of Austria is Vienna.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Belgium capital",
+      "aliases": [
+        "capital of belgium",
+        "belgium capital",
+        "capitala belgiei"
+      ],
+      "answer": "The capital of Belgium is Brussels.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Bulgaria capital",
+      "aliases": [
+        "capital of bulgaria",
+        "bulgaria capital",
+        "capitala bulgariei"
+      ],
+      "answer": "The capital of Bulgaria is Sofia.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Chile capital",
+      "aliases": [
+        "capital of chile",
+        "chile capital",
+        "capitala statului chile"
+      ],
+      "answer": "The capital of Chile is Santiago.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Colombia capital",
+      "aliases": [
+        "capital of colombia",
+        "colombia capital",
+        "capitala columbiei"
+      ],
+      "answer": "The capital of Colombia is Bogotá.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Croatia capital",
+      "aliases": [
+        "capital of croatia",
+        "croatia capital",
+        "capitala croatiei",
+        "capitala croației"
+      ],
+      "answer": "The capital of Croatia is Zagreb.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Cuba capital",
+      "aliases": [
+        "capital of cuba",
+        "cuba capital"
+      ],
+      "answer": "The capital of Cuba is Havana.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Czechia capital",
+      "aliases": [
+        "capital of czechia",
+        "capital of czech republic",
+        "czech republic capital"
+      ],
+      "answer": "The capital of Czechia is Prague.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Denmark capital",
+      "aliases": [
+        "capital of denmark",
+        "denmark capital",
+        "capitala danemarcei"
+      ],
+      "answer": "The capital of Denmark is Copenhagen.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Finland capital",
+      "aliases": [
+        "capital of finland",
+        "finland capital",
+        "capitala finlandei"
+      ],
+      "answer": "The capital of Finland is Helsinki.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Hungary capital",
+      "aliases": [
+        "capital of hungary",
+        "hungary capital",
+        "capitala ungariei"
+      ],
+      "answer": "The capital of Hungary is Budapest.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Iceland capital",
+      "aliases": [
+        "capital of iceland",
+        "iceland capital",
+        "capitala islandei"
+      ],
+      "answer": "The capital of Iceland is Reykjavík.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Indonesia capital",
+      "aliases": [
+        "capital of indonesia",
+        "indonesia capital",
+        "capitala indoneziei"
+      ],
+      "answer": "The capital of Indonesia is Jakarta.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Iran capital",
+      "aliases": [
+        "capital of iran",
+        "iran capital",
+        "capitala iranului"
+      ],
+      "answer": "The capital of Iran is Tehran.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Iraq capital",
+      "aliases": [
+        "capital of iraq",
+        "iraq capital",
+        "capitala irakului"
+      ],
+      "answer": "The capital of Iraq is Baghdad.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Ireland capital",
+      "aliases": [
+        "capital of ireland",
+        "ireland capital",
+        "capitala irlandei"
+      ],
+      "answer": "The capital of Ireland is Dublin.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Israel capital",
+      "aliases": [
+        "capital of israel",
+        "israel capital"
+      ],
+      "answer": "Israel's seat of government and proclaimed capital is Jerusalem; its status is internationally contested.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Jordan capital",
+      "aliases": [
+        "capital of jordan",
+        "jordan capital",
+        "capitala iordaniei"
+      ],
+      "answer": "The capital of Jordan is Amman.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Kenya capital",
+      "aliases": [
+        "capital of kenya",
+        "kenya capital",
+        "capitala kenyei"
+      ],
+      "answer": "The capital of Kenya is Nairobi.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Lebanon capital",
+      "aliases": [
+        "capital of lebanon",
+        "lebanon capital",
+        "capitala libanului"
+      ],
+      "answer": "The capital of Lebanon is Beirut.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Lithuania capital",
+      "aliases": [
+        "capital of lithuania",
+        "lithuania capital",
+        "capitala lituaniei"
+      ],
+      "answer": "The capital of Lithuania is Vilnius.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Luxembourg capital",
+      "aliases": [
+        "capital of luxembourg",
+        "luxembourg capital"
+      ],
+      "answer": "The capital of Luxembourg is Luxembourg City.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Malaysia capital",
+      "aliases": [
+        "capital of malaysia",
+        "malaysia capital",
+        "capitala malaeziei"
+      ],
+      "answer": "The capital of Malaysia is Kuala Lumpur.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Mexico capital",
+      "aliases": [
+        "capital of mexico",
+        "mexico capital",
+        "capitala mexicului"
+      ],
+      "answer": "The capital of Mexico is Mexico City.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Moldova capital",
+      "aliases": [
+        "capital of moldova",
+        "moldova capital",
+        "capitala moldovei"
+      ],
+      "answer": "The capital of Moldova is Chișinău.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Monaco capital",
+      "aliases": [
+        "capital of monaco",
+        "monaco capital"
+      ],
+      "answer": "The capital of Monaco is Monaco.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Mongolia capital",
+      "aliases": [
+        "capital of mongolia",
+        "mongolia capital",
+        "capitala mongoliei"
+      ],
+      "answer": "The capital of Mongolia is Ulaanbaatar.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Morocco capital",
+      "aliases": [
+        "capital of morocco",
+        "morocco capital",
+        "capitala marocului"
+      ],
+      "answer": "The capital of Morocco is Rabat.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Netherlands capital",
+      "aliases": [
+        "capital of netherlands",
+        "netherlands capital",
+        "capitala olandei"
+      ],
+      "answer": "The capital of the Netherlands is Amsterdam.",
+      "domain": "geography"
+    },
+    {
+      "topic": "New Zealand capital",
+      "aliases": [
+        "capital of new zealand",
+        "new zealand capital",
+        "capitala noii zeelande"
+      ],
+      "answer": "The capital of New Zealand is Wellington.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Norway capital",
+      "aliases": [
+        "capital of norway",
+        "norway capital",
+        "capitala norvegiei"
+      ],
+      "answer": "The capital of Norway is Oslo.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Poland capital",
+      "aliases": [
+        "capital of poland",
+        "poland capital",
+        "capitala poloniei"
+      ],
+      "answer": "The capital of Poland is Warsaw.",
+      "domain": "geography"
+    },
+    {
+      "topic": "South Korea capital",
+      "aliases": [
+        "capital of south korea",
+        "south korea capital",
+        "capitala coreei de sud"
+      ],
+      "answer": "The capital of South Korea is Seoul.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Sweden capital",
+      "aliases": [
+        "capital of sweden",
+        "sweden capital",
+        "capitala suediei"
+      ],
+      "answer": "The capital of Sweden is Stockholm.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Switzerland capital",
+      "aliases": [
+        "capital of switzerland",
+        "switzerland capital",
+        "capitala elvetiei",
+        "capitala elveției"
+      ],
+      "answer": "The federal city of Switzerland is Bern.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Turkey capital",
+      "aliases": [
+        "capital of turkey",
+        "turkey capital",
+        "capitala turciei"
+      ],
+      "answer": "The capital of Türkiye is Ankara.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Ukraine capital",
+      "aliases": [
+        "capital of ukraine",
+        "ukraine capital",
+        "capitala ucrainei"
+      ],
+      "answer": "The capital of Ukraine is Kyiv.",
+      "domain": "geography"
+    },
+    {
+      "topic": "United Arab Emirates capital",
+      "aliases": [
+        "capital of uae",
+        "uae capital",
+        "capitala emiratelor arabe unite"
+      ],
+      "answer": "The capital of the United Arab Emirates is Abu Dhabi.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Vietnam capital",
+      "aliases": [
+        "capital of vietnam",
+        "vietnam capital",
+        "capitala vietnamului"
+      ],
+      "answer": "The capital of Vietnam is Hanoi.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Helium symbol",
+      "aliases": [
+        "chemical symbol for helium",
+        "helium symbol"
+      ],
+      "answer": "The chemical symbol for helium is He.",
+      "domain": "chemistry"
+    },
+    {
+      "topic": "Lithium symbol",
+      "aliases": [
+        "chemical symbol for lithium",
+        "lithium symbol"
+      ],
+      "answer": "The chemical symbol for lithium is Li.",
+      "domain": "chemistry"
+    },
+    {
+      "topic": "Beryllium symbol",
+      "aliases": [
+        "chemical symbol for beryllium",
+        "beryllium symbol"
+      ],
+      "answer": "The chemical symbol for beryllium is Be.",
+      "domain": "chemistry"
+    },
+    {
+      "topic": "Boron symbol",
+      "aliases": [
+        "chemical symbol for boron",
+        "boron symbol"
+      ],
+      "answer": "The chemical symbol for boron is B.",
+      "domain": "chemistry"
+    },
+    {
+      "topic": "Fluorine symbol",
+      "aliases": [
+        "chemical symbol for fluorine",
+        "fluorine symbol"
+      ],
+      "answer": "The chemical symbol for fluorine is F.",
+      "domain": "chemistry"
+    },
+    {
+      "topic": "Neon symbol",
+      "aliases": [
+        "chemical symbol for neon",
+        "neon symbol"
+      ],
+      "answer": "The chemical symbol for neon is Ne.",
+      "domain": "chemistry"
+    },
+    {
+      "topic": "Magnesium symbol",
+      "aliases": [
+        "chemical symbol for magnesium",
+        "magnesium symbol"
+      ],
+      "answer": "The chemical symbol for magnesium is Mg.",
+      "domain": "chemistry"
+    },
+    {
+      "topic": "Aluminium symbol",
+      "aliases": [
+        "chemical symbol for aluminium",
+        "aluminum symbol"
+      ],
+      "answer": "The chemical symbol for aluminium is Al.",
+      "domain": "chemistry"
+    },
+    {
+      "topic": "Silicon symbol",
+      "aliases": [
+        "chemical symbol for silicon",
+        "silicon symbol"
+      ],
+      "answer": "The chemical symbol for silicon is Si.",
+      "domain": "chemistry"
+    },
+    {
+      "topic": "Phosphorus symbol",
+      "aliases": [
+        "chemical symbol for phosphorus",
+        "phosphorus symbol"
+      ],
+      "answer": "The chemical symbol for phosphorus is P.",
+      "domain": "chemistry"
+    },
+    {
+      "topic": "Sulfur symbol",
+      "aliases": [
+        "chemical symbol for sulfur",
+        "sulfur symbol"
+      ],
+      "answer": "The chemical symbol for sulfur is S.",
+      "domain": "chemistry"
+    },
+    {
+      "topic": "Chlorine symbol",
+      "aliases": [
+        "chemical symbol for chlorine",
+        "chlorine symbol"
+      ],
+      "answer": "The chemical symbol for chlorine is Cl.",
+      "domain": "chemistry"
+    },
+    {
+      "topic": "Argon symbol",
+      "aliases": [
+        "chemical symbol for argon",
+        "argon symbol"
+      ],
+      "answer": "The chemical symbol for argon is Ar.",
+      "domain": "chemistry"
+    },
+    {
+      "topic": "Calcium symbol",
+      "aliases": [
+        "chemical symbol for calcium",
+        "calcium symbol"
+      ],
+      "answer": "The chemical symbol for calcium is Ca.",
+      "domain": "chemistry"
+    },
+    {
+      "topic": "Zinc symbol",
+      "aliases": [
+        "chemical symbol for zinc",
+        "zinc symbol"
+      ],
+      "answer": "The chemical symbol for zinc is Zn.",
+      "domain": "chemistry"
+    },
+    {
+      "topic": "Bromine symbol",
+      "aliases": [
+        "chemical symbol for bromine",
+        "bromine symbol"
+      ],
+      "answer": "The chemical symbol for bromine is Br.",
+      "domain": "chemistry"
+    },
+    {
+      "topic": "Iodine symbol",
+      "aliases": [
+        "chemical symbol for iodine",
+        "iodine symbol"
+      ],
+      "answer": "The chemical symbol for iodine is I.",
+      "domain": "chemistry"
+    },
+    {
+      "topic": "Platinum symbol",
+      "aliases": [
+        "chemical symbol for platinum",
+        "platinum symbol"
+      ],
+      "answer": "The chemical symbol for platinum is Pt.",
+      "domain": "chemistry"
+    },
+    {
+      "topic": "Mercury symbol",
+      "aliases": [
+        "chemical symbol for mercury",
+        "mercury chemical symbol"
+      ],
+      "answer": "The chemical symbol for mercury is Hg.",
+      "domain": "chemistry"
+    },
+    {
+      "topic": "Lead symbol",
+      "aliases": [
+        "chemical symbol for lead",
+        "lead symbol"
+      ],
+      "answer": "The chemical symbol for lead is Pb.",
+      "domain": "chemistry"
+    },
+    {
+      "topic": "Uranium symbol",
+      "aliases": [
+        "chemical symbol for uranium",
+        "uranium symbol"
+      ],
+      "answer": "The chemical symbol for uranium is U.",
+      "domain": "chemistry"
+    },
+    {
+      "topic": "Acceleration",
+      "aliases": [
+        "what is acceleration",
+        "ce este acceleratia",
+        "ce este accelerația"
+      ],
+      "answer": "Acceleration is the rate of change of velocity with respect to time.",
+      "domain": "physics"
+    },
+    {
+      "topic": "Velocity",
+      "aliases": [
+        "what is velocity",
+        "ce este viteza vectoriala",
+        "ce este viteza vectorială"
+      ],
+      "answer": "Velocity is the rate of change of position with respect to time and has both magnitude and direction.",
+      "domain": "physics"
+    },
+    {
+      "topic": "Force",
+      "aliases": [
+        "what is force physics",
+        "ce este forta in fizica",
+        "ce este forța în fizică"
+      ],
+      "answer": "Force is an interaction that can change an object's motion; its SI unit is the newton.",
+      "domain": "physics"
+    },
+    {
+      "topic": "Mass",
+      "aliases": [
+        "what is mass physics",
+        "ce este masa in fizica",
+        "ce este masa în fizică"
+      ],
+      "answer": "Mass is a measure of an object's inertia and contributes to its gravitational interaction.",
+      "domain": "physics"
+    },
+    {
+      "topic": "Momentum",
+      "aliases": [
+        "what is momentum physics",
+        "ce este impulsul fizic"
+      ],
+      "answer": "Linear momentum is the product of mass and velocity.",
+      "domain": "physics"
+    },
+    {
+      "topic": "Kinetic energy",
+      "aliases": [
+        "what is kinetic energy",
+        "ce este energia cinetica",
+        "ce este energia cinetică"
+      ],
+      "answer": "For a nonrelativistic particle, kinetic energy is 1/2 mv².",
+      "domain": "physics"
+    },
+    {
+      "topic": "Potential energy",
+      "aliases": [
+        "what is potential energy",
+        "ce este energia potentiala",
+        "ce este energia potențială"
+      ],
+      "answer": "Potential energy is energy associated with position, configuration or interactions within a system.",
+      "domain": "physics"
+    },
+    {
+      "topic": "Electric current",
+      "aliases": [
+        "what is electric current",
+        "ce este curentul electric"
+      ],
+      "answer": "Electric current is the rate at which electric charge flows through a surface.",
+      "domain": "physics"
+    },
+    {
+      "topic": "Voltage",
+      "aliases": [
+        "what is voltage",
+        "ce este tensiunea electrica",
+        "ce este tensiunea electrică"
+      ],
+      "answer": "Voltage is electric potential difference between two points.",
+      "domain": "physics"
+    },
+    {
+      "topic": "Resistance",
+      "aliases": [
+        "what is electrical resistance",
+        "ce este rezistenta electrica",
+        "ce este rezistența electrică"
+      ],
+      "answer": "Electrical resistance describes opposition to electric current; in an ohmic conductor V = IR.",
+      "domain": "physics"
+    },
+    {
+      "topic": "Frequency",
+      "aliases": [
+        "what is frequency physics",
+        "ce este frecventa",
+        "ce este frecvența"
+      ],
+      "answer": "Frequency is the number of cycles or repetitions per unit time.",
+      "domain": "physics"
+    },
+    {
+      "topic": "Wavelength",
+      "aliases": [
+        "what is wavelength",
+        "ce este lungimea de unda",
+        "ce este lungimea de undă"
+      ],
+      "answer": "Wavelength is the spatial period of a wave.",
+      "domain": "physics"
+    },
+    {
+      "topic": "Temperature",
+      "aliases": [
+        "what is temperature physics",
+        "ce este temperatura"
+      ],
+      "answer": "Temperature characterizes the thermal state of a system and is related to average microscopic energy.",
+      "domain": "physics"
+    },
+    {
+      "topic": "Earth orbit",
+      "aliases": [
+        "how long does earth orbit sun",
+        "earth orbital period"
+      ],
+      "answer": "Earth completes one orbit around the Sun in about 365.25 days.",
+      "domain": "astronomy"
+    },
+    {
+      "topic": "Moon orbit",
+      "aliases": [
+        "how long does moon orbit earth",
+        "moon orbital period"
+      ],
+      "answer": "The Moon's sidereal orbital period around Earth is about 27.3 days.",
+      "domain": "astronomy"
+    },
+    {
+      "topic": "Mars moons",
+      "aliases": [
+        "how many moons does mars have",
+        "mars moons"
+      ],
+      "answer": "Mars has two known natural satellites, Phobos and Deimos.",
+      "domain": "astronomy"
+    },
+    {
+      "topic": "Jupiter moons",
+      "aliases": [
+        "how many moons does jupiter have",
+        "jupiter moons"
+      ],
+      "answer": "Jupiter has many known natural satellites; the exact count can change as new small moons are confirmed.",
+      "domain": "astronomy"
+    },
+    {
+      "topic": "Saturn rings",
+      "aliases": [
+        "does saturn have rings",
+        "saturn rings"
+      ],
+      "answer": "Saturn has a prominent ring system made mainly of particles of water ice and rocky material.",
+      "domain": "astronomy"
+    },
+    {
+      "topic": "Venus rotation",
+      "aliases": [
+        "how long does venus rotate",
+        "venus day"
+      ],
+      "answer": "Venus rotates very slowly and in the opposite direction to most planets.",
+      "domain": "astronomy"
+    },
+    {
+      "topic": "Mars atmosphere",
+      "aliases": [
+        "what is mars atmosphere",
+        "mars atmosphere"
+      ],
+      "answer": "Mars has a thin atmosphere composed mostly of carbon dioxide.",
+      "domain": "astronomy"
+    },
+    {
+      "topic": "Asteroid",
+      "aliases": [
+        "what is an asteroid",
+        "ce este un asteroid"
+      ],
+      "answer": "An asteroid is a relatively small rocky or metallic Solar System body, many of which orbit the Sun.",
+      "domain": "astronomy"
+    },
+    {
+      "topic": "Comet",
+      "aliases": [
+        "what is a comet",
+        "ce este o cometa",
+        "ce este o cometă"
+      ],
+      "answer": "A comet is an icy Solar System body that can develop a coma and tail when heated near the Sun.",
+      "domain": "astronomy"
+    },
+    {
+      "topic": "Exoplanet",
+      "aliases": [
+        "what is an exoplanet",
+        "ce este o exoplaneta",
+        "ce este o exoplanetă"
+      ],
+      "answer": "An exoplanet is a planet outside our Solar System that orbits another star or, in some cases, a stellar remnant.",
+      "domain": "astronomy"
+    },
+    {
+      "topic": "Light year",
+      "aliases": [
+        "what is a light year",
+        "ce este un an lumina",
+        "ce este un an-lumină"
+      ],
+      "answer": "A light-year is a unit of distance equal to the distance light travels in vacuum in one Julian year.",
+      "domain": "astronomy"
+    },
+    {
+      "topic": "Parsec",
+      "aliases": [
+        "what is a parsec",
+        "ce este un parsec"
+      ],
+      "answer": "A parsec is an astronomical unit of distance defined through stellar parallax and equal to about 3.26 light-years.",
+      "domain": "astronomy"
+    },
+    {
+      "topic": "Mitochondria",
+      "aliases": [
+        "what are mitochondria",
+        "ce sunt mitocondriile"
+      ],
+      "answer": "Mitochondria are organelles involved in cellular energy metabolism and ATP production.",
+      "domain": "biology"
+    },
+    {
+      "topic": "Ribosome",
+      "aliases": [
+        "what is a ribosome",
+        "ce este ribozomul"
+      ],
+      "answer": "A ribosome is a molecular machine that synthesizes proteins from messenger RNA.",
+      "domain": "biology"
+    },
+    {
+      "topic": "Chromosome",
+      "aliases": [
+        "what is a chromosome",
+        "ce este un cromozom"
+      ],
+      "answer": "A chromosome is a DNA-containing structure that carries genetic information.",
+      "domain": "biology"
+    },
+    {
+      "topic": "Gene",
+      "aliases": [
+        "what is a gene",
+        "ce este o gena",
+        "ce este o genă"
+      ],
+      "answer": "A gene is a region of genetic material associated with functional products or regulation.",
+      "domain": "biology"
+    },
+    {
+      "topic": "Genome",
+      "aliases": [
+        "what is a genome",
+        "ce este genomul"
+      ],
+      "answer": "A genome is the complete genetic material of an organism or virus.",
+      "domain": "biology"
+    },
+    {
+      "topic": "Bacteria",
+      "aliases": [
+        "what are bacteria",
+        "ce sunt bacteriile"
+      ],
+      "answer": "Bacteria are diverse single-celled organisms without a membrane-bound nucleus.",
+      "domain": "biology"
+    },
+    {
+      "topic": "Fungi",
+      "aliases": [
+        "what are fungi",
+        "ce sunt fungii"
+      ],
+      "answer": "Fungi are organisms belonging to a distinct biological kingdom and include yeasts, molds and mushrooms.",
+      "domain": "biology"
+    },
+    {
+      "topic": "Ecology",
+      "aliases": [
+        "what is ecology",
+        "ce este ecologia"
+      ],
+      "answer": "Ecology studies interactions among organisms and between organisms and their environment.",
+      "domain": "biology"
+    },
+    {
+      "topic": "Ecosystem",
+      "aliases": [
+        "what is an ecosystem",
+        "ce este un ecosistem"
+      ],
+      "answer": "An ecosystem includes living organisms and their physical environment interacting as a system.",
+      "domain": "biology"
+    },
+    {
+      "topic": "Food chain",
+      "aliases": [
+        "what is a food chain",
+        "ce este lantul trofic",
+        "ce este lanțul trofic"
+      ],
+      "answer": "A food chain describes the transfer of energy and matter through feeding relationships.",
+      "domain": "biology"
+    },
+    {
+      "topic": "Zero",
+      "aliases": [
+        "what is zero mathematics",
+        "ce este zero"
+      ],
+      "answer": "Zero is the integer representing no quantity and is the additive identity.",
+      "domain": "mathematics"
+    },
+    {
+      "topic": "Negative number",
+      "aliases": [
+        "what is a negative number",
+        "ce este un numar negativ",
+        "ce este un număr negativ"
+      ],
+      "answer": "A negative number is a real number less than zero.",
+      "domain": "mathematics"
+    },
+    {
+      "topic": "Fraction",
+      "aliases": [
+        "what is a fraction",
+        "ce este o fractie",
+        "ce este o fracție"
+      ],
+      "answer": "A fraction represents a quotient of integers, with a numerator and nonzero denominator.",
+      "domain": "mathematics"
+    },
+    {
+      "topic": "Percentage",
+      "aliases": [
+        "what is a percentage",
+        "ce este procentul"
+      ],
+      "answer": "A percentage is a number expressed as a fraction of 100.",
+      "domain": "mathematics"
+    },
+    {
+      "topic": "Mean",
+      "aliases": [
+        "what is arithmetic mean",
+        "ce este media aritmetica",
+        "ce este media aritmetică"
+      ],
+      "answer": "The arithmetic mean is the sum of values divided by the number of values.",
+      "domain": "mathematics"
+    },
+    {
+      "topic": "Median",
+      "aliases": [
+        "what is median statistics",
+        "ce este mediana statistica",
+        "ce este mediana statistică"
+      ],
+      "answer": "The median is the middle value of an ordered dataset, with standard conventions for even-sized datasets.",
+      "domain": "mathematics"
+    },
+    {
+      "topic": "Probability",
+      "aliases": [
+        "what is probability",
+        "ce este probabilitatea"
+      ],
+      "answer": "Probability is a mathematical measure of uncertainty about events, conventionally ranging from 0 to 1.",
+      "domain": "mathematics"
+    },
+    {
+      "topic": "Set",
+      "aliases": [
+        "what is a set mathematics",
+        "ce este o multime matematica",
+        "ce este o mulțime matematică"
+      ],
+      "answer": "A set is a collection of distinct objects considered as a mathematical object.",
+      "domain": "mathematics"
+    },
+    {
+      "topic": "Equation",
+      "aliases": [
+        "what is an equation",
+        "ce este o ecuatie",
+        "ce este o ecuație"
+      ],
+      "answer": "An equation is a statement that two expressions have equal values.",
+      "domain": "mathematics"
+    },
+    {
+      "topic": "Function",
+      "aliases": [
+        "what is a function mathematics",
+        "ce este o functie",
+        "ce este o funcție"
+      ],
+      "answer": "A function assigns each allowed input exactly one output.",
+      "domain": "mathematics"
+    },
+    {
+      "topic": "URL",
+      "aliases": [
+        "what is a url",
+        "ce este un url"
+      ],
+      "answer": "A URL is a Uniform Resource Locator identifying the location or access method of a resource.",
+      "domain": "computing"
+    },
+    {
+      "topic": "DNS",
+      "aliases": [
+        "what is dns",
+        "ce este dns"
+      ],
+      "answer": "DNS is the Domain Name System, which maps domain names to network information such as IP addresses.",
+      "domain": "computing"
+    },
+    {
+      "topic": "IP address",
+      "aliases": [
+        "what is an ip address",
+        "ce este o adresa ip",
+        "ce este o adresă ip"
+      ],
+      "answer": "An IP address identifies a network interface or endpoint using an Internet Protocol addressing scheme.",
+      "domain": "computing"
+    },
+    {
+      "topic": "IPv4",
+      "aliases": [
+        "what is ipv4",
+        "ce este ipv4"
+      ],
+      "answer": "IPv4 uses 32-bit addresses, conventionally written as four decimal octets.",
+      "domain": "computing"
+    },
+    {
+      "topic": "IPv6",
+      "aliases": [
+        "what is ipv6",
+        "ce este ipv6"
+      ],
+      "answer": "IPv6 uses 128-bit addresses and was designed to expand Internet address space.",
+      "domain": "computing"
+    },
+    {
+      "topic": "TCP",
+      "aliases": [
+        "what is tcp",
+        "what does tcp stand for",
+        "ce este tcp"
+      ],
+      "answer": "TCP stands for Transmission Control Protocol and provides reliable, ordered byte-stream delivery.",
+      "domain": "computing"
+    },
+    {
+      "topic": "UDP",
+      "aliases": [
+        "what is udp",
+        "what does udp stand for",
+        "ce este udp"
+      ],
+      "answer": "UDP stands for User Datagram Protocol and provides connectionless datagram transport without TCP-style reliability guarantees.",
+      "domain": "computing"
+    },
+    {
+      "topic": "API",
+      "aliases": [
+        "what is an api",
+        "ce este un api"
+      ],
+      "answer": "An API is an Application Programming Interface defining how software components can interact.",
+      "domain": "computing"
+    },
+    {
+      "topic": "Compiler",
+      "aliases": [
+        "what is a compiler",
+        "ce este un compilator"
+      ],
+      "answer": "A compiler translates source code into another representation, often machine code or an intermediate form.",
+      "domain": "computing"
+    },
+    {
+      "topic": "Programming language",
+      "aliases": [
+        "what is a programming language",
+        "ce este un limbaj de programare"
+      ],
+      "answer": "A programming language is a formal language used to express computations and algorithms.",
+      "domain": "computing"
+    },
+    {
+      "topic": "Kotlin",
+      "aliases": [
+        "what is kotlin programming language",
+        "ce este kotlin"
+      ],
+      "answer": "Kotlin is a statically typed programming language developed by JetBrains and widely used for Android development.",
+      "domain": "computing"
+    },
+    {
+      "topic": "Java",
+      "aliases": [
+        "what is java programming language",
+        "ce este java"
+      ],
+      "answer": "Java is a statically typed programming language and runtime ecosystem used for many kinds of software.",
+      "domain": "computing"
+    },
+    {
+      "topic": "Python",
+      "aliases": [
+        "what is python programming language",
+        "ce este python"
+      ],
+      "answer": "Python is a high-level general-purpose programming language emphasizing readability and a broad standard library.",
+      "domain": "computing"
+    },
+    {
+      "topic": "Git commit",
+      "aliases": [
+        "what is a git commit",
+        "ce este un commit git"
+      ],
+      "answer": "A Git commit records a snapshot of tracked project changes in a repository history.",
+      "domain": "computing"
+    },
+    {
+      "topic": "Git branch",
+      "aliases": [
+        "what is a git branch",
+        "ce este o ramura git",
+        "ce este o ramură git"
+      ],
+      "answer": "A Git branch is a movable reference to commits used to develop an independent line of work.",
+      "domain": "computing"
+    },
+    {
+      "topic": "Training data",
+      "aliases": [
+        "what is training data ai",
+        "ce sunt datele de antrenament"
+      ],
+      "answer": "Training data is data used to adjust the parameters of a machine-learning model.",
+      "domain": "ai"
+    },
+    {
+      "topic": "Inference",
+      "aliases": [
+        "what is ai inference",
+        "ce este inferenta ai",
+        "ce este inferența ai"
+      ],
+      "answer": "Inference is the process of using a trained model to produce outputs from inputs.",
+      "domain": "ai"
+    },
+    {
+      "topic": "Large language model",
+      "aliases": [
+        "what is a large language model",
+        "ce este un model lingvistic mare"
+      ],
+      "answer": "A large language model is a neural model trained on large text datasets to model and generate language.",
+      "domain": "ai"
+    },
+    {
+      "topic": "Token AI",
+      "aliases": [
+        "what is a token in ai",
+        "ce este un token ai"
+      ],
+      "answer": "In language models, a token is a unit of text processed by the model's tokenizer.",
+      "domain": "ai"
+    },
+    {
+      "topic": "Prompt",
+      "aliases": [
+        "what is a prompt ai",
+        "ce este un prompt"
+      ],
+      "answer": "A prompt is input provided to an AI system to specify a task, context or desired response.",
+      "domain": "ai"
+    },
+    {
+      "topic": "Embedding",
+      "aliases": [
+        "what is an embedding ai",
+        "ce este un embedding"
+      ],
+      "answer": "An embedding is a numerical vector representation designed to capture useful relationships among data items.",
+      "domain": "ai"
+    },
+    {
+      "topic": "Classification",
+      "aliases": [
+        "what is classification machine learning",
+        "ce este clasificarea machine learning"
+      ],
+      "answer": "Classification assigns inputs to one or more predefined categories.",
+      "domain": "ai"
+    },
+    {
+      "topic": "Regression",
+      "aliases": [
+        "what is regression machine learning",
+        "ce este regresia machine learning"
+      ],
+      "answer": "Regression models a continuous-valued target from input data.",
+      "domain": "ai"
+    },
+    {
+      "topic": "Tectonic plates",
+      "aliases": [
+        "what are tectonic plates",
+        "ce sunt placile tectonice",
+        "ce sunt plăcile tectonice"
+      ],
+      "answer": "Tectonic plates are large pieces of Earth's lithosphere that move relative to one another.",
+      "domain": "earth-science"
+    },
+    {
+      "topic": "Earthquake",
+      "aliases": [
+        "what is an earthquake",
+        "ce este un cutremur"
+      ],
+      "answer": "An earthquake is ground motion caused by a sudden release of energy in Earth's crust or mantle.",
+      "domain": "earth-science"
+    },
+    {
+      "topic": "Volcano",
+      "aliases": [
+        "what is a volcano",
+        "ce este un vulcan"
+      ],
+      "answer": "A volcano is a geological structure through which magma, gases or volcanic material can reach the surface.",
+      "domain": "earth-science"
+    },
+    {
+      "topic": "Tsunami",
+      "aliases": [
+        "what is a tsunami",
+        "ce este un tsunami"
+      ],
+      "answer": "A tsunami is a series of long ocean waves usually generated by displacement of a large volume of water.",
+      "domain": "earth-science"
+    },
+    {
+      "topic": "Ocean",
+      "aliases": [
+        "what is an ocean",
+        "ce este un ocean"
+      ],
+      "answer": "An ocean is a major continuous body of salt water covering much of Earth's surface.",
+      "domain": "earth-science"
+    },
+    {
+      "topic": "Continent",
+      "aliases": [
+        "what is a continent",
+        "ce este un continent"
+      ],
+      "answer": "A continent is one of Earth's major landmass divisions.",
+      "domain": "earth-science"
+    },
+    {
+      "topic": "Evaporation",
+      "aliases": [
+        "what is evaporation",
+        "ce este evaporarea"
+      ],
+      "answer": "Evaporation is the transition of a substance from liquid to gas at a surface.",
+      "domain": "earth-science"
+    },
+    {
+      "topic": "Condensation",
+      "aliases": [
+        "what is condensation",
+        "ce este condensarea"
+      ],
+      "answer": "Condensation is the transition of a substance from gas to liquid.",
+      "domain": "earth-science"
+    },
+    {
+      "topic": "Observation",
+      "aliases": [
+        "what is scientific observation",
+        "ce este observatia stiintifica",
+        "ce este observația științifică"
+      ],
+      "answer": "Scientific observation is systematic collection of information about phenomena using senses or instruments.",
+      "domain": "science"
+    },
+    {
+      "topic": "Experiment",
+      "aliases": [
+        "what is an experiment science",
+        "ce este un experiment stiintific",
+        "ce este un experiment științific"
+      ],
+      "answer": "A scientific experiment is a controlled or structured investigation designed to test hypotheses or measure effects.",
+      "domain": "science"
+    },
+    {
+      "topic": "Measurement",
+      "aliases": [
+        "what is scientific measurement",
+        "ce este masurarea stiintifica",
+        "ce este măsurarea științifică"
+      ],
+      "answer": "Measurement assigns values to properties according to defined procedures and units.",
+      "domain": "science"
+    },
+    {
+      "topic": "Uncertainty",
+      "aliases": [
+        "what is measurement uncertainty",
+        "ce este incertitudinea masurarii",
+        "ce este incertitudinea măsurării"
+      ],
+      "answer": "Measurement uncertainty describes the range of values reasonably associated with a measured quantity.",
+      "domain": "science"
+    },
+    {
+      "topic": "Correlation",
+      "aliases": [
+        "what is correlation statistics",
+        "ce este corelatia statistica",
+        "ce este corelația statistică"
+      ],
+      "answer": "Correlation describes statistical association between variables and does not by itself establish causation.",
+      "domain": "science"
+    },
+    {
+      "topic": "Causation",
+      "aliases": [
+        "what is causation",
+        "ce este cauzalitatea"
+      ],
+      "answer": "Causation means that a change in one factor contributes to producing a change in another under specified conditions.",
+      "domain": "science"
+    },
+    {
+      "topic": "Adverb",
+      "aliases": [
+        "what is an adverb",
+        "ce este un adverb"
+      ],
+      "answer": "An adverb commonly modifies a verb, adjective, another adverb or an entire clause.",
+      "domain": "language"
+    },
+    {
+      "topic": "Pronoun",
+      "aliases": [
+        "what is a pronoun",
+        "ce este un pronume"
+      ],
+      "answer": "A pronoun is a word or expression that can substitute for or refer to a noun phrase.",
+      "domain": "language"
+    },
+    {
+      "topic": "Preposition",
+      "aliases": [
+        "what is a preposition",
+        "ce este o prepozitie",
+        "ce este o prepoziție"
+      ],
+      "answer": "A preposition commonly expresses a relation between a following noun phrase and another part of a sentence.",
+      "domain": "language"
+    },
+    {
+      "topic": "Sentence",
+      "aliases": [
+        "what is a sentence grammar",
+        "ce este o propozitie",
+        "ce este o propoziție"
+      ],
+      "answer": "A sentence is a grammatical unit capable of expressing a complete proposition or speech act depending on context.",
+      "domain": "language"
+    },
+    {
+      "topic": "Alphabet",
+      "aliases": [
+        "what is an alphabet",
+        "ce este un alfabet"
+      ],
+      "answer": "An alphabet is a writing system using a set of symbols representing phonemes or related sound units.",
+      "domain": "language"
+    },
+    {
+      "topic": "Grammar",
+      "aliases": [
+        "what is grammar",
+        "ce este gramatica"
+      ],
+      "answer": "Grammar is the system of rules and patterns governing the structure of a language.",
+      "domain": "language"
+    },
+    {
+      "topic": "Market",
+      "aliases": [
+        "what is a market economics",
+        "ce este o piata economica",
+        "ce este o piață economică"
+      ],
+      "answer": "A market is an arrangement through which buyers and sellers exchange goods, services or assets.",
+      "domain": "economics"
+    },
+    {
+      "topic": "Interest rate",
+      "aliases": [
+        "what is an interest rate",
+        "ce este rata dobanzii",
+        "ce este rata dobânzii"
+      ],
+      "answer": "An interest rate is the price or return associated with borrowing or lending money, usually expressed per period.",
+      "domain": "economics"
+    },
+    {
+      "topic": "Unemployment",
+      "aliases": [
+        "what is unemployment",
+        "ce este somajul",
+        "ce este șomajul"
+      ],
+      "answer": "Unemployment refers to people without work who are available for work and seeking employment under the statistical definition used.",
+      "domain": "economics"
+    },
+    {
+      "topic": "Productivity",
+      "aliases": [
+        "what is economic productivity",
+        "ce este productivitatea"
+      ],
+      "answer": "Productivity measures output relative to inputs over a specified period.",
+      "domain": "economics"
+    },
+    {
+      "topic": "Parliament",
+      "aliases": [
+        "what is parliament",
+        "ce este parlamentul"
+      ],
+      "answer": "A parliament is a legislative body, often composed of elected or otherwise designated representatives.",
+      "domain": "civics"
+    },
+    {
+      "topic": "Election",
+      "aliases": [
+        "what is an election",
+        "ce este o alegere electorala",
+        "ce este o alegere electorală"
+      ],
+      "answer": "An election is a formal process through which voters choose among candidates or options for public office or representation.",
+      "domain": "civics"
+    },
+    {
+      "topic": "Law",
+      "aliases": [
+        "what is law",
+        "ce este legea"
+      ],
+      "answer": "Law is a system of rules recognized and enforced by an authority or legal system.",
+      "domain": "civics"
+    },
+    {
+      "topic": "Human rights",
+      "aliases": [
+        "what are human rights",
+        "ce sunt drepturile omului"
+      ],
+      "answer": "Human rights are rights and freedoms recognized as belonging to human beings under international and domestic legal frameworks.",
+      "domain": "civics"
+    },
+    {
+      "topic": "Roman Empire",
+      "aliases": [
+        "what was the roman empire",
+        "ce a fost imperiul roman"
+      ],
+      "answer": "The Roman Empire was a state centered on Rome that developed from the Roman Republic and lasted in the West until the fifth century.",
+      "domain": "history"
+    },
+    {
+      "topic": "Ancient Egypt",
+      "aliases": [
+        "what was ancient egypt",
+        "ce a fost egiptul antic"
+      ],
+      "answer": "Ancient Egypt was a civilization centered along the Nile with a history spanning several millennia.",
+      "domain": "history"
+    },
+    {
+      "topic": "Renaissance",
+      "aliases": [
+        "what was the renaissance",
+        "ce a fost renasterea",
+        "ce a fost renașterea"
+      ],
+      "answer": "The Renaissance was a period of major cultural, artistic and intellectual change in Europe, traditionally associated with the fourteenth through seventeenth centuries.",
+      "domain": "history"
+    },
+    {
+      "topic": "Metre",
+      "aliases": [
+        "what is a metre",
+        "what is a meter si unit",
+        "ce este metrul"
+      ],
+      "answer": "The metre is the SI base unit of length.",
+      "domain": "science"
+    },
+    {
+      "topic": "Kilogram",
+      "aliases": [
+        "what is a kilogram",
+        "ce este kilogramul"
+      ],
+      "answer": "The kilogram is the SI base unit of mass.",
+      "domain": "science"
+    },
+    {
+      "topic": "Second",
+      "aliases": [
+        "what is a second si unit",
+        "ce este secunda"
+      ],
+      "answer": "The second is the SI base unit of time.",
+      "domain": "science"
+    },
+    {
+      "topic": "Ampere",
+      "aliases": [
+        "what is an ampere",
+        "ce este amperul"
+      ],
+      "answer": "The ampere is the SI base unit of electric current.",
+      "domain": "science"
+    },
+    {
+      "topic": "Kelvin",
+      "aliases": [
+        "what is a kelvin",
+        "ce este kelvinul"
+      ],
+      "answer": "The kelvin is the SI base unit of thermodynamic temperature.",
+      "domain": "science"
+    },
+    {
+      "topic": "Mole",
+      "aliases": [
+        "what is a mole chemistry",
+        "ce este molul"
+      ],
+      "answer": "The mole is the SI base unit for amount of substance.",
+      "domain": "chemistry"
+    },
+    {
+      "topic": "Candela",
+      "aliases": [
+        "what is a candela",
+        "ce este candela"
+      ],
+      "answer": "The candela is the SI base unit of luminous intensity.",
+      "domain": "science"
+    }
+  ]
+}

@@ -64,6 +64,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        LocalKnowledgeBase.initialize(applicationContext)
         binding=ActivityMainBinding.inflate(layoutInflater); setContentView(binding.root)
         brain=Brain(this); sessions=SessionManager(this); intelligence=IntelligenceEngine(filesDir); workspaces=WorkspaceManager(this); watchers=WatchManager(this); secureStore=SecureStore(this); webFallback=WebFallbackEngine(this); researchEngine=ResearchEngine(webFallback); geminiLearning=GeminiLearningEngine(filesDir); memoryEngine=MemoryEngine(brain,intelligence,geminiLearning)
         adapter=ChatAdapter(); binding.recyclerView.layoutManager=LinearLayoutManager(this); binding.recyclerView.adapter=adapter
