@@ -4,13 +4,14 @@ import java.util.Locale
 import kotlin.math.abs
 
 /**
- * Autonomous virtual-agent swarm.
+ * Autonomous Agent Swarm Engine.
  *
- * Agents are generated dynamically from capabilities instead of being
- * instantiated permanently. The swarm can represent up to one million
- * virtual agents while activating only the agents required by a task.
+ * Virtual capacity: 1,000,000 agents.
+ * Active execution is bounded for Android safety.
  *
- * No network, API or neural model is required.
+ * Pipeline:
+ * Planning -> ToolChain -> ToolRegistry -> Agent Engines
+ * -> Verification -> Confidence -> SelfReflection
  */
 object AutonomousAgentSwarmEngine {
 
@@ -59,66 +60,138 @@ object AutonomousAgentSwarmEngine {
         "semantic-memory",
         "knowledge-graph",
         "concept-graph",
+        "tool-chain",
+        "tool-registry",
         "self-reflection",
         "confidence"
     )
 
     fun run(input: String, intent: IntentEngine.Type): Result {
-        val selected = selectAgents(input, intent)
+        if (input.isBlank()) {
+            return Result(false, "", emptyList(), coverage(), 0)
+        }
 
+        val selected = selectAgents(input, intent)
         if (selected.isEmpty()) {
-            return Result(
-                false,
-                "",
-                emptyList(),
-                coverage(),
-                0
-            )
+            return Result(false, "", emptyList(), coverage(), 0)
         }
 
         val outputs = mutableListOf<String>()
         val used = mutableListOf<Agent>()
 
+        /*
+         * The ToolChain is a real orchestration stage of the swarm.
+         * It delegates execution to ToolRegistry.
+         */
+        val chain = ToolChainEngine.run(input, intent)
+
+        if (chain.handled && chain.answer.isNotBlank()) {
+            outputs += chain.answer.trim()
+
+            chain.tools.forEachIndexed { index, tool ->
+                used += Agent(
+                    id = virtualAgentId("tool-chain-$tool", index),
+                    role = "Tool Chain Agent",
+                    capability = "tool-chain",
+                    priority = chain.confidence
+                )
+
+                used += Agent(
+                    id = virtualAgentId("tool-registry-$tool", index),
+                    role = "Tool Registry Agent",
+                    capability = "tool-registry",
+                    priority = chain.confidence
+                )
+            }
+        }
+
+        /*
+         * Dynamic specialist agents.
+         */
         for (agent in selected) {
-            val output = executeAgent(agent, input, intent)
+            if (
+                agent.capability == "tool-chain" ||
+                agent.capability == "tool-registry"
+            ) {
+                continue
+            }
+
+            val output = executeAgent(agent, input)
 
             if (!output.isNullOrBlank()) {
                 outputs += output.trim()
                 used += agent
             }
 
-            if (outputs.size >= 3) break
+            if (outputs.distinct().size >= 3) break
         }
 
         if (outputs.isEmpty()) {
             return Result(
                 false,
                 "",
-                used,
+                used.distinctBy { it.id },
                 coverage(),
                 0
             )
         }
 
-        val answer = outputs.distinct().joinToString("\n\n")
+        val answer = outputs
+            .distinct()
+            .joinToString("\n\n")
+            .trim()
+
+        /*
+         * The swarm verifies its own result before returning it.
+         */
+        val sourceConfidence = calculateConfidence(used)
+
+        val verification = VerificationEngine.check(
+            input,
+            answer,
+            sourceConfidence
+        )
+
+        /*
+         * Confidence is calculated from the real IntentEngine result,
+         * source confidence and verification result.
+         */
+        val intentResult = IntentEngine.detect(input)
+
+        val confidence = ConfidenceEngine.score(
+            intentResult,
+            sourceConfidence,
+            verification,
+            SemanticMemoryEngine.recall(input, 1).isNotEmpty()
+        )
+
+        /*
+         * Self-reflection is executed inside the swarm itself.
+         */
+        val reflection = SelfReflectionEngine.reflect(
+            input,
+            answer,
+            confidence,
+            verification
+        )
 
         return Result(
             true,
-            answer,
+            reflection.answer,
             used.distinctBy { it.id },
             coverage(),
-            calculateConfidence(used)
+            reflection.score.coerceIn(5, 98)
         )
     }
 
     /**
-     * Reports which capabilities are currently represented by the swarm.
+     * Reports actual capabilities implemented by this swarm.
      */
     fun coverage(): Coverage {
         val registered = capabilities.toList()
 
-        val covered = registered.filter { capability ->
-            when (capability) {
+        val covered = registered.filter {
+            when (it) {
                 "conversation",
                 "math",
                 "statistics",
@@ -138,52 +211,53 @@ object AutonomousAgentSwarmEngine {
                 "semantic-memory",
                 "knowledge-graph",
                 "concept-graph",
+                "tool-chain",
+                "tool-registry",
                 "self-reflection",
                 "confidence" -> true
+
                 else -> false
             }
         }
 
         return Coverage(
-            MAX_VIRTUAL_AGENTS,
-            registered,
-            covered,
-            registered.filterNot { covered.contains(it) }
+            virtualCapacity = MAX_VIRTUAL_AGENTS,
+            registeredCapabilities = registered,
+            coveredCapabilities = covered,
+            uncoveredCapabilities = registered.filterNot { covered.contains(it) }
         )
     }
 
-    /**
-     * Generates deterministic virtual agents only when needed.
-     */
     private fun selectAgents(
         input: String,
         intent: IntentEngine.Type
     ): List<Agent> {
-        val normalized = input.lowercase(Locale.getDefault())
 
+        val normalized = input.lowercase(Locale.getDefault())
         val requested = linkedSetOf<String>()
 
         when (intent) {
             IntentEngine.Type.CALCULATION ->
-                requested += listOf("symbolic-math", "math")
+                requested += listOf("symbolic-math", "math", "tool-chain")
 
             IntentEngine.Type.STATISTICS ->
-                requested += "statistics"
+                requested += listOf("statistics", "tool-chain")
 
             IntentEngine.Type.CONVERSION ->
-                requested += "conversion"
+                requested += listOf("conversion", "tool-chain")
 
             IntentEngine.Type.TIME ->
-                requested += "time"
+                requested += listOf("time", "temporal", "tool-chain")
 
             IntentEngine.Type.LOGIC ->
-                requested += listOf("logic", "contradiction")
+                requested += listOf("logic", "contradiction", "tool-chain")
 
             IntentEngine.Type.REASONING ->
                 requested += listOf(
                     "reasoning",
                     "logic",
-                    "contradiction"
+                    "contradiction",
+                    "tool-chain"
                 )
 
             IntentEngine.Type.CAUSAL ->
@@ -218,7 +292,9 @@ object AutonomousAgentSwarmEngine {
                 requested += listOf(
                     "knowledge",
                     "knowledge-graph",
-                    "text"
+                    "concept-graph",
+                    "text",
+                    "tool-chain"
                 )
 
             IntentEngine.Type.CONVERSATION ->
@@ -228,7 +304,6 @@ object AutonomousAgentSwarmEngine {
                 requested += listOf(
                     "reasoning",
                     "knowledge",
-                    "text",
                     "verification"
                 )
         }
@@ -252,7 +327,8 @@ object AutonomousAgentSwarmEngine {
         if (
             normalized.contains("plan") ||
             normalized.contains("strategie") ||
-            normalized.contains("paș")
+            normalized.contains("paș") ||
+            normalized.contains("pas ")
         ) {
             requested += "planning"
         }
@@ -273,15 +349,15 @@ object AutonomousAgentSwarmEngine {
 
     private fun executeAgent(
         agent: Agent,
-        input: String,
-        intent: IntentEngine.Type
+        input: String
     ): String? {
+
         return when (agent.capability) {
 
             "conversation" ->
-                if (ConversationEngine.canHandle(input))
+                if (ConversationEngine.canHandle(input)) {
                     ConversationEngine.answer(input)
-                else null
+                } else null
 
             "planning" -> {
                 val r = AdvancedPlanningEngine.plan(input)
@@ -302,14 +378,14 @@ object AutonomousAgentSwarmEngine {
                 VerificationEngine.answer(input)
 
             "reasoning" ->
-                if (ReasoningEngine.canHandle(input))
+                if (ReasoningEngine.canHandle(input)) {
                     ReasoningEngine.answer(input)
-                else null
+                } else null
 
             "contradiction" ->
-                if (ContradictionEngine.canHandle(input))
+                if (ContradictionEngine.canHandle(input)) {
                     ContradictionEngine.answer(input)
-                else null
+                } else null
 
             "temporal" ->
                 TemporalReasoningEngine.infer(input)?.let {
@@ -318,6 +394,7 @@ object AutonomousAgentSwarmEngine {
 
             "semantic-memory" -> {
                 val memory = SemanticMemoryEngine.recall(input, 3)
+
                 if (memory.isEmpty()) {
                     null
                 } else {
@@ -329,19 +406,29 @@ object AutonomousAgentSwarmEngine {
 
             "knowledge-graph" -> {
                 val context = ContextEngine.snapshot(input)
-                val relations = KnowledgeGraphEngine.query(context.topic).take(5)
-                if (relations.isEmpty()) null
-                else relations.joinToString("\n") {
-                    "${it.from} —${it.relation}→ ${it.to}"
+                val relations =
+                    KnowledgeGraphEngine.query(context.topic).take(5)
+
+                if (relations.isEmpty()) {
+                    null
+                } else {
+                    relations.joinToString("\n") {
+                        "${it.from} —${it.relation}→ ${it.to}"
+                    }
                 }
             }
 
             "concept-graph" -> {
                 val context = ContextEngine.snapshot(input)
-                val relations = ConceptGraphEngine.related(context.topic, 5)
-                if (relations.isEmpty()) null
-                else relations.joinToString("\n") {
-                    "${it.a} ↔ ${it.b} [${it.weight}]"
+                val relations =
+                    ConceptGraphEngine.related(context.topic, 5)
+
+                if (relations.isEmpty()) {
+                    null
+                } else {
+                    relations.joinToString("\n") {
+                        "${it.a} ↔ ${it.b} [${it.weight}]"
+                    }
                 }
             }
 
@@ -363,6 +450,7 @@ object AutonomousAgentSwarmEngine {
         capability: String,
         index: Int
     ): Long {
+
         var hash = 1125899906842597L
 
         for (c in capability) {
@@ -371,7 +459,7 @@ object AutonomousAgentSwarmEngine {
 
         return abs(
             (hash * 1_000_003L + index)
-            .mod(MAX_VIRTUAL_AGENTS.toLong())
+                .mod(MAX_VIRTUAL_AGENTS.toLong())
         ) + 1L
     }
 
@@ -381,7 +469,7 @@ object AutonomousAgentSwarmEngine {
             "math" -> "Mathematics Agent"
             "statistics" -> "Statistics Agent"
             "conversion" -> "Unit Conversion Agent"
-            "time" -> "Temporal Agent"
+            "time" -> "Time Agent"
             "logic" -> "Logic Agent"
             "symbolic-math" -> "Symbolic Mathematics Agent"
             "knowledge" -> "Knowledge Agent"
@@ -396,6 +484,8 @@ object AutonomousAgentSwarmEngine {
             "semantic-memory" -> "Semantic Memory Agent"
             "knowledge-graph" -> "Knowledge Graph Agent"
             "concept-graph" -> "Concept Graph Agent"
+            "tool-chain" -> "Tool Chain Agent"
+            "tool-registry" -> "Tool Registry Agent"
             "self-reflection" -> "Self Reflection Agent"
             "confidence" -> "Confidence Agent"
             else -> "General Autonomous Agent"
@@ -404,6 +494,10 @@ object AutonomousAgentSwarmEngine {
     private fun priorityFor(capability: String): Int =
         when (capability) {
             "verification" -> 100
+            "self-reflection" -> 99
+            "confidence" -> 98
+            "tool-chain" -> 97
+            "tool-registry" -> 96
             "reasoning" -> 95
             "causal" -> 94
             "hypothesis" -> 92
@@ -421,15 +515,19 @@ object AutonomousAgentSwarmEngine {
     private fun calculateConfidence(
         agents: List<Agent>
     ): Int {
+
         if (agents.isEmpty()) return 0
 
         val average =
             agents.map { it.priority }.average().toInt()
 
         val diversityBonus =
-            (agents.map { it.capability }.distinct().size - 1)
+            (agents.map { it.capability }
+                .distinct()
+                .size - 1)
                 .coerceAtLeast(0) * 3
 
-        return (average + diversityBonus).coerceIn(5, 98)
+        return (average + diversityBonus)
+            .coerceIn(5, 98)
     }
 }
