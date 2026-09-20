@@ -1,0 +1,176 @@
+{
+  "version": 1,
+  "domain": "biology",
+  "entries": [
+    {
+      "topic": "Photosynthesis",
+      "aliases": [
+        "what is photosynthesis",
+        "ce este fotosinteza"
+      ],
+      "answer": "Photosynthesis converts light energy into chemical energy; oxygenic photosynthesis uses carbon dioxide and water and releases oxygen.",
+      "domain": "biology"
+    },
+    {
+      "topic": "Cell",
+      "aliases": [
+        "what is a cell biology",
+        "ce este o celula",
+        "ce este o celulă"
+      ],
+      "answer": "A cell is the basic structural and functional unit of living organisms.",
+      "domain": "biology"
+    },
+    {
+      "topic": "DNA",
+      "aliases": [
+        "what is dna",
+        "ce este adn",
+        "ce este dna"
+      ],
+      "answer": "DNA stores hereditary genetic information in living organisms and some viruses.",
+      "domain": "biology"
+    },
+    {
+      "topic": "RNA",
+      "aliases": [
+        "what is rna",
+        "ce este arn",
+        "ce este rna"
+      ],
+      "answer": "RNA is a nucleic acid involved in information transfer, gene regulation and sometimes catalysis.",
+      "domain": "biology"
+    },
+    {
+      "topic": "Protein",
+      "aliases": [
+        "what is a protein",
+        "ce este o proteina",
+        "ce este o proteină"
+      ],
+      "answer": "Proteins are biological polymers made from amino acids that perform structural, catalytic, transport and signaling functions.",
+      "domain": "biology"
+    },
+    {
+      "topic": "Evolution",
+      "aliases": [
+        "what is evolution biology",
+        "ce este evolutia biologica",
+        "ce este evoluția biologică"
+      ],
+      "answer": "Biological evolution is change in heritable characteristics of populations across generations.",
+      "domain": "biology"
+    },
+    {
+      "topic": "Natural selection",
+      "aliases": [
+        "what is natural selection",
+        "ce este selectia naturala",
+        "ce este selecția naturală"
+      ],
+      "answer": "Natural selection is a process in which heritable differences affect reproductive success, changing trait frequencies across generations.",
+      "domain": "biology"
+    },
+    {
+      "topic": "Virus",
+      "aliases": [
+        "what is a virus",
+        "ce este un virus"
+      ],
+      "answer": "A virus is an infectious biological entity that replicates using a host cell's molecular machinery.",
+      "domain": "biology"
+    },
+    {
+      "topic": "Mitochondria",
+      "aliases": [
+        "what are mitochondria",
+        "ce sunt mitocondriile"
+      ],
+      "answer": "Mitochondria are organelles involved in cellular energy metabolism and ATP production.",
+      "domain": "biology"
+    },
+    {
+      "topic": "Ribosome",
+      "aliases": [
+        "what is a ribosome",
+        "ce este ribozomul"
+      ],
+      "answer": "A ribosome is a molecular machine that synthesizes proteins from messenger RNA.",
+      "domain": "biology"
+    },
+    {
+      "topic": "Chromosome",
+      "aliases": [
+        "what is a chromosome",
+        "ce este un cromozom"
+      ],
+      "answer": "A chromosome is a DNA-containing structure that carries genetic information.",
+      "domain": "biology"
+    },
+    {
+      "topic": "Gene",
+      "aliases": [
+        "what is a gene",
+        "ce este o gena",
+        "ce este o genă"
+      ],
+      "answer": "A gene is a region of genetic material associated with functional products or regulation.",
+      "domain": "biology"
+    },
+    {
+      "topic": "Genome",
+      "aliases": [
+        "what is a genome",
+        "ce este genomul"
+      ],
+      "answer": "A genome is the complete genetic material of an organism or virus.",
+      "domain": "biology"
+    },
+    {
+      "topic": "Bacteria",
+      "aliases": [
+        "what are bacteria",
+        "ce sunt bacteriile"
+      ],
+      "answer": "Bacteria are diverse single-celled organisms without a membrane-bound nucleus.",
+      "domain": "biology"
+    },
+    {
+      "topic": "Fungi",
+      "aliases": [
+        "what are fungi",
+        "ce sunt fungii"
+      ],
+      "answer": "Fungi are organisms belonging to a distinct biological kingdom and include yeasts, molds and mushrooms.",
+      "domain": "biology"
+    },
+    {
+      "topic": "Ecology",
+      "aliases": [
+        "what is ecology",
+        "ce este ecologia"
+      ],
+      "answer": "Ecology studies interactions among organisms and between organisms and their environment.",
+      "domain": "biology"
+    },
+    {
+      "topic": "Ecosystem",
+      "aliases": [
+        "what is an ecosystem",
+        "ce este un ecosistem"
+      ],
+      "answer": "An ecosystem includes living organisms and their physical environment interacting as a system.",
+      "domain": "biology"
+    },
+    {
+      "topic": "Food chain",
+      "aliases": [
+        "what is a food chain",
+        "ce este lantul trofic",
+        "ce este lanțul trofic"
+      ],
+      "answer": "A food chain describes the transfer of energy and matter through feeding relationships.",
+      "domain": "biology"
+    }
+  ]
+}

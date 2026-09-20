@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "domain": "history",
+  "entries": [
+    {
+      "topic": "United Nations",
+      "aliases": [
+        "what is the united nations",
+        "ce este onu",
+        "ce este organizatia natiunilor unite",
+        "ce este organizația națiunilor unite"
+      ],
+      "answer": "The United Nations is an international organization founded in 1945 for international cooperation and collective action.",
+      "domain": "history"
+    },
+    {
+      "topic": "World War II",
+      "aliases": [
+        "when was world war ii",
+        "al doilea razboi mondial",
+        "al doilea război mondial"
+      ],
+      "answer": "World War II was a global war fought from 1939 to 1945.",
+      "domain": "history"
+    },
+    {
+      "topic": "World War I",
+      "aliases": [
+        "when was world war i",
+        "primul razboi mondial",
+        "primul război mondial"
+      ],
+      "answer": "World War I was a global conflict fought mainly from 1914 to 1918.",
+      "domain": "history"
+    },
+    {
+      "topic": "Roman Empire",
+      "aliases": [
+        "what was the roman empire",
+        "ce a fost imperiul roman"
+      ],
+      "answer": "The Roman Empire was a state centered on Rome that developed from the Roman Republic and lasted in the West until the fifth century.",
+      "domain": "history"
+    },
+    {
+      "topic": "Ancient Egypt",
+      "aliases": [
+        "what was ancient egypt",
+        "ce a fost egiptul antic"
+      ],
+      "answer": "Ancient Egypt was a civilization centered along the Nile with a history spanning several millennia.",
+      "domain": "history"
+    },
+    {
+      "topic": "Renaissance",
+      "aliases": [
+        "what was the renaissance",
+        "ce a fost renasterea",
+        "ce a fost renașterea"
+      ],
+      "answer": "The Renaissance was a period of major cultural, artistic and intellectual change in Europe, traditionally associated with the fourteenth through seventeenth centuries.",
+      "domain": "history"
+    }
+  ]
+}

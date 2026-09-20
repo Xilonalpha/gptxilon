@@ -23,11 +23,10 @@ object LocalKnowledgeBase {
     private var normalized: List<Pair<String, Entry>> = emptyList()
 
     /**
-     * Loads the deterministic offline knowledge dataset from assets.
+     * Loads all offline knowledge datasets listed by knowledge_index.json.
      *
-     * The knowledge itself is deliberately kept outside this Kotlin file
-     * so the dataset can grow independently to thousands or tens of
-     * thousands of entries.
+     * Knowledge is kept outside Kotlin so the database can grow
+     * independently into thousands or tens of thousands of entries.
      */
     fun initialize(context: Context) {
         if (initialized) return
@@ -35,35 +34,52 @@ object LocalKnowledgeBase {
         synchronized(this) {
             if (initialized) return
 
-            val text = context.applicationContext.assets
-                .open("local_knowledge.json")
+            val assets = context.applicationContext.assets
+
+            val indexText = assets
+                .open("knowledge_index.json")
                 .bufferedReader(Charsets.UTF_8)
                 .use { it.readText() }
 
-            val root = JSONObject(text)
-            val array = root.optJSONArray("entries") ?: JSONArray()
+            val index = JSONObject(indexText)
+            val datasets = index.optJSONArray("datasets") ?: JSONArray()
 
-            val loaded = ArrayList<Entry>(array.length())
+            val loaded = ArrayList<Entry>()
 
-            for (i in 0 until array.length()) {
-                val item = array.getJSONObject(i)
-                val aliasesJson = item.optJSONArray("aliases") ?: JSONArray()
+            for (i in 0 until datasets.length()) {
+                val dataset = datasets.getJSONObject(i)
+                val file = dataset.optString("file")
 
-                val aliases = ArrayList<String>(aliasesJson.length())
+                if (file.isBlank()) continue
 
-                for (j in 0 until aliasesJson.length()) {
-                    val alias = aliasesJson.optString(j)
-                    if (alias.isNotBlank()) {
-                        aliases += alias
+                val text = assets
+                    .open(file)
+                    .bufferedReader(Charsets.UTF_8)
+                    .use { it.readText() }
+
+                val root = JSONObject(text)
+                val array = root.optJSONArray("entries") ?: JSONArray()
+
+                for (j in 0 until array.length()) {
+                    val item = array.getJSONObject(j)
+                    val aliasesJson = item.optJSONArray("aliases") ?: JSONArray()
+
+                    val aliases = ArrayList<String>(aliasesJson.length())
+
+                    for (k in 0 until aliasesJson.length()) {
+                        val alias = aliasesJson.optString(k)
+                        if (alias.isNotBlank()) {
+                            aliases += alias
+                        }
                     }
-                }
 
-                loaded += Entry(
-                    topic = item.optString("topic"),
-                    aliases = aliases,
-                    answer = item.optString("answer"),
-                    domain = item.optString("domain")
-                )
+                    loaded += Entry(
+                        topic = item.optString("topic"),
+                        aliases = aliases,
+                        answer = item.optString("answer"),
+                        domain = item.optString("domain")
+                    )
+                }
             }
 
             entries = loaded

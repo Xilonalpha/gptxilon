@@ -1,0 +1,111 @@
+{
+  "version": 1,
+  "domain": "ai",
+  "entries": [
+    {
+      "topic": "Machine learning",
+      "aliases": [
+        "what is machine learning",
+        "ce este machine learning",
+        "ce este invatarea automata",
+        "ce este învățarea automată"
+      ],
+      "answer": "Machine learning is a field in which algorithms learn patterns from data to make predictions, decisions or representations.",
+      "domain": "ai"
+    },
+    {
+      "topic": "Artificial intelligence",
+      "aliases": [
+        "what is artificial intelligence",
+        "what is ai",
+        "ce este inteligenta artificiala",
+        "ce este inteligența artificială"
+      ],
+      "answer": "Artificial intelligence is the field of computing concerned with systems that perform tasks associated with perception, reasoning, learning, language or decision-making.",
+      "domain": "ai"
+    },
+    {
+      "topic": "Neural network",
+      "aliases": [
+        "what is a neural network",
+        "ce este o retea neuronala",
+        "ce este o rețea neuronală"
+      ],
+      "answer": "An artificial neural network is a parameterized computational model whose parameters are adjusted to model patterns in data.",
+      "domain": "ai"
+    },
+    {
+      "topic": "Training data",
+      "aliases": [
+        "what is training data ai",
+        "ce sunt datele de antrenament"
+      ],
+      "answer": "Training data is data used to adjust the parameters of a machine-learning model.",
+      "domain": "ai"
+    },
+    {
+      "topic": "Inference",
+      "aliases": [
+        "what is ai inference",
+        "ce este inferenta ai",
+        "ce este inferența ai"
+      ],
+      "answer": "Inference is the process of using a trained model to produce outputs from inputs.",
+      "domain": "ai"
+    },
+    {
+      "topic": "Large language model",
+      "aliases": [
+        "what is a large language model",
+        "ce este un model lingvistic mare"
+      ],
+      "answer": "A large language model is a neural model trained on large text datasets to model and generate language.",
+      "domain": "ai"
+    },
+    {
+      "topic": "Token AI",
+      "aliases": [
+        "what is a token in ai",
+        "ce este un token ai"
+      ],
+      "answer": "In language models, a token is a unit of text processed by the model's tokenizer.",
+      "domain": "ai"
+    },
+    {
+      "topic": "Prompt",
+      "aliases": [
+        "what is a prompt ai",
+        "ce este un prompt"
+      ],
+      "answer": "A prompt is input provided to an AI system to specify a task, context or desired response.",
+      "domain": "ai"
+    },
+    {
+      "topic": "Embedding",
+      "aliases": [
+        "what is an embedding ai",
+        "ce este un embedding"
+      ],
+      "answer": "An embedding is a numerical vector representation designed to capture useful relationships among data items.",
+      "domain": "ai"
+    },
+    {
+      "topic": "Classification",
+      "aliases": [
+        "what is classification machine learning",
+        "ce este clasificarea machine learning"
+      ],
+      "answer": "Classification assigns inputs to one or more predefined categories.",
+      "domain": "ai"
+    },
+    {
+      "topic": "Regression",
+      "aliases": [
+        "what is regression machine learning",
+        "ce este regresia machine learning"
+      ],
+      "answer": "Regression models a continuous-valued target from input data.",
+      "domain": "ai"
+    }
+  ]
+}

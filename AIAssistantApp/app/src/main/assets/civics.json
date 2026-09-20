@@ -1,0 +1,63 @@
+{
+  "version": 1,
+  "domain": "civics",
+  "entries": [
+    {
+      "topic": "Democracy",
+      "aliases": [
+        "what is democracy",
+        "ce este democratia",
+        "ce este democrația"
+      ],
+      "answer": "Democracy is a system of government in which political authority is ultimately derived from the people.",
+      "domain": "civics"
+    },
+    {
+      "topic": "Constitution",
+      "aliases": [
+        "what is a constitution",
+        "ce este o constitutie",
+        "ce este o constituție"
+      ],
+      "answer": "A constitution is a fundamental framework defining governmental institutions, powers, procedures and often rights.",
+      "domain": "civics"
+    },
+    {
+      "topic": "Parliament",
+      "aliases": [
+        "what is parliament",
+        "ce este parlamentul"
+      ],
+      "answer": "A parliament is a legislative body, often composed of elected or otherwise designated representatives.",
+      "domain": "civics"
+    },
+    {
+      "topic": "Election",
+      "aliases": [
+        "what is an election",
+        "ce este o alegere electorala",
+        "ce este o alegere electorală"
+      ],
+      "answer": "An election is a formal process through which voters choose among candidates or options for public office or representation.",
+      "domain": "civics"
+    },
+    {
+      "topic": "Law",
+      "aliases": [
+        "what is law",
+        "ce este legea"
+      ],
+      "answer": "Law is a system of rules recognized and enforced by an authority or legal system.",
+      "domain": "civics"
+    },
+    {
+      "topic": "Human rights",
+      "aliases": [
+        "what are human rights",
+        "ce sunt drepturile omului"
+      ],
+      "answer": "Human rights are rights and freedoms recognized as belonging to human beings under international and domestic legal frameworks.",
+      "domain": "civics"
+    }
+  ]
+}

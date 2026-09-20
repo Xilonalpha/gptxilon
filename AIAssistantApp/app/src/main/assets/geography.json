@@ -1,0 +1,614 @@
+{
+  "version": 1,
+  "domain": "geography",
+  "entries": [
+    {
+      "topic": "Australia capital",
+      "aliases": [
+        "capital of australia",
+        "australia capital",
+        "capitala australiei"
+      ],
+      "answer": "The capital of Australia is Canberra.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Romania capital",
+      "aliases": [
+        "capital of romania",
+        "romania capital",
+        "capitala romaniei"
+      ],
+      "answer": "The capital of Romania is Bucharest.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Italy capital",
+      "aliases": [
+        "capital of italy",
+        "italy capital",
+        "capitala italiei"
+      ],
+      "answer": "The capital of Italy is Rome.",
+      "domain": "geography"
+    },
+    {
+      "topic": "France capital",
+      "aliases": [
+        "capital of france",
+        "france capital",
+        "capitala frantei",
+        "capitala franței"
+      ],
+      "answer": "The capital of France is Paris.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Germany capital",
+      "aliases": [
+        "capital of germany",
+        "germany capital",
+        "capitala germaniei"
+      ],
+      "answer": "The capital of Germany is Berlin.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Spain capital",
+      "aliases": [
+        "capital of spain",
+        "spain capital",
+        "capitala spaniei"
+      ],
+      "answer": "The capital of Spain is Madrid.",
+      "domain": "geography"
+    },
+    {
+      "topic": "UK capital",
+      "aliases": [
+        "capital of united kingdom",
+        "uk capital",
+        "capitala regatului unit"
+      ],
+      "answer": "The capital of the United Kingdom is London.",
+      "domain": "geography"
+    },
+    {
+      "topic": "USA capital",
+      "aliases": [
+        "capital of united states",
+        "usa capital",
+        "us capital"
+      ],
+      "answer": "The capital of the United States is Washington, D.C.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Canada capital",
+      "aliases": [
+        "capital of canada",
+        "canada capital",
+        "capitala canadei"
+      ],
+      "answer": "The capital of Canada is Ottawa.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Japan capital",
+      "aliases": [
+        "capital of japan",
+        "japan capital",
+        "capitala japoniei"
+      ],
+      "answer": "The capital of Japan is Tokyo.",
+      "domain": "geography"
+    },
+    {
+      "topic": "China capital",
+      "aliases": [
+        "capital of china",
+        "china capital",
+        "capitala chinei"
+      ],
+      "answer": "The capital of China is Beijing.",
+      "domain": "geography"
+    },
+    {
+      "topic": "India capital",
+      "aliases": [
+        "capital of india",
+        "india capital",
+        "capitala indiei"
+      ],
+      "answer": "The capital of India is New Delhi.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Brazil capital",
+      "aliases": [
+        "capital of brazil",
+        "brazil capital",
+        "capitala braziliei"
+      ],
+      "answer": "The capital of Brazil is Brasília.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Egypt capital",
+      "aliases": [
+        "capital of egypt",
+        "egypt capital",
+        "capitala egiptului"
+      ],
+      "answer": "The capital of Egypt is Cairo.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Greece capital",
+      "aliases": [
+        "capital of greece",
+        "greece capital",
+        "capitala greciei"
+      ],
+      "answer": "The capital of Greece is Athens.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Portugal capital",
+      "aliases": [
+        "capital of portugal",
+        "portugal capital",
+        "capitala portugaliei"
+      ],
+      "answer": "The capital of Portugal is Lisbon.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Pacific Ocean",
+      "aliases": [
+        "pacific ocean",
+        "pacific vs atlantic",
+        "pacific larger atlantic"
+      ],
+      "answer": "The Pacific Ocean is larger than the Atlantic Ocean.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Afghanistan capital",
+      "aliases": [
+        "capital of afghanistan",
+        "afghanistan capital",
+        "capitala afganistanului"
+      ],
+      "answer": "The capital of Afghanistan is Kabul.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Albania capital",
+      "aliases": [
+        "capital of albania",
+        "albania capital",
+        "capitala albaniеi"
+      ],
+      "answer": "The capital of Albania is Tirana.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Algeria capital",
+      "aliases": [
+        "capital of algeria",
+        "algeria capital",
+        "capitala algeriei"
+      ],
+      "answer": "The capital of Algeria is Algiers.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Argentina capital",
+      "aliases": [
+        "capital of argentina",
+        "argentina capital",
+        "capitala argentinei"
+      ],
+      "answer": "The capital of Argentina is Buenos Aires.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Armenia capital",
+      "aliases": [
+        "capital of armenia",
+        "armenia capital"
+      ],
+      "answer": "The capital of Armenia is Yerevan.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Austria capital",
+      "aliases": [
+        "capital of austria",
+        "austria capital",
+        "capitala austriei"
+      ],
+      "answer": "The capital of Austria is Vienna.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Belgium capital",
+      "aliases": [
+        "capital of belgium",
+        "belgium capital",
+        "capitala belgiei"
+      ],
+      "answer": "The capital of Belgium is Brussels.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Bulgaria capital",
+      "aliases": [
+        "capital of bulgaria",
+        "bulgaria capital",
+        "capitala bulgariei"
+      ],
+      "answer": "The capital of Bulgaria is Sofia.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Chile capital",
+      "aliases": [
+        "capital of chile",
+        "chile capital",
+        "capitala statului chile"
+      ],
+      "answer": "The capital of Chile is Santiago.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Colombia capital",
+      "aliases": [
+        "capital of colombia",
+        "colombia capital",
+        "capitala columbiei"
+      ],
+      "answer": "The capital of Colombia is Bogotá.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Croatia capital",
+      "aliases": [
+        "capital of croatia",
+        "croatia capital",
+        "capitala croatiei",
+        "capitala croației"
+      ],
+      "answer": "The capital of Croatia is Zagreb.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Cuba capital",
+      "aliases": [
+        "capital of cuba",
+        "cuba capital"
+      ],
+      "answer": "The capital of Cuba is Havana.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Czechia capital",
+      "aliases": [
+        "capital of czechia",
+        "capital of czech republic",
+        "czech republic capital"
+      ],
+      "answer": "The capital of Czechia is Prague.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Denmark capital",
+      "aliases": [
+        "capital of denmark",
+        "denmark capital",
+        "capitala danemarcei"
+      ],
+      "answer": "The capital of Denmark is Copenhagen.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Finland capital",
+      "aliases": [
+        "capital of finland",
+        "finland capital",
+        "capitala finlandei"
+      ],
+      "answer": "The capital of Finland is Helsinki.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Hungary capital",
+      "aliases": [
+        "capital of hungary",
+        "hungary capital",
+        "capitala ungariei"
+      ],
+      "answer": "The capital of Hungary is Budapest.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Iceland capital",
+      "aliases": [
+        "capital of iceland",
+        "iceland capital",
+        "capitala islandei"
+      ],
+      "answer": "The capital of Iceland is Reykjavík.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Indonesia capital",
+      "aliases": [
+        "capital of indonesia",
+        "indonesia capital",
+        "capitala indoneziei"
+      ],
+      "answer": "The capital of Indonesia is Jakarta.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Iran capital",
+      "aliases": [
+        "capital of iran",
+        "iran capital",
+        "capitala iranului"
+      ],
+      "answer": "The capital of Iran is Tehran.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Iraq capital",
+      "aliases": [
+        "capital of iraq",
+        "iraq capital",
+        "capitala irakului"
+      ],
+      "answer": "The capital of Iraq is Baghdad.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Ireland capital",
+      "aliases": [
+        "capital of ireland",
+        "ireland capital",
+        "capitala irlandei"
+      ],
+      "answer": "The capital of Ireland is Dublin.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Israel capital",
+      "aliases": [
+        "capital of israel",
+        "israel capital"
+      ],
+      "answer": "Israel's seat of government and proclaimed capital is Jerusalem; its status is internationally contested.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Jordan capital",
+      "aliases": [
+        "capital of jordan",
+        "jordan capital",
+        "capitala iordaniei"
+      ],
+      "answer": "The capital of Jordan is Amman.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Kenya capital",
+      "aliases": [
+        "capital of kenya",
+        "kenya capital",
+        "capitala kenyei"
+      ],
+      "answer": "The capital of Kenya is Nairobi.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Lebanon capital",
+      "aliases": [
+        "capital of lebanon",
+        "lebanon capital",
+        "capitala libanului"
+      ],
+      "answer": "The capital of Lebanon is Beirut.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Lithuania capital",
+      "aliases": [
+        "capital of lithuania",
+        "lithuania capital",
+        "capitala lituaniei"
+      ],
+      "answer": "The capital of Lithuania is Vilnius.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Luxembourg capital",
+      "aliases": [
+        "capital of luxembourg",
+        "luxembourg capital"
+      ],
+      "answer": "The capital of Luxembourg is Luxembourg City.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Malaysia capital",
+      "aliases": [
+        "capital of malaysia",
+        "malaysia capital",
+        "capitala malaeziei"
+      ],
+      "answer": "The capital of Malaysia is Kuala Lumpur.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Mexico capital",
+      "aliases": [
+        "capital of mexico",
+        "mexico capital",
+        "capitala mexicului"
+      ],
+      "answer": "The capital of Mexico is Mexico City.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Moldova capital",
+      "aliases": [
+        "capital of moldova",
+        "moldova capital",
+        "capitala moldovei"
+      ],
+      "answer": "The capital of Moldova is Chișinău.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Monaco capital",
+      "aliases": [
+        "capital of monaco",
+        "monaco capital"
+      ],
+      "answer": "The capital of Monaco is Monaco.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Mongolia capital",
+      "aliases": [
+        "capital of mongolia",
+        "mongolia capital",
+        "capitala mongoliei"
+      ],
+      "answer": "The capital of Mongolia is Ulaanbaatar.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Morocco capital",
+      "aliases": [
+        "capital of morocco",
+        "morocco capital",
+        "capitala marocului"
+      ],
+      "answer": "The capital of Morocco is Rabat.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Netherlands capital",
+      "aliases": [
+        "capital of netherlands",
+        "netherlands capital",
+        "capitala olandei"
+      ],
+      "answer": "The capital of the Netherlands is Amsterdam.",
+      "domain": "geography"
+    },
+    {
+      "topic": "New Zealand capital",
+      "aliases": [
+        "capital of new zealand",
+        "new zealand capital",
+        "capitala noii zeelande"
+      ],
+      "answer": "The capital of New Zealand is Wellington.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Norway capital",
+      "aliases": [
+        "capital of norway",
+        "norway capital",
+        "capitala norvegiei"
+      ],
+      "answer": "The capital of Norway is Oslo.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Poland capital",
+      "aliases": [
+        "capital of poland",
+        "poland capital",
+        "capitala poloniei"
+      ],
+      "answer": "The capital of Poland is Warsaw.",
+      "domain": "geography"
+    },
+    {
+      "topic": "South Korea capital",
+      "aliases": [
+        "capital of south korea",
+        "south korea capital",
+        "capitala coreei de sud"
+      ],
+      "answer": "The capital of South Korea is Seoul.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Sweden capital",
+      "aliases": [
+        "capital of sweden",
+        "sweden capital",
+        "capitala suediei"
+      ],
+      "answer": "The capital of Sweden is Stockholm.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Switzerland capital",
+      "aliases": [
+        "capital of switzerland",
+        "switzerland capital",
+        "capitala elvetiei",
+        "capitala elveției"
+      ],
+      "answer": "The federal city of Switzerland is Bern.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Turkey capital",
+      "aliases": [
+        "capital of turkey",
+        "turkey capital",
+        "capitala turciei"
+      ],
+      "answer": "The capital of Türkiye is Ankara.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Ukraine capital",
+      "aliases": [
+        "capital of ukraine",
+        "ukraine capital",
+        "capitala ucrainei"
+      ],
+      "answer": "The capital of Ukraine is Kyiv.",
+      "domain": "geography"
+    },
+    {
+      "topic": "United Arab Emirates capital",
+      "aliases": [
+        "capital of uae",
+        "uae capital",
+        "capitala emiratelor arabe unite"
+      ],
+      "answer": "The capital of the United Arab Emirates is Abu Dhabi.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Vietnam capital",
+      "aliases": [
+        "capital of vietnam",
+        "vietnam capital",
+        "capitala vietnamului"
+      ],
+      "answer": "The capital of Vietnam is Hanoi.",
+      "domain": "geography"
+    }
+  ]
+}

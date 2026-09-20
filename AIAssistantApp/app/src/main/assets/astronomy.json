@@ -1,0 +1,227 @@
+{
+  "version": 1,
+  "domain": "astronomy",
+  "entries": [
+    {
+      "topic": "Earth",
+      "aliases": [
+        "what is earth",
+        "ce este pamantul",
+        "ce este pământul"
+      ],
+      "answer": "Earth is the third planet from the Sun and the only astronomical object currently known to support life.",
+      "domain": "astronomy"
+    },
+    {
+      "topic": "Moon",
+      "aliases": [
+        "what is the moon",
+        "ce este luna"
+      ],
+      "answer": "The Moon is Earth's natural satellite.",
+      "domain": "astronomy"
+    },
+    {
+      "topic": "Sun",
+      "aliases": [
+        "what is the sun",
+        "ce este soarele"
+      ],
+      "answer": "The Sun is the star at the center of the Solar System.",
+      "domain": "astronomy"
+    },
+    {
+      "topic": "Black hole",
+      "aliases": [
+        "what is a black hole",
+        "ce este o gaura neagra",
+        "ce este o gaură neagră"
+      ],
+      "answer": "A black hole is a region of spacetime bounded by an event horizon from which signals cannot escape to distant observers.",
+      "domain": "astronomy"
+    },
+    {
+      "topic": "Solar System",
+      "aliases": [
+        "what is the solar system",
+        "ce este sistemul solar"
+      ],
+      "answer": "The Solar System consists of the Sun and objects gravitationally bound to it, including planets, moons, asteroids and comets.",
+      "domain": "astronomy"
+    },
+    {
+      "topic": "Milky Way",
+      "aliases": [
+        "what is the milky way",
+        "ce este calea lactee"
+      ],
+      "answer": "The Milky Way is the barred spiral galaxy that contains the Solar System.",
+      "domain": "astronomy"
+    },
+    {
+      "topic": "Mars",
+      "aliases": [
+        "what is mars",
+        "ce este marte"
+      ],
+      "answer": "Mars is the fourth planet from the Sun and a terrestrial planet.",
+      "domain": "astronomy"
+    },
+    {
+      "topic": "Jupiter",
+      "aliases": [
+        "what is jupiter",
+        "ce este jupiter"
+      ],
+      "answer": "Jupiter is the largest planet in the Solar System and a gas giant.",
+      "domain": "astronomy"
+    },
+    {
+      "topic": "Saturn",
+      "aliases": [
+        "what is saturn",
+        "ce este saturn"
+      ],
+      "answer": "Saturn is a gas giant known for its prominent ring system.",
+      "domain": "astronomy"
+    },
+    {
+      "topic": "Venus",
+      "aliases": [
+        "what is venus",
+        "ce este venus"
+      ],
+      "answer": "Venus is the second planet from the Sun and has a dense carbon-dioxide-rich atmosphere.",
+      "domain": "astronomy"
+    },
+    {
+      "topic": "Mercury",
+      "aliases": [
+        "what is mercury planet",
+        "ce este mercur planeta"
+      ],
+      "answer": "Mercury is the smallest and innermost planet of the Solar System.",
+      "domain": "astronomy"
+    },
+    {
+      "topic": "Neptune",
+      "aliases": [
+        "what is neptune",
+        "ce este neptun"
+      ],
+      "answer": "Neptune is the eighth and most distant recognized planet from the Sun.",
+      "domain": "astronomy"
+    },
+    {
+      "topic": "Earth orbit",
+      "aliases": [
+        "how long does earth orbit sun",
+        "earth orbital period"
+      ],
+      "answer": "Earth completes one orbit around the Sun in about 365.25 days.",
+      "domain": "astronomy"
+    },
+    {
+      "topic": "Moon orbit",
+      "aliases": [
+        "how long does moon orbit earth",
+        "moon orbital period"
+      ],
+      "answer": "The Moon's sidereal orbital period around Earth is about 27.3 days.",
+      "domain": "astronomy"
+    },
+    {
+      "topic": "Mars moons",
+      "aliases": [
+        "how many moons does mars have",
+        "mars moons"
+      ],
+      "answer": "Mars has two known natural satellites, Phobos and Deimos.",
+      "domain": "astronomy"
+    },
+    {
+      "topic": "Jupiter moons",
+      "aliases": [
+        "how many moons does jupiter have",
+        "jupiter moons"
+      ],
+      "answer": "Jupiter has many known natural satellites; the exact count can change as new small moons are confirmed.",
+      "domain": "astronomy"
+    },
+    {
+      "topic": "Saturn rings",
+      "aliases": [
+        "does saturn have rings",
+        "saturn rings"
+      ],
+      "answer": "Saturn has a prominent ring system made mainly of particles of water ice and rocky material.",
+      "domain": "astronomy"
+    },
+    {
+      "topic": "Venus rotation",
+      "aliases": [
+        "how long does venus rotate",
+        "venus day"
+      ],
+      "answer": "Venus rotates very slowly and in the opposite direction to most planets.",
+      "domain": "astronomy"
+    },
+    {
+      "topic": "Mars atmosphere",
+      "aliases": [
+        "what is mars atmosphere",
+        "mars atmosphere"
+      ],
+      "answer": "Mars has a thin atmosphere composed mostly of carbon dioxide.",
+      "domain": "astronomy"
+    },
+    {
+      "topic": "Asteroid",
+      "aliases": [
+        "what is an asteroid",
+        "ce este un asteroid"
+      ],
+      "answer": "An asteroid is a relatively small rocky or metallic Solar System body, many of which orbit the Sun.",
+      "domain": "astronomy"
+    },
+    {
+      "topic": "Comet",
+      "aliases": [
+        "what is a comet",
+        "ce este o cometa",
+        "ce este o cometă"
+      ],
+      "answer": "A comet is an icy Solar System body that can develop a coma and tail when heated near the Sun.",
+      "domain": "astronomy"
+    },
+    {
+      "topic": "Exoplanet",
+      "aliases": [
+        "what is an exoplanet",
+        "ce este o exoplaneta",
+        "ce este o exoplanetă"
+      ],
+      "answer": "An exoplanet is a planet outside our Solar System that orbits another star or, in some cases, a stellar remnant.",
+      "domain": "astronomy"
+    },
+    {
+      "topic": "Light year",
+      "aliases": [
+        "what is a light year",
+        "ce este un an lumina",
+        "ce este un an-lumină"
+      ],
+      "answer": "A light-year is a unit of distance equal to the distance light travels in vacuum in one Julian year.",
+      "domain": "astronomy"
+    },
+    {
+      "topic": "Parsec",
+      "aliases": [
+        "what is a parsec",
+        "ce este un parsec"
+      ],
+      "answer": "A parsec is an astronomical unit of distance defined through stellar parallax and equal to about 3.26 light-years.",
+      "domain": "astronomy"
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "version": 1,
+  "domain": "language",
+  "entries": [
+    {
+      "topic": "Noun",
+      "aliases": [
+        "what is a noun",
+        "ce este un substantiv"
+      ],
+      "answer": "A noun typically refers to a person, place, thing, concept or entity.",
+      "domain": "language"
+    },
+    {
+      "topic": "Verb",
+      "aliases": [
+        "what is a verb",
+        "ce este un verb"
+      ],
+      "answer": "A verb typically expresses an action, occurrence, state or relation.",
+      "domain": "language"
+    },
+    {
+      "topic": "Adjective",
+      "aliases": [
+        "what is an adjective",
+        "ce este un adjectiv"
+      ],
+      "answer": "An adjective typically modifies a noun or noun phrase by describing a property or quality.",
+      "domain": "language"
+    },
+    {
+      "topic": "Translation",
+      "aliases": [
+        "what is translation",
+        "ce este traducerea"
+      ],
+      "answer": "Translation expresses the meaning of a source text in another language.",
+      "domain": "language"
+    },
+    {
+      "topic": "Adverb",
+      "aliases": [
+        "what is an adverb",
+        "ce este un adverb"
+      ],
+      "answer": "An adverb commonly modifies a verb, adjective, another adverb or an entire clause.",
+      "domain": "language"
+    },
+    {
+      "topic": "Pronoun",
+      "aliases": [
+        "what is a pronoun",
+        "ce este un pronume"
+      ],
+      "answer": "A pronoun is a word or expression that can substitute for or refer to a noun phrase.",
+      "domain": "language"
+    },
+    {
+      "topic": "Preposition",
+      "aliases": [
+        "what is a preposition",
+        "ce este o prepozitie",
+        "ce este o prepoziție"
+      ],
+      "answer": "A preposition commonly expresses a relation between a following noun phrase and another part of a sentence.",
+      "domain": "language"
+    },
+    {
+      "topic": "Sentence",
+      "aliases": [
+        "what is a sentence grammar",
+        "ce este o propozitie",
+        "ce este o propoziție"
+      ],
+      "answer": "A sentence is a grammatical unit capable of expressing a complete proposition or speech act depending on context.",
+      "domain": "language"
+    },
+    {
+      "topic": "Alphabet",
+      "aliases": [
+        "what is an alphabet",
+        "ce este un alfabet"
+      ],
+      "answer": "An alphabet is a writing system using a set of symbols representing phonemes or related sound units.",
+      "domain": "language"
+    },
+    {
+      "topic": "Grammar",
+      "aliases": [
+        "what is grammar",
+        "ce este gramatica"
+      ],
+      "answer": "Grammar is the system of rules and patterns governing the structure of a language.",
+      "domain": "language"
+    }
+  ]
+}

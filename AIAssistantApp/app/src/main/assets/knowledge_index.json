@@ -1,0 +1,86 @@
+{
+  "version": 1,
+  "description": "AI Assistant offline knowledge datasets",
+  "datasets": [
+    {
+      "domain": "geography",
+      "file": "geography.json",
+      "entries": 61
+    },
+    {
+      "domain": "chemistry",
+      "file": "chemistry.json",
+      "entries": 37
+    },
+    {
+      "domain": "physics",
+      "file": "physics.json",
+      "entries": 19
+    },
+    {
+      "domain": "biology",
+      "file": "biology.json",
+      "entries": 18
+    },
+    {
+      "domain": "astronomy",
+      "file": "astronomy.json",
+      "entries": 24
+    },
+    {
+      "domain": "computing",
+      "file": "computing.json",
+      "entries": 28
+    },
+    {
+      "domain": "ai",
+      "file": "ai.json",
+      "entries": 11
+    },
+    {
+      "domain": "history",
+      "file": "history.json",
+      "entries": 6
+    },
+    {
+      "domain": "mathematics",
+      "file": "mathematics.json",
+      "entries": 15
+    },
+    {
+      "domain": "medicine",
+      "file": "medicine.json",
+      "entries": 0
+    },
+    {
+      "domain": "engineering",
+      "file": "engineering.json",
+      "entries": 0
+    },
+    {
+      "domain": "earth_science",
+      "file": "earth_science.json",
+      "entries": 12
+    },
+    {
+      "domain": "economics",
+      "file": "economics.json",
+      "entries": 7
+    },
+    {
+      "domain": "language",
+      "file": "language.json",
+      "entries": 10
+    },
+    {
+      "domain": "science",
+      "file": "science.json",
+      "entries": 16
+    },
+    {
+      "domain": "civics",
+      "file": "civics.json",
+      "entries": 6
+    }
+  ]
+}

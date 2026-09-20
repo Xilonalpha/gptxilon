@@ -1,0 +1,76 @@
+{
+  "version": 1,
+  "domain": "economics",
+  "entries": [
+    {
+      "topic": "Inflation",
+      "aliases": [
+        "what is inflation",
+        "ce este inflatia",
+        "ce este inflația"
+      ],
+      "answer": "Inflation is a sustained increase in the general price level of goods and services.",
+      "domain": "economics"
+    },
+    {
+      "topic": "GDP",
+      "aliases": [
+        "what does gdp stand for",
+        "what is gdp",
+        "ce inseamna pib",
+        "ce este pib"
+      ],
+      "answer": "GDP stands for Gross Domestic Product and measures the monetary value of final goods and services produced within an economy over a period.",
+      "domain": "economics"
+    },
+    {
+      "topic": "Supply and demand",
+      "aliases": [
+        "supply and demand",
+        "cerere si oferta",
+        "cerere și ofertă"
+      ],
+      "answer": "Supply and demand is an economic framework relating quantities offered and wanted to prices and other conditions.",
+      "domain": "economics"
+    },
+    {
+      "topic": "Market",
+      "aliases": [
+        "what is a market economics",
+        "ce este o piata economica",
+        "ce este o piață economică"
+      ],
+      "answer": "A market is an arrangement through which buyers and sellers exchange goods, services or assets.",
+      "domain": "economics"
+    },
+    {
+      "topic": "Interest rate",
+      "aliases": [
+        "what is an interest rate",
+        "ce este rata dobanzii",
+        "ce este rata dobânzii"
+      ],
+      "answer": "An interest rate is the price or return associated with borrowing or lending money, usually expressed per period.",
+      "domain": "economics"
+    },
+    {
+      "topic": "Unemployment",
+      "aliases": [
+        "what is unemployment",
+        "ce este somajul",
+        "ce este șomajul"
+      ],
+      "answer": "Unemployment refers to people without work who are available for work and seeking employment under the statistical definition used.",
+      "domain": "economics"
+    },
+    {
+      "topic": "Productivity",
+      "aliases": [
+        "what is economic productivity",
+        "ce este productivitatea"
+      ],
+      "answer": "Productivity measures output relative to inputs over a specified period.",
+      "domain": "economics"
+    }
+  ]
+}

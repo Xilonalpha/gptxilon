@@ -1,0 +1,190 @@
+{
+  "version": 1,
+  "domain": "physics",
+  "entries": [
+    {
+      "topic": "Gravity",
+      "aliases": [
+        "what is gravity",
+        "ce este gravitatia",
+        "ce este gravitația"
+      ],
+      "answer": "Gravity is the interaction associated with mass and energy that governs attraction and motion.",
+      "domain": "physics"
+    },
+    {
+      "topic": "Speed of light",
+      "aliases": [
+        "speed of light",
+        "viteza luminii"
+      ],
+      "answer": "The speed of light in vacuum is exactly 299,792,458 metres per second.",
+      "domain": "physics"
+    },
+    {
+      "topic": "Newton second law",
+      "aliases": [
+        "newton second law",
+        "second law of motion",
+        "a doua lege a lui newton"
+      ],
+      "answer": "Newton's second law relates net force, mass and acceleration as F = ma in its classical form.",
+      "domain": "physics"
+    },
+    {
+      "topic": "Energy conservation",
+      "aliases": [
+        "conservation of energy",
+        "conservarea energiei"
+      ],
+      "answer": "In an isolated system, total energy is conserved; it can change form but is not created or destroyed.",
+      "domain": "physics"
+    },
+    {
+      "topic": "Relativity",
+      "aliases": [
+        "what is relativity",
+        "ce este relativitatea"
+      ],
+      "answer": "Relativity describes relationships among space, time, motion and gravity.",
+      "domain": "physics"
+    },
+    {
+      "topic": "Quantum mechanics",
+      "aliases": [
+        "what is quantum mechanics",
+        "ce este mecanica cuantica",
+        "ce este mecanica cuantică"
+      ],
+      "answer": "Quantum mechanics is the physical theory used to describe matter and radiation at microscopic scales.",
+      "domain": "physics"
+    },
+    {
+      "topic": "Acceleration",
+      "aliases": [
+        "what is acceleration",
+        "ce este acceleratia",
+        "ce este accelerația"
+      ],
+      "answer": "Acceleration is the rate of change of velocity with respect to time.",
+      "domain": "physics"
+    },
+    {
+      "topic": "Velocity",
+      "aliases": [
+        "what is velocity",
+        "ce este viteza vectoriala",
+        "ce este viteza vectorială"
+      ],
+      "answer": "Velocity is the rate of change of position with respect to time and has both magnitude and direction.",
+      "domain": "physics"
+    },
+    {
+      "topic": "Force",
+      "aliases": [
+        "what is force physics",
+        "ce este forta in fizica",
+        "ce este forța în fizică"
+      ],
+      "answer": "Force is an interaction that can change an object's motion; its SI unit is the newton.",
+      "domain": "physics"
+    },
+    {
+      "topic": "Mass",
+      "aliases": [
+        "what is mass physics",
+        "ce este masa in fizica",
+        "ce este masa în fizică"
+      ],
+      "answer": "Mass is a measure of an object's inertia and contributes to its gravitational interaction.",
+      "domain": "physics"
+    },
+    {
+      "topic": "Momentum",
+      "aliases": [
+        "what is momentum physics",
+        "ce este impulsul fizic"
+      ],
+      "answer": "Linear momentum is the product of mass and velocity.",
+      "domain": "physics"
+    },
+    {
+      "topic": "Kinetic energy",
+      "aliases": [
+        "what is kinetic energy",
+        "ce este energia cinetica",
+        "ce este energia cinetică"
+      ],
+      "answer": "For a nonrelativistic particle, kinetic energy is 1/2 mv².",
+      "domain": "physics"
+    },
+    {
+      "topic": "Potential energy",
+      "aliases": [
+        "what is potential energy",
+        "ce este energia potentiala",
+        "ce este energia potențială"
+      ],
+      "answer": "Potential energy is energy associated with position, configuration or interactions within a system.",
+      "domain": "physics"
+    },
+    {
+      "topic": "Electric current",
+      "aliases": [
+        "what is electric current",
+        "ce este curentul electric"
+      ],
+      "answer": "Electric current is the rate at which electric charge flows through a surface.",
+      "domain": "physics"
+    },
+    {
+      "topic": "Voltage",
+      "aliases": [
+        "what is voltage",
+        "ce este tensiunea electrica",
+        "ce este tensiunea electrică"
+      ],
+      "answer": "Voltage is electric potential difference between two points.",
+      "domain": "physics"
+    },
+    {
+      "topic": "Resistance",
+      "aliases": [
+        "what is electrical resistance",
+        "ce este rezistenta electrica",
+        "ce este rezistența electrică"
+      ],
+      "answer": "Electrical resistance describes opposition to electric current; in an ohmic conductor V = IR.",
+      "domain": "physics"
+    },
+    {
+      "topic": "Frequency",
+      "aliases": [
+        "what is frequency physics",
+        "ce este frecventa",
+        "ce este frecvența"
+      ],
+      "answer": "Frequency is the number of cycles or repetitions per unit time.",
+      "domain": "physics"
+    },
+    {
+      "topic": "Wavelength",
+      "aliases": [
+        "what is wavelength",
+        "ce este lungimea de unda",
+        "ce este lungimea de undă"
+      ],
+      "answer": "Wavelength is the spatial period of a wave.",
+      "domain": "physics"
+    },
+    {
+      "topic": "Temperature",
+      "aliases": [
+        "what is temperature physics",
+        "ce este temperatura"
+      ],
+      "answer": "Temperature characterizes the thermal state of a system and is related to average microscopic energy.",
+      "domain": "physics"
+    }
+  ]
+}

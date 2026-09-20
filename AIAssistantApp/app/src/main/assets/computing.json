@@ -1,0 +1,271 @@
+{
+  "version": 1,
+  "domain": "computing",
+  "entries": [
+    {
+      "topic": "CPU",
+      "aliases": [
+        "what does cpu stand for",
+        "cpu meaning",
+        "ce inseamna cpu",
+        "ce înseamnă cpu"
+      ],
+      "answer": "CPU stands for Central Processing Unit.",
+      "domain": "computing"
+    },
+    {
+      "topic": "GPU",
+      "aliases": [
+        "what does gpu stand for",
+        "gpu meaning",
+        "ce inseamna gpu",
+        "ce înseamnă gpu"
+      ],
+      "answer": "GPU stands for Graphics Processing Unit.",
+      "domain": "computing"
+    },
+    {
+      "topic": "RAM",
+      "aliases": [
+        "what does ram stand for",
+        "ram meaning",
+        "ce inseamna ram",
+        "ce înseamnă ram"
+      ],
+      "answer": "RAM stands for Random Access Memory.",
+      "domain": "computing"
+    },
+    {
+      "topic": "ROM",
+      "aliases": [
+        "what does rom stand for computing",
+        "rom meaning computing"
+      ],
+      "answer": "ROM stands for Read-Only Memory.",
+      "domain": "computing"
+    },
+    {
+      "topic": "HTTP",
+      "aliases": [
+        "what does http stand for",
+        "http meaning",
+        "ce inseamna http",
+        "ce înseamnă http"
+      ],
+      "answer": "HTTP stands for Hypertext Transfer Protocol.",
+      "domain": "computing"
+    },
+    {
+      "topic": "HTTPS",
+      "aliases": [
+        "what does https stand for",
+        "https meaning"
+      ],
+      "answer": "HTTPS is HTTP protected by a cryptographic transport layer, normally TLS.",
+      "domain": "computing"
+    },
+    {
+      "topic": "JSON",
+      "aliases": [
+        "what is json",
+        "ce este json"
+      ],
+      "answer": "JSON is a text-based data interchange format for structured data.",
+      "domain": "computing"
+    },
+    {
+      "topic": "Algorithm",
+      "aliases": [
+        "what is an algorithm",
+        "ce este un algoritm"
+      ],
+      "answer": "An algorithm is a finite, defined procedure for solving a problem or performing a computation.",
+      "domain": "computing"
+    },
+    {
+      "topic": "Database",
+      "aliases": [
+        "what is a database",
+        "ce este o baza de date",
+        "ce este o bază de date"
+      ],
+      "answer": "A database is an organized collection of data managed so it can be stored, queried and updated.",
+      "domain": "computing"
+    },
+    {
+      "topic": "Operating system",
+      "aliases": [
+        "what is an operating system",
+        "ce este un sistem de operare"
+      ],
+      "answer": "An operating system manages computer hardware and provides services and interfaces for applications.",
+      "domain": "computing"
+    },
+    {
+      "topic": "Android",
+      "aliases": [
+        "what is android operating system",
+        "ce este android"
+      ],
+      "answer": "Android is a mobile operating system and software platform built around the Linux kernel and related components.",
+      "domain": "computing"
+    },
+    {
+      "topic": "Git",
+      "aliases": [
+        "what is git",
+        "ce este git"
+      ],
+      "answer": "Git is a distributed version-control system used to track changes to files and coordinate software development.",
+      "domain": "computing"
+    },
+    {
+      "topic": "GitHub",
+      "aliases": [
+        "what is github",
+        "ce este github"
+      ],
+      "answer": "GitHub is a platform for hosting and collaborating on software repositories and development workflows.",
+      "domain": "computing"
+    },
+    {
+      "topic": "URL",
+      "aliases": [
+        "what is a url",
+        "ce este un url"
+      ],
+      "answer": "A URL is a Uniform Resource Locator identifying the location or access method of a resource.",
+      "domain": "computing"
+    },
+    {
+      "topic": "DNS",
+      "aliases": [
+        "what is dns",
+        "ce este dns"
+      ],
+      "answer": "DNS is the Domain Name System, which maps domain names to network information such as IP addresses.",
+      "domain": "computing"
+    },
+    {
+      "topic": "IP address",
+      "aliases": [
+        "what is an ip address",
+        "ce este o adresa ip",
+        "ce este o adresă ip"
+      ],
+      "answer": "An IP address identifies a network interface or endpoint using an Internet Protocol addressing scheme.",
+      "domain": "computing"
+    },
+    {
+      "topic": "IPv4",
+      "aliases": [
+        "what is ipv4",
+        "ce este ipv4"
+      ],
+      "answer": "IPv4 uses 32-bit addresses, conventionally written as four decimal octets.",
+      "domain": "computing"
+    },
+    {
+      "topic": "IPv6",
+      "aliases": [
+        "what is ipv6",
+        "ce este ipv6"
+      ],
+      "answer": "IPv6 uses 128-bit addresses and was designed to expand Internet address space.",
+      "domain": "computing"
+    },
+    {
+      "topic": "TCP",
+      "aliases": [
+        "what is tcp",
+        "what does tcp stand for",
+        "ce este tcp"
+      ],
+      "answer": "TCP stands for Transmission Control Protocol and provides reliable, ordered byte-stream delivery.",
+      "domain": "computing"
+    },
+    {
+      "topic": "UDP",
+      "aliases": [
+        "what is udp",
+        "what does udp stand for",
+        "ce este udp"
+      ],
+      "answer": "UDP stands for User Datagram Protocol and provides connectionless datagram transport without TCP-style reliability guarantees.",
+      "domain": "computing"
+    },
+    {
+      "topic": "API",
+      "aliases": [
+        "what is an api",
+        "ce este un api"
+      ],
+      "answer": "An API is an Application Programming Interface defining how software components can interact.",
+      "domain": "computing"
+    },
+    {
+      "topic": "Compiler",
+      "aliases": [
+        "what is a compiler",
+        "ce este un compilator"
+      ],
+      "answer": "A compiler translates source code into another representation, often machine code or an intermediate form.",
+      "domain": "computing"
+    },
+    {
+      "topic": "Programming language",
+      "aliases": [
+        "what is a programming language",
+        "ce este un limbaj de programare"
+      ],
+      "answer": "A programming language is a formal language used to express computations and algorithms.",
+      "domain": "computing"
+    },
+    {
+      "topic": "Kotlin",
+      "aliases": [
+        "what is kotlin programming language",
+        "ce este kotlin"
+      ],
+      "answer": "Kotlin is a statically typed programming language developed by JetBrains and widely used for Android development.",
+      "domain": "computing"
+    },
+    {
+      "topic": "Java",
+      "aliases": [
+        "what is java programming language",
+        "ce este java"
+      ],
+      "answer": "Java is a statically typed programming language and runtime ecosystem used for many kinds of software.",
+      "domain": "computing"
+    },
+    {
+      "topic": "Python",
+      "aliases": [
+        "what is python programming language",
+        "ce este python"
+      ],
+      "answer": "Python is a high-level general-purpose programming language emphasizing readability and a broad standard library.",
+      "domain": "computing"
+    },
+    {
+      "topic": "Git commit",
+      "aliases": [
+        "what is a git commit",
+        "ce este un commit git"
+      ],
+      "answer": "A Git commit records a snapshot of tracked project changes in a repository history.",
+      "domain": "computing"
+    },
+    {
+      "topic": "Git branch",
+      "aliases": [
+        "what is a git branch",
+        "ce este o ramura git",
+        "ce este o ramură git"
+      ],
+      "answer": "A Git branch is a movable reference to commits used to develop an independent line of work.",
+      "domain": "computing"
+    }
+  ]
+}

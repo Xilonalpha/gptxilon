@@ -1,0 +1,151 @@
+{
+  "version": 1,
+  "domain": "mathematics",
+  "entries": [
+    {
+      "topic": "Pi",
+      "aliases": [
+        "what is pi",
+        "valoarea lui pi",
+        "pi number"
+      ],
+      "answer": "π is the ratio of a circle's circumference to its diameter; approximately 3.141592653589793.",
+      "domain": "mathematics"
+    },
+    {
+      "topic": "Prime number",
+      "aliases": [
+        "what is a prime number",
+        "ce este un numar prim",
+        "ce este un număr prim"
+      ],
+      "answer": "A prime number is an integer greater than 1 with exactly two positive divisors: 1 and itself.",
+      "domain": "mathematics"
+    },
+    {
+      "topic": "Pythagorean theorem",
+      "aliases": [
+        "pythagorean theorem",
+        "teorema lui pitagora"
+      ],
+      "answer": "For a right triangle, a² + b² = c².",
+      "domain": "mathematics"
+    },
+    {
+      "topic": "Derivative",
+      "aliases": [
+        "what is a derivative calculus",
+        "ce este derivata"
+      ],
+      "answer": "A derivative measures the instantaneous rate of change of a function with respect to its variable.",
+      "domain": "mathematics"
+    },
+    {
+      "topic": "Integral",
+      "aliases": [
+        "what is an integral calculus",
+        "ce este o integrala",
+        "ce este o integrală"
+      ],
+      "answer": "An integral represents accumulation and, under appropriate conditions, is related to an antiderivative by the fundamental theorem of calculus.",
+      "domain": "mathematics"
+    },
+    {
+      "topic": "Zero",
+      "aliases": [
+        "what is zero mathematics",
+        "ce este zero"
+      ],
+      "answer": "Zero is the integer representing no quantity and is the additive identity.",
+      "domain": "mathematics"
+    },
+    {
+      "topic": "Negative number",
+      "aliases": [
+        "what is a negative number",
+        "ce este un numar negativ",
+        "ce este un număr negativ"
+      ],
+      "answer": "A negative number is a real number less than zero.",
+      "domain": "mathematics"
+    },
+    {
+      "topic": "Fraction",
+      "aliases": [
+        "what is a fraction",
+        "ce este o fractie",
+        "ce este o fracție"
+      ],
+      "answer": "A fraction represents a quotient of integers, with a numerator and nonzero denominator.",
+      "domain": "mathematics"
+    },
+    {
+      "topic": "Percentage",
+      "aliases": [
+        "what is a percentage",
+        "ce este procentul"
+      ],
+      "answer": "A percentage is a number expressed as a fraction of 100.",
+      "domain": "mathematics"
+    },
+    {
+      "topic": "Mean",
+      "aliases": [
+        "what is arithmetic mean",
+        "ce este media aritmetica",
+        "ce este media aritmetică"
+      ],
+      "answer": "The arithmetic mean is the sum of values divided by the number of values.",
+      "domain": "mathematics"
+    },
+    {
+      "topic": "Median",
+      "aliases": [
+        "what is median statistics",
+        "ce este mediana statistica",
+        "ce este mediana statistică"
+      ],
+      "answer": "The median is the middle value of an ordered dataset, with standard conventions for even-sized datasets.",
+      "domain": "mathematics"
+    },
+    {
+      "topic": "Probability",
+      "aliases": [
+        "what is probability",
+        "ce este probabilitatea"
+      ],
+      "answer": "Probability is a mathematical measure of uncertainty about events, conventionally ranging from 0 to 1.",
+      "domain": "mathematics"
+    },
+    {
+      "topic": "Set",
+      "aliases": [
+        "what is a set mathematics",
+        "ce este o multime matematica",
+        "ce este o mulțime matematică"
+      ],
+      "answer": "A set is a collection of distinct objects considered as a mathematical object.",
+      "domain": "mathematics"
+    },
+    {
+      "topic": "Equation",
+      "aliases": [
+        "what is an equation",
+        "ce este o ecuatie",
+        "ce este o ecuație"
+      ],
+      "answer": "An equation is a statement that two expressions have equal values.",
+      "domain": "mathematics"
+    },
+    {
+      "topic": "Function",
+      "aliases": [
+        "what is a function mathematics",
+        "ce este o functie",
+        "ce este o funcție"
+      ],
+      "answer": "A function assigns each allowed input exactly one output.",
+      "domain": "mathematics"
+    }
+  ]
+}

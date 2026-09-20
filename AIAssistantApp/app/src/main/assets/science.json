@@ -1,0 +1,160 @@
+{
+  "version": 1,
+  "domain": "science",
+  "entries": [
+    {
+      "topic": "Scientific method",
+      "aliases": [
+        "what is the scientific method",
+        "ce este metoda stiintifica",
+        "ce este metoda științifică"
+      ],
+      "answer": "The scientific method uses observation, measurement, hypotheses, predictions and empirical checks to evaluate explanations.",
+      "domain": "science"
+    },
+    {
+      "topic": "Hypothesis",
+      "aliases": [
+        "what is a hypothesis",
+        "ce este o ipoteza",
+        "ce este o ipoteză"
+      ],
+      "answer": "A hypothesis is a proposed explanation or prediction that can be tested against evidence.",
+      "domain": "science"
+    },
+    {
+      "topic": "Theory",
+      "aliases": [
+        "what is a scientific theory",
+        "ce este o teorie stiintifica",
+        "ce este o teorie științifică"
+      ],
+      "answer": "In science, a theory is a well-supported explanatory framework that accounts for observations and makes testable predictions.",
+      "domain": "science"
+    },
+    {
+      "topic": "Evidence",
+      "aliases": [
+        "what is evidence",
+        "ce este o dovada",
+        "ce este o dovadă"
+      ],
+      "answer": "Evidence is information or observations used to support, challenge or evaluate a claim.",
+      "domain": "science"
+    },
+    {
+      "topic": "Observation",
+      "aliases": [
+        "what is scientific observation",
+        "ce este observatia stiintifica",
+        "ce este observația științifică"
+      ],
+      "answer": "Scientific observation is systematic collection of information about phenomena using senses or instruments.",
+      "domain": "science"
+    },
+    {
+      "topic": "Experiment",
+      "aliases": [
+        "what is an experiment science",
+        "ce este un experiment stiintific",
+        "ce este un experiment științific"
+      ],
+      "answer": "A scientific experiment is a controlled or structured investigation designed to test hypotheses or measure effects.",
+      "domain": "science"
+    },
+    {
+      "topic": "Measurement",
+      "aliases": [
+        "what is scientific measurement",
+        "ce este masurarea stiintifica",
+        "ce este măsurarea științifică"
+      ],
+      "answer": "Measurement assigns values to properties according to defined procedures and units.",
+      "domain": "science"
+    },
+    {
+      "topic": "Uncertainty",
+      "aliases": [
+        "what is measurement uncertainty",
+        "ce este incertitudinea masurarii",
+        "ce este incertitudinea măsurării"
+      ],
+      "answer": "Measurement uncertainty describes the range of values reasonably associated with a measured quantity.",
+      "domain": "science"
+    },
+    {
+      "topic": "Correlation",
+      "aliases": [
+        "what is correlation statistics",
+        "ce este corelatia statistica",
+        "ce este corelația statistică"
+      ],
+      "answer": "Correlation describes statistical association between variables and does not by itself establish causation.",
+      "domain": "science"
+    },
+    {
+      "topic": "Causation",
+      "aliases": [
+        "what is causation",
+        "ce este cauzalitatea"
+      ],
+      "answer": "Causation means that a change in one factor contributes to producing a change in another under specified conditions.",
+      "domain": "science"
+    },
+    {
+      "topic": "Metre",
+      "aliases": [
+        "what is a metre",
+        "what is a meter si unit",
+        "ce este metrul"
+      ],
+      "answer": "The metre is the SI base unit of length.",
+      "domain": "science"
+    },
+    {
+      "topic": "Kilogram",
+      "aliases": [
+        "what is a kilogram",
+        "ce este kilogramul"
+      ],
+      "answer": "The kilogram is the SI base unit of mass.",
+      "domain": "science"
+    },
+    {
+      "topic": "Second",
+      "aliases": [
+        "what is a second si unit",
+        "ce este secunda"
+      ],
+      "answer": "The second is the SI base unit of time.",
+      "domain": "science"
+    },
+    {
+      "topic": "Ampere",
+      "aliases": [
+        "what is an ampere",
+        "ce este amperul"
+      ],
+      "answer": "The ampere is the SI base unit of electric current.",
+      "domain": "science"
+    },
+    {
+      "topic": "Kelvin",
+      "aliases": [
+        "what is a kelvin",
+        "ce este kelvinul"
+      ],
+      "answer": "The kelvin is the SI base unit of thermodynamic temperature.",
+      "domain": "science"
+    },
+    {
+      "topic": "Candela",
+      "aliases": [
+        "what is a candela",
+        "ce este candela"
+      ],
+      "answer": "The candela is the SI base unit of luminous intensity.",
+      "domain": "science"
+    }
+  ]
+}
