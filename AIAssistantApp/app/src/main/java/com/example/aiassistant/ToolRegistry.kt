@@ -10,7 +10,7 @@ object ToolRegistry {
         Tool("time", "timp și date", { if (TimeEngine.canHandle(it)) TimeEngine.answer(it) else null }),
         Tool("logic", "logică numerică", { if (LogicEngine.canHandle(it)) LogicEngine.answer(it) else null }),
         Tool("symbolic-math", "ecuații liniare", { if (SymbolicMathEngine.canHandle(it)) SymbolicMathEngine.answer(it) else null }),
-        Tool("knowledge", "cunoștințe locale", { if (KnowledgeEngine.canHandle(it)) KnowledgeEngine.answer(it) else null }),
+        Tool("knowledge", "cunoștințe locale", { LocalKnowledgeBase.answer(it) }),
         Tool("text", "analiză text", { if (TextAnalysisEngine.canHandle(it)) TextAnalysisEngine.analyze(it) else null })
     )
 

@@ -180,7 +180,7 @@ object OfflineBrain {
                 "time"->if(TimeEngine.canHandle(input))TimeEngine.answer(input)else null
                 "logic"->if(LogicEngine.canHandle(input))LogicEngine.answer(input)else null
                 "text"->if(TextAnalysisEngine.canHandle(input))TextAnalysisEngine.analyze(input)else null
-                "knowledge"->if(KnowledgeEngine.canHandle(input))KnowledgeEngine.answer(input)else null
+                "knowledge"->LocalKnowledgeBase.answer(input)
                 "statistics"->if(StatisticsEngine.canHandle(input))StatisticsEngine.answer(input)else null
                 else->null
             }
@@ -201,10 +201,26 @@ object OfflineBrain {
 
     private fun seedEvidence(p:CognitiveProblem){
         if(p.originalInput.isNotBlank())p.evidence+=Evidence(p.originalInput.take(1200),EvidenceState.EXPLICIT,"user-input")
-        if(KnowledgeEngine.canHandle(p.originalInput))p.evidence+=Evidence(KnowledgeEngine.answer(p.originalInput).take(1200),EvidenceState.KNOWN,"local-knowledge")
+        val localEntry = LocalKnowledgeBase.lookup(p.originalInput)
+
+        if (localEntry != null) {
+            p.evidence += Evidence(
+                localEntry.answer.take(1200),
+                EvidenceState.KNOWN,
+                "local-knowledge:${localEntry.domain}"
+            )
+        }
+
         val memory=SemanticMemoryEngine.recall(p.originalInput,3)
         memory.forEach{p.evidence+=Evidence("Potrivire semantică: ${it.text.take(300)}",EvidenceState.ASSUMED,"semantic-memory")}
-        if(memory.isEmpty()&&!KnowledgeEngine.canHandle(p.originalInput))p.evidence+=Evidence("Nu există încă dovadă locală suficientă pentru afirmațiile externe.",EvidenceState.UNKNOWN,"offline-boundary")
+
+        if(memory.isEmpty() && localEntry == null) {
+            p.evidence += Evidence(
+                "Nu există încă dovadă locală suficientă pentru afirmațiile externe.",
+                EvidenceState.UNKNOWN,
+                "offline-boundary"
+            )
+        }
         listOf("trebuie" to "obiectiv obligatoriu","fără" to "restricție explicită","fara" to "restricție explicită","doar" to "restricție de exclusivitate","înainte" to "ordine temporală","dupa" to "ordine temporală","după" to "ordine temporală").forEach{if(p.normalizedInput.contains(it.first))p.constraints+=it.second}
     }
 

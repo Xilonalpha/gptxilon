@@ -21,7 +21,7 @@ object IntentEngine {
         if (listOf("verifică", "verifica", "contradicție", "contradictie", "este adevărat", "este adevarat", "dovadă", "dovada").any { s.contains(it) }) add(Type.VERIFICATION, 85, "verification")
         if (listOf("planifică", "planifica", "pașii", "pasii", "cum pot să", "cum pot sa", "strategie").any { s.contains(it) }) add(Type.PLANNING, 80, "planning")
         if (listOf("ce este", "ce înseamnă", "ce inseamna", "explică", "explica", "cum funcționează", "cum functioneaza").any { s.contains(it) }) add(Type.EXPLANATION, 65, "explanation")
-        if (KnowledgeEngine.canHandle(input)) add(Type.KNOWLEDGE, 75, "local-knowledge")
+        if (LocalKnowledgeBase.canHandle(input)) add(Type.KNOWLEDGE, 90, "local-knowledge")
         if (scores.values.maxOrNull() == null || scores.values.maxOrNull() == 0) return Result(Type.UNKNOWN, 0, emptyList())
         val best = scores.maxByOrNull { it.value }!!
         return Result(best.key, best.value.coerceAtMost(99), scores.filterValues { it > 0 }.keys.map { it.name.lowercase() })
