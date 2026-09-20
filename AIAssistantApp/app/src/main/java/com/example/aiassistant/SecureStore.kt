@@ -39,9 +39,6 @@ class SecureStore(context: Context) {
         prefs.edit().remove("v").apply()
     }
 
-    fun clear() {
-        prefs.edit().remove("v").apply()
-    }
 
     fun get(): String {
         val raw = prefs.getString("v", null) ?: return ""
