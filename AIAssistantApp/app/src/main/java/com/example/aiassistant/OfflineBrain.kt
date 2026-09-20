@@ -135,6 +135,16 @@ object OfflineBrain {
             IntentEngine.Type.VERIFICATION->return Execution(VerificationEngine.answer(input),listOf("verification"),82)
             else->Unit
         }
+
+        val swarm = AutonomousAgentSwarmEngine.run(input,p.intent.type)
+        if (swarm.handled) {
+            return Execution(
+                swarm.answer,
+                swarm.agents.map { "agent:${it.capability}" }.distinct(),
+                swarm.confidence
+            )
+        }
+
         if (plan.tools.contains("semantic-memory")) {
             val memory=SemanticMemoryEngine.recall(input)
             if(memory.isNotEmpty()) {
