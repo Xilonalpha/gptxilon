@@ -73,6 +73,24 @@ object AutonomousAgentSwarmEngine {
             return Result(false, "", emptyList(), coverage(), 0)
         }
 
+        /*
+         * Deterministic English math/conversion must execute before
+         * local knowledge, tools or semantic memory. This prevents
+         * generic knowledge matches (for example pH) from hijacking
+         * arithmetic and conversion questions.
+         */
+        val deterministic = deterministicEnglishMath(input)
+
+        if (!deterministic.isNullOrBlank()) {
+            return Result(
+                handled = true,
+                answer = deterministic,
+                agents = emptyList(),
+                coverage = coverage(),
+                confidence = 95
+            )
+        }
+
         val selected = selectAgents(input, intent)
         if (selected.isEmpty()) {
             return Result(false, "", emptyList(), coverage(), 0)
@@ -218,6 +236,73 @@ object AutonomousAgentSwarmEngine {
             coverage(),
             reflection.score.coerceIn(5, 98)
         )
+    }
+
+    private fun deterministicEnglishMath(input: String): String? {
+        val q = input.trim().lowercase(Locale.ROOT)
+
+        val number = """([0-9]+(?:\.[0-9]+)?)"""
+
+        // X% of Y
+        Regex(
+            """^\s*(?:what is\s+)?$number\s*%\s*(?:of|from)\s*$number\s*\??\s*$"""
+        ).matchEntire(q)?.let { m ->
+            val percent = m.groupValues[1].toDouble()
+            val base = m.groupValues[2].toDouble()
+            val result = percent * base / 100.0
+            return "The answer is ${formatNumber(result)}."
+        }
+
+        // Natural English miles -> kilometers conversion
+        Regex(
+            """^\s*(?:how many\s+)?kilometers\s+(?:are\s+)?in\s+$number\s+miles\s*\??\s*$"""
+        ).matchEntire(q)?.let { m ->
+            val miles = m.groupValues[1].toDouble()
+            val km = miles * 1.609344
+            return "${formatNumber(miles)} miles is approximately ${formatNumber(km)} kilometers."
+        }
+
+        Regex(
+            """^\s*how many\s+kilometers\s+are\s+there\s+in\s+$number\s+miles\s*\??\s*$"""
+        ).matchEntire(q)?.let { m ->
+            val miles = m.groupValues[1].toDouble()
+            val km = miles * 1.609344
+            return "${formatNumber(miles)} miles is approximately ${formatNumber(km)} kilometers."
+        }
+
+        // Basic English arithmetic: +, -, x, ×, *, /, ÷
+        Regex(
+            """^\s*(?:what is\s+)?$number\s*([+\-×x*/÷])\s*$number\s*\??\s*$"""
+        ).matchEntire(q)?.let { m ->
+            val a = m.groupValues[1].toDouble()
+            val op = m.groupValues[2]
+            val b = m.groupValues[3].toDouble()
+
+            val result = when (op) {
+                "+" -> a + b
+                "-" -> a - b
+                "x", "×", "*" -> a * b
+                "/", "÷" -> {
+                    if (b == 0.0) return null
+                    a / b
+                }
+                else -> return null
+            }
+
+            return "The answer is ${formatNumber(result)}."
+        }
+
+        return null
+    }
+
+    private fun formatNumber(value: Double): String {
+        if (value == value.toLong().toDouble()) {
+            return value.toLong().toString()
+        }
+
+        return "%.10f".format(Locale.ROOT, value)
+            .trimEnd('0')
+            .trimEnd('.')
     }
 
     /**
