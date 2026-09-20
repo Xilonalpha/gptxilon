@@ -367,6 +367,32 @@
       ],
       "answer": "The mole is the SI base unit for amount of substance.",
       "domain": "chemistry"
+    },
+    {
+      "topic": "which element has symbol au",
+      "aliases": [
+        "which element has the symbol au",
+        "which element has symbol au",
+        "what element has the symbol au",
+        "what element has symbol au",
+        "element with symbol au",
+        "element whose symbol is au"
+      ],
+      "answer": "The element with the symbol Au is gold.",
+      "domain": "chemistry"
+    },
+    {
+      "topic": "what is formula water",
+      "aliases": [
+        "what is the formula for water",
+        "what is formula for water",
+        "water formula",
+        "formula for water",
+        "chemical formula of water",
+        "what is the chemical formula of water"
+      ],
+      "answer": "The chemical formula for water is H₂O.",
+      "domain": "chemistry"
     }
   ]
 }
