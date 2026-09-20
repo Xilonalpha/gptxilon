@@ -121,13 +121,6 @@ object OfflineBrain {
 
     private fun execute(p:CognitiveProblem,plan:Plan,cycle:Int):Execution{
         val input=p.originalInput
-        if (ConversationEngine.canHandle(input)) {
-            return Execution(
-                ConversationEngine.answer(input),
-                listOf("conversation"),
-                95
-            )
-        }
         /*
          * Autonomous Agent Swarm is the central execution layer.
          *
