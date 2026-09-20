@@ -363,7 +363,12 @@ object AutonomousAgentSwarmEngine {
          * Local dialogue and deterministic factual knowledge have priority.
          * They must be evaluated before generic verification/reasoning agents.
          */
-        if (DialogueEngine.canHandle(input)) {
+        val dialogueHandled = DialogueEngine.canHandle(input)
+
+        if (dialogueHandled) {
+            // DialogueEngine is the single owner of conversational replies.
+            // Do not also activate ConversationEngine for the same input,
+            // otherwise both engines return a greeting/identity response.
             requested += "dialogue"
         }
 
@@ -433,7 +438,9 @@ object AutonomousAgentSwarmEngine {
                 )
 
             IntentEngine.Type.CONVERSATION ->
-                requested += "conversation"
+                if (!dialogueHandled) {
+                    requested += "conversation"
+                }
 
             else ->
                 requested += listOf(
