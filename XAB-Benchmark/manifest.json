@@ -1,11 +1,40 @@
 {
   "benchmark": "XAB-1",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "system_under_test": "Xilon AI Assistant",
-  "isolation": {"assistant_source_modified": false, "assistant_path": "AIAssistantApp/", "benchmark_path": "XAB-Benchmark/"},
-  "categories": ["factuality", "research", "web", "reasoning", "coding", "memory", "agentic"],
+  "isolation": {
+    "assistant_source_modified": false,
+    "assistant_path": "AIAssistantApp/",
+    "benchmark_path": "XAB-Benchmark/"
+  },
+  "categories": [
+    "factuality",
+    "research",
+    "web",
+    "reasoning",
+    "coding",
+    "memory",
+    "agentic"
+  ],
   "cases": 35,
   "cases_per_category": 5,
   "scoring": "0-2 per case, normalized to 100",
-  "official_run_policy": {"fresh_session_per_case": true, "repetitions_recommended": 3, "preserve_raw_outputs": true, "freeze_benchmark_commit": true}
+  "official_run_policy": {
+    "fresh_session_per_independent_case": true,
+    "memory_sequence_groups": [
+      {
+        "name": "memory-orbit",
+        "cases": [
+          "MEM-001",
+          "MEM-002",
+          "MEM-003"
+        ],
+        "same_session": true,
+        "ordered": true
+      }
+    ],
+    "repetitions_recommended": 3,
+    "preserve_raw_outputs": true,
+    "freeze_benchmark_commit": true
+  }
 }

@@ -1,15 +1,48 @@
 name: XAB-1 Benchmark Validation
+
 on:
   push:
-    paths: ['XAB-Benchmark/**']
+    paths:
+      - 'XAB-Benchmark/**'
   pull_request:
-    paths: ['XAB-Benchmark/**']
+    paths:
+      - 'XAB-Benchmark/**'
   workflow_dispatch:
+
 jobs:
   validate:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: python -m json.tool XAB-Benchmark/manifest.json >/dev/null && python -m json.tool XAB-Benchmark/cases.json >/dev/null
-      - run: python XAB-Benchmark/runner.py --outputs XAB-Benchmark/example-outputs.jsonl --out /tmp/xab-report.json
-      - run: test -s /tmp/xab-report.json
+        with:
+          fetch-depth: 0
+
+      - name: Verify Assistant isolation
+        shell: bash
+        run: |
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            git diff --exit-code "${{ github.event.pull_request.base.sha }}...${{ github.event.pull_request.head.sha }}" -- AIAssistantApp
+          else
+            git diff --exit-code HEAD^ HEAD -- AIAssistantApp
+          fi
+
+      - name: Validate benchmark JSON
+        run: |
+          python -m json.tool XAB-Benchmark/manifest.json >/dev/null
+          python -m json.tool XAB-Benchmark/cases.json >/dev/null
+
+      - name: Validate runner behavior
+        run: |
+          python XAB-Benchmark/runner.py \
+            --outputs XAB-Benchmark/example-outputs.jsonl \
+            --out /tmp/xab-report.json
+          test -s /tmp/xab-report.json
+          python - <<'PY'
+          import json
+          report = json.load(open('/tmp/xab-report.json', encoding='utf-8'))
+          assert report['overall']['cases'] == 35
+          assert report['overall']['scored_cases'] == 2
+          assert report['overall']['score'] is None
+          assert len(report['overall']['missing_case_ids']) == 33
+          print('XAB-1 validation passed')
+          PY

@@ -231,7 +231,8 @@
     "criteria": [
       "Returns ORBIT-17.",
       "Does not invent additional memory."
-    ]
+    ],
+    "session_group": "memory-orbit"
   },
   {
     "id": "MEM-002",
@@ -240,7 +241,8 @@
     "criteria": [
       "Retrieves ORBIT-17.",
       "Does not substitute another value."
-    ]
+    ],
+    "session_group": "memory-orbit"
   },
   {
     "id": "MEM-003",
@@ -249,7 +251,8 @@
     "criteria": [
       "Updates to ORBIT-18.",
       "Does not keep the obsolete value as current."
-    ]
+    ],
+    "session_group": "memory-orbit"
   },
   {
     "id": "MEM-004",
