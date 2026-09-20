@@ -121,6 +121,13 @@ object OfflineBrain {
 
     private fun execute(p:CognitiveProblem,plan:Plan,cycle:Int):Execution{
         val input=p.originalInput
+        if (ConversationEngine.canHandle(input)) {
+            return Execution(
+                ConversationEngine.answer(input),
+                listOf("conversation"),
+                95
+            )
+        }
         when(p.intent.type){
             IntentEngine.Type.CAUSAL->{val r=CausalReasoningEngine.answer(input);if(r.handled)return Execution(r.answer,listOf("causal"),r.confidence)}
             IntentEngine.Type.HYPOTHESIS->{val r=HypothesisEngine.generate(input);if(r.handled){p.hypotheses.clear();p.hypotheses.addAll(r.hypotheses.map{it.text});return Execution(r.answer,listOf("hypothesis"),68)}}
