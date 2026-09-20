@@ -168,7 +168,13 @@ class MainActivity : AppCompatActivity() {
                                 toast("⚠️ Cheia Gemini nu este validă/acceptată. Am trecut automat pe motorul local.")
                             }
 
-                            if (plan.useWeb) {
+                            if (LocalKnowledgeBase.canHandle(text) || DialogueEngine.canHandle(text)) {
+                                AiResponse(
+                                    OfflineBrain.reply(text),
+                                    emptyList(),
+                                    0
+                                )
+                            } else if (plan.useWeb) {
                                 val report = researchEngine.research(text, plan.deep)
                                 collectedEvidence.addAll(report.evidence)
 
@@ -189,7 +195,13 @@ class MainActivity : AppCompatActivity() {
                         }
                     }
                 } else {
-                    if (plan.useWeb) {
+                    if (LocalKnowledgeBase.canHandle(text) || DialogueEngine.canHandle(text)) {
+                        AiResponse(
+                            OfflineBrain.reply(text),
+                            emptyList(),
+                            0
+                        )
+                    } else if (plan.useWeb) {
                         val report = researchEngine.research(text, plan.deep)
                         collectedEvidence.addAll(report.evidence)
 
