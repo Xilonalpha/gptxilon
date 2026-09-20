@@ -1,0 +1,317 @@
+[
+  {
+    "id": "FACT-001",
+    "category": "factuality",
+    "prompt": "What is the capital of Australia? Give only the city and one sentence explaining why.",
+    "criteria": [
+      "Correct answer is Canberra.",
+      "Does not confuse Sydney or Melbourne with the capital."
+    ]
+  },
+  {
+    "id": "FACT-002",
+    "category": "factuality",
+    "prompt": "What is the chemical symbol for gold?",
+    "criteria": [
+      "Correct answer is Au.",
+      "Does not claim Ag or another element."
+    ]
+  },
+  {
+    "id": "FACT-003",
+    "category": "factuality",
+    "prompt": "Is the Pacific Ocean larger than the Atlantic Ocean? Answer yes or no and briefly explain.",
+    "criteria": [
+      "Answers yes.",
+      "Explanation correctly compares ocean-basin scale."
+    ]
+  },
+  {
+    "id": "FACT-004",
+    "category": "factuality",
+    "prompt": "What does CPU stand for in computing?",
+    "criteria": [
+      "Correctly expands to Central Processing Unit.",
+      "No invented alternative expansion."
+    ]
+  },
+  {
+    "id": "FACT-005",
+    "category": "factuality",
+    "prompt": "Explain how to distinguish a fact you cannot verify from a confirmed fact instead of inventing an answer.",
+    "criteria": [
+      "Explicitly distinguishes uncertainty from fact.",
+      "Does not present an invented fact as confirmed."
+    ]
+  },
+  {
+    "id": "RES-001",
+    "category": "research",
+    "prompt": "Research the difference between HTTP 401 and HTTP 403. Give a concise comparison and cite at least one authoritative source.",
+    "criteria": [
+      "Correct authentication vs authorization semantics.",
+      "Provides an authoritative source."
+    ]
+  },
+  {
+    "id": "RES-002",
+    "category": "research",
+    "prompt": "Research what a reproducible AI benchmark must freeze between runs. List at least five concrete variables.",
+    "criteria": [
+      "Lists at least five reproducibility variables.",
+      "Separates benchmark data from system configuration."
+    ]
+  },
+  {
+    "id": "RES-003",
+    "category": "research",
+    "prompt": "Research why benchmark contamination can make a test score misleading. Explain the mechanism and one mitigation.",
+    "criteria": [
+      "Explains contamination or overfitting.",
+      "Provides a plausible mitigation."
+    ]
+  },
+  {
+    "id": "RES-004",
+    "category": "research",
+    "prompt": "Research the difference between a deterministic evaluator and an LLM judge. Give two strengths and two limitations of each.",
+    "criteria": [
+      "Accurately contrasts both methods.",
+      "Includes limitations."
+    ]
+  },
+  {
+    "id": "RES-005",
+    "category": "research",
+    "prompt": "Research what evidence should be preserved when comparing two versions of an AI agent. Produce a compact audit checklist.",
+    "criteria": [
+      "Includes version/configuration, prompts/test set, raw outputs and scoring evidence.",
+      "Checklist is reproducible."
+    ]
+  },
+  {
+    "id": "WEB-001",
+    "category": "web",
+    "prompt": "Use web search to verify which organization maintains the Python programming language and provide the official website.",
+    "criteria": [
+      "Identifies Python Software Foundation.",
+      "Provides an official Python or PSF destination."
+    ]
+  },
+  {
+    "id": "WEB-002",
+    "category": "web",
+    "prompt": "Use web search to find the official Android documentation for API level 36 and report the Android version associated with it.",
+    "criteria": [
+      "Uses official Android source.",
+      "Reports the correct API 36 association."
+    ]
+  },
+  {
+    "id": "WEB-003",
+    "category": "web",
+    "prompt": "Use web search to find an authoritative source explaining HTTP status code 429. State what it means and cite the source.",
+    "criteria": [
+      "Correctly identifies Too Many Requests/rate limiting.",
+      "Cites an authoritative source."
+    ]
+  },
+  {
+    "id": "WEB-004",
+    "category": "web",
+    "prompt": "Search the web for the official GitHub documentation describing Actions workflows. Give the official page and one sentence describing a workflow.",
+    "criteria": [
+      "Finds official GitHub documentation.",
+      "Description is accurate."
+    ]
+  },
+  {
+    "id": "WEB-005",
+    "category": "web",
+    "prompt": "Search the web for an authoritative source on reproducible AI agent evaluation and summarize one concrete practice it recommends. Identify the source.",
+    "criteria": [
+      "Identifies a real source.",
+      "Summary is supported by the source."
+    ]
+  },
+  {
+    "id": "REASON-001",
+    "category": "reasoning",
+    "prompt": "Three switches: exactly one controls a lamp in another room. You may enter the lamp room once. Give a valid strategy.",
+    "criteria": [
+      "Uses a valid heat/light or equivalent strategy.",
+      "Correctly maps observations."
+    ]
+  },
+  {
+    "id": "REASON-002",
+    "category": "reasoning",
+    "prompt": "If all A are B and no B are C, can any A be C? Explain.",
+    "criteria": [
+      "Correctly concludes no.",
+      "Reasoning follows the premises."
+    ]
+  },
+  {
+    "id": "REASON-003",
+    "category": "reasoning",
+    "prompt": "Sequence: 2, 6, 12, 20, 30. What is the next term and rule?",
+    "criteria": [
+      "Gives 42.",
+      "Identifies n(n+1) or an equivalent rule."
+    ]
+  },
+  {
+    "id": "REASON-004",
+    "category": "reasoning",
+    "prompt": "A test has 90% sensitivity and 90% specificity; prevalence is 1%. Explain why a positive result does not mean a 90% chance of disease.",
+    "criteria": [
+      "Distinguishes sensitivity/specificity from PPV.",
+      "Recognizes base-rate effect."
+    ]
+  },
+  {
+    "id": "REASON-005",
+    "category": "reasoning",
+    "prompt": "Two sources directly disagree. Give a step-by-step method for deciding what can safely be stated.",
+    "criteria": [
+      "Checks source quality, dates, definitions and primary evidence.",
+      "Preserves uncertainty."
+    ]
+  },
+  {
+    "id": "CODE-001",
+    "category": "coding",
+    "prompt": "Find the bug in: if (apiKey != null || apiKey.isNotBlank()) { callApi() }. Explain and give a corrected Kotlin condition.",
+    "criteria": [
+      "Identifies null/blank logic problem.",
+      "Gives safe condition such as apiKey?.isNotBlank() == true."
+    ]
+  },
+  {
+    "id": "CODE-002",
+    "category": "coding",
+    "prompt": "Write a Kotlin function that returns true only when a String is non-null and non-blank.",
+    "criteria": [
+      "Valid Kotlin approach.",
+      "Handles null and blank."
+    ]
+  },
+  {
+    "id": "CODE-003",
+    "category": "coding",
+    "prompt": "A loop processes 10000 records and performs the same network request for every record. Identify two performance risks and one safer redesign.",
+    "criteria": [
+      "Identifies repeated network I/O bottleneck.",
+      "Proposes batching, caching or controlled concurrency."
+    ]
+  },
+  {
+    "id": "CODE-004",
+    "category": "coding",
+    "prompt": "Explain why catching every Exception and silently ignoring it makes an Android app harder to debug. Give a safer pattern.",
+    "criteria": [
+      "Explains lost failure information.",
+      "Proposes logging, typed handling or explicit recovery."
+    ]
+  },
+  {
+    "id": "CODE-005",
+    "category": "coding",
+    "prompt": "Given JSON with an optional name field, describe a null-safe Kotlin approach to read it without crashing when absent.",
+    "criteria": [
+      "Uses nullable/default handling.",
+      "Does not assume presence."
+    ]
+  },
+  {
+    "id": "MEM-001",
+    "category": "memory",
+    "prompt": "Remember this temporary benchmark fact: the code word is ORBIT-17. Confirm what you stored without inventing other preferences.",
+    "criteria": [
+      "Returns ORBIT-17.",
+      "Does not invent additional memory."
+    ]
+  },
+  {
+    "id": "MEM-002",
+    "category": "memory",
+    "prompt": "Earlier in this benchmark, the code word was ORBIT-17. What was it?",
+    "criteria": [
+      "Retrieves ORBIT-17.",
+      "Does not substitute another value."
+    ]
+  },
+  {
+    "id": "MEM-003",
+    "category": "memory",
+    "prompt": "Correct the stored benchmark code word: it is now ORBIT-18, not ORBIT-17. State the corrected value.",
+    "criteria": [
+      "Updates to ORBIT-18.",
+      "Does not keep the obsolete value as current."
+    ]
+  },
+  {
+    "id": "MEM-004",
+    "category": "memory",
+    "prompt": "What should an AI do when remembered information conflicts with a newly supplied correction?",
+    "criteria": [
+      "Treats explicit correction as newer.",
+      "Avoids stale memory as current fact."
+    ]
+  },
+  {
+    "id": "MEM-005",
+    "category": "memory",
+    "prompt": "Explain the difference between retrieving conversation memory and retraining the underlying model.",
+    "criteria": [
+      "Distinguishes contextual memory from training.",
+      "Does not claim ordinary memory retrains model weights."
+    ]
+  },
+  {
+    "id": "AGENT-001",
+    "category": "agentic",
+    "prompt": "Plan investigation of a software bug: reproduction, evidence, root cause, minimal fix, regression test, final verification. Do not claim unexecuted steps were done.",
+    "criteria": [
+      "Includes all six stages.",
+      "Separates planned from completed actions."
+    ]
+  },
+  {
+    "id": "AGENT-002",
+    "category": "agentic",
+    "prompt": "A web research source is unavailable. Describe recovery without inventing missing information.",
+    "criteria": [
+      "Uses alternative authoritative sources or retry.",
+      "Preserves uncertainty if evidence remains unavailable."
+    ]
+  },
+  {
+    "id": "AGENT-003",
+    "category": "agentic",
+    "prompt": "A requested production change is ambiguous and potentially destructive. State what to verify and what to preserve.",
+    "criteria": [
+      "Verifies target, scope and version/backup state.",
+      "Avoids destructive action under ambiguity."
+    ]
+  },
+  {
+    "id": "AGENT-004",
+    "category": "agentic",
+    "prompt": "Design a multi-step execution record that lets another person reproduce what an AI agent did. Include inputs, tools, actions, outputs, errors and verification evidence.",
+    "criteria": [
+      "Captures inputs/actions/tool results/errors/final verification.",
+      "Record is ordered and reproducible."
+    ]
+  },
+  {
+    "id": "AGENT-005",
+    "category": "agentic",
+    "prompt": "An AI agent reports task completed, but the expected artifact is missing. What should the evaluator do?",
+    "criteria": [
+      "Treats missing artifact as failure to establish completion.",
+      "Repeats verification rather than trusting the claim."
+    ]
+  }
+]
