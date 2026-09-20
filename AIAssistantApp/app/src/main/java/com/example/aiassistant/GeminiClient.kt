@@ -99,7 +99,7 @@ class GeminiClient(private val apiKey: String) {
         val body = JSONObject()
             .put("contents", contents)
             .put("systemInstruction", JSONObject().put("parts", JSONArray().put(JSONObject().put("text", systemText))))
-            .put("generationConfig", JSONObject().put("temperature", 0.15).put("topP", 0.9).put("maxOutputTokens", 12288))
+            .put("generationConfig", JSONObject().put("maxOutputTokens", 12288))
         if (forceSearch) body.put("tools", JSONArray().put(JSONObject().put("google_search", JSONObject())))
 
         val request = Request.Builder()

@@ -99,13 +99,8 @@ object LocalKnowledgeBase {
 
         val q = normalize(input)
 
-        // 1. Exact alias match.
-        normalized
-            .firstOrNull { q == it.first }
-            ?.second
-            ?.let { return it }
-
-        // 2. Multi-word aliases may match as complete phrases.
+        // 1. Multi-word aliases may match as complete phrases.
+        //    These are sufficiently specific to be safe.
         normalized
             .asSequence()
             .filter { it.first.contains(" ") }
@@ -113,9 +108,9 @@ object LocalKnowledgeBase {
             ?.second
             ?.let { return it }
 
-        // 3. Single-word aliases require an actual knowledge-question
-        //    structure. A random occurrence of "atom", "gold", etc.
-        //    must NOT trigger a factual answer.
+        // 2. Single-word aliases require an actual knowledge-question
+        //    structure. This protection must run BEFORE exact matching,
+        //    otherwise an input such as "atom" could bypass it.
         normalized
             .asSequence()
             .filter { !it.first.contains(" ") }
@@ -123,6 +118,7 @@ object LocalKnowledgeBase {
             ?.second
             ?.let { return it }
 
+        // No safe knowledge match.
         return null
     }
 

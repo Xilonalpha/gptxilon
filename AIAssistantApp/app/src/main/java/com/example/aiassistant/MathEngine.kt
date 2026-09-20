@@ -72,6 +72,10 @@ object MathEngine {
             .replace("cat face", "")
             .replace("rezolvă", "")
             .replace("rezolva", "")
+            .replace("rădăcina", "")
+            .replace("radacina", "")
+            .replace("radicalul", "")
+            .replace("radical", "")
             .replace("=", "")
             .trim()
     }
