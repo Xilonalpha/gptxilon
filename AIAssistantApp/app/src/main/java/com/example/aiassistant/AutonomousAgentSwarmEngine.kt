@@ -42,6 +42,8 @@ object AutonomousAgentSwarmEngine {
 
     private val capabilities = linkedSetOf(
         "conversation",
+        "dialogue",
+        "local-knowledge",
         "math",
         "statistics",
         "conversion",
@@ -80,28 +82,45 @@ object AutonomousAgentSwarmEngine {
         val used = mutableListOf<Agent>()
 
         /*
-         * The ToolChain is a real orchestration stage of the swarm.
+         * Deterministic local knowledge has priority over generic tools.
+         * This keeps elementary factual questions fully offline.
+         */
+        val localKnowledge = LocalKnowledgeBase.answer(input)
+
+        if (!localKnowledge.isNullOrBlank()) {
+            outputs += localKnowledge.trim()
+
+            val agent = selected.firstOrNull { it.capability == "local-knowledge" }
+            if (agent != null) {
+                used += agent
+            }
+        }
+
+        /*
+         * The ToolChain remains a real orchestration stage of the swarm.
          * It delegates execution to ToolRegistry.
          */
-        val chain = ToolChainEngine.run(input, intent)
+        if (outputs.isEmpty()) {
+            val chain = ToolChainEngine.run(input, intent)
 
-        if (chain.handled && chain.answer.isNotBlank()) {
-            outputs += chain.answer.trim()
+            if (chain.handled && chain.answer.isNotBlank()) {
+                outputs += chain.answer.trim()
 
-            chain.tools.forEachIndexed { index, tool ->
-                used += Agent(
-                    id = virtualAgentId("tool-chain-$tool", index),
-                    role = "Tool Chain Agent",
-                    capability = "tool-chain",
-                    priority = chain.confidence
-                )
+                chain.tools.forEachIndexed { index, tool ->
+                    used += Agent(
+                        id = virtualAgentId("tool-chain-$tool", index),
+                        role = "Tool Chain Agent",
+                        capability = "tool-chain",
+                        priority = chain.confidence
+                    )
 
-                used += Agent(
-                    id = virtualAgentId("tool-registry-$tool", index),
-                    role = "Tool Registry Agent",
-                    capability = "tool-registry",
-                    priority = chain.confidence
-                )
+                    used += Agent(
+                        id = virtualAgentId("tool-registry-$tool", index),
+                        role = "Tool Registry Agent",
+                        capability = "tool-registry",
+                        priority = chain.confidence
+                    )
+                }
             }
         }
 
@@ -193,6 +212,8 @@ object AutonomousAgentSwarmEngine {
         val covered = registered.filter {
             when (it) {
                 "conversation",
+                "dialogue",
+                "local-knowledge",
                 "math",
                 "statistics",
                 "conversion",
@@ -235,6 +256,18 @@ object AutonomousAgentSwarmEngine {
 
         val normalized = input.lowercase(Locale.getDefault())
         val requested = linkedSetOf<String>()
+
+        /*
+         * Local dialogue and deterministic factual knowledge have priority.
+         * They must be evaluated before generic verification/reasoning agents.
+         */
+        if (DialogueEngine.canHandle(input)) {
+            requested += "dialogue"
+        }
+
+        if (LocalKnowledgeBase.canHandle(input)) {
+            requested += "local-knowledge"
+        }
 
         when (intent) {
             IntentEngine.Type.CALCULATION ->
@@ -359,6 +392,12 @@ object AutonomousAgentSwarmEngine {
                     ConversationEngine.answer(input)
                 } else null
 
+            "dialogue" ->
+                DialogueEngine.answer(input)
+
+            "local-knowledge" ->
+                LocalKnowledgeBase.answer(input)
+
             "planning" -> {
                 val r = AdvancedPlanningEngine.plan(input)
                 if (r.handled) r.answer else null
@@ -374,8 +413,17 @@ object AutonomousAgentSwarmEngine {
                 if (r.handled) r.answer else null
             }
 
-            "verification" ->
-                VerificationEngine.answer(input)
+            "verification" -> {
+                val requested =
+                    input.contains("verific", true) ||
+                    input.contains("verify", true) ||
+                    input.contains("fact check", true) ||
+                    input.contains("adevărat", true) ||
+                    input.contains("adevarat", true) ||
+                    input.contains("is it true", true)
+
+                if (requested) VerificationEngine.answer(input) else null
+            }
 
             "reasoning" ->
                 if (ReasoningEngine.canHandle(input)) {
