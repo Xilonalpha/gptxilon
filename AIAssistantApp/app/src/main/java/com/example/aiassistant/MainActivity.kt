@@ -180,11 +180,22 @@ class MainActivity : AppCompatActivity() {
                         }
                     }
                 } else {
-                    AiResponse(
-                        OfflineBrain.reply(text),
-                        emptyList(),
-                        0
-                    )
+                    if (plan.useWeb) {
+                        val report = researchEngine.research(text, plan.deep)
+                        collectedEvidence.addAll(report.evidence)
+
+                        AiResponse(
+                            report.answer,
+                            report.evidence.map { "${it.title} — ${it.url}" },
+                            0
+                        )
+                    } else {
+                        AiResponse(
+                            OfflineBrain.reply(text),
+                            emptyList(),
+                            0
+                        )
+                    }
                 }
                 lastWebEvidence=collectedEvidence.toList()
                 memoryEngine.observe(text,reply.text,if(apiKey.isNotBlank()) reply else null);lastCodeBlocks=FileSaver.extractCodeBlocks(reply.text);intelligence.remember("last_query",text)
