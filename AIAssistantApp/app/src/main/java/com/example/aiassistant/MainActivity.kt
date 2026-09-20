@@ -159,22 +159,31 @@ class MainActivity : AppCompatActivity() {
                             intelligence
                         )
                     } catch (e: Exception) {
-                        val message=e.message.orEmpty()
-
-                        if (message.startsWith("Eroare API 401")) {
+                        if (e is GeminiApiException && e.isAuthenticationFailure()) {
                             secureStore.clear()
                             apiKey=""
 
                             runOnUiThread {
                                 binding.etApiKey.setText("")
-                                toast("⚠️ Cheia Gemini este invalidă. Am trecut automat pe motorul local.")
+                                toast("⚠️ Cheia Gemini nu este validă/acceptată. Am trecut automat pe motorul local.")
                             }
 
-                            AiResponse(
-                                OfflineBrain.reply(text),
-                                emptyList(),
-                                0
-                            )
+                            if (plan.useWeb) {
+                                val report = researchEngine.research(text, plan.deep)
+                                collectedEvidence.addAll(report.evidence)
+
+                                AiResponse(
+                                    report.answer,
+                                    report.evidence.map { "${it.title} — ${it.url}" },
+                                    0
+                                )
+                            } else {
+                                AiResponse(
+                                    OfflineBrain.reply(text),
+                                    emptyList(),
+                                    0
+                                )
+                            }
                         } else {
                             throw e
                         }

@@ -9,6 +9,31 @@ import org.json.JSONArray
 import org.json.JSONObject
 import java.util.concurrent.TimeUnit
 
+class GeminiApiException(
+    val code: Int,
+    val rawBody: String
+) : Exception("Eroare API " + code + ": " + rawBody.take(300)) {
+
+    fun isAuthenticationFailure(): Boolean {
+        val body = rawBody.lowercase()
+        val invalidKey =
+            body.contains("api_key_invalid") ||
+            body.contains("api key not valid") ||
+            body.contains("invalid api key") ||
+            (body.contains("invalid_argument") && body.contains("api key")) ||
+            (body.contains("expired") && body.contains("key")) ||
+            (body.contains("revoked") && body.contains("key"))
+
+        val blockedKey =
+            body.contains("api_key_service_blocked") ||
+            (body.contains("api key") && body.contains("permission_denied"))
+
+        return code == 401 ||
+            (code == 400 && invalidKey) ||
+            (code == 403 && (invalidKey || blockedKey))
+    }
+}
+
 class GeminiClient(private val apiKey: String) {
     companion object {
         val PERSONAS = listOf(
@@ -84,7 +109,7 @@ class GeminiClient(private val apiKey: String) {
 
         client.newCall(request).execute().use { response ->
             val raw = response.body?.string().orEmpty()
-            if (!response.isSuccessful) throw Exception("Eroare API ${response.code}: ${raw.take(300)}")
+            if (!response.isSuccessful) throw GeminiApiException(response.code, raw)
             val json = JSONObject(raw)
             val candidates = json.optJSONArray("candidates") ?: throw Exception("Răspuns Gemini fără candidates")
             if (candidates.length() == 0) throw Exception("Gemini nu a returnat un răspuns")
