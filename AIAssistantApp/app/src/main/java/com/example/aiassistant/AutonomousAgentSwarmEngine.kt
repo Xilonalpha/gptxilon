@@ -88,12 +88,29 @@ object AutonomousAgentSwarmEngine {
         val localKnowledge = LocalKnowledgeBase.answer(input)
 
         if (!localKnowledge.isNullOrBlank()) {
-            outputs += localKnowledge.trim()
-
             val agent = selected.firstOrNull { it.capability == "local-knowledge" }
+
             if (agent != null) {
                 used += agent
             }
+
+            /*
+             * Deterministic local knowledge is authoritative for factual
+             * entries that are explicitly present in the offline datasets.
+             *
+             * Do not continue into semantic memory, generic reasoning or
+             * tools after a local fact has been found. Those agents can
+             * contaminate a known factual answer with unrelated context.
+             */
+            val localAnswer = localKnowledge.trim()
+
+            return Result(
+                handled = true,
+                answer = localAnswer,
+                agents = used.distinctBy { it.id },
+                coverage = coverage(),
+                confidence = 70
+            )
         }
 
         /*

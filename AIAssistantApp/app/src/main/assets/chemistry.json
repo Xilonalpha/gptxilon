@@ -9,7 +9,13 @@
         "gold symbol",
         "symbol for gold",
         "simbol chimic aur",
-        "simbolul aurului"
+        "simbolul aurului",
+        "which element has the symbol au",
+        "which element has symbol au",
+        "element with symbol au",
+        "what element is au",
+        "au element",
+        "au chemical element"
       ],
       "answer": "The chemical symbol for gold is Au.",
       "domain": "chemistry"
@@ -19,7 +25,11 @@
       "aliases": [
         "chemical symbol for silver",
         "silver symbol",
-        "simbol chimic argint"
+        "simbol chimic argint",
+        "which element has the symbol ag",
+        "which element has symbol ag",
+        "element with symbol ag",
+        "what element is ag"
       ],
       "answer": "The chemical symbol for silver is Ag.",
       "domain": "chemistry"
@@ -29,7 +39,11 @@
       "aliases": [
         "chemical symbol for iron",
         "iron symbol",
-        "simbol chimic fier"
+        "simbol chimic fier",
+        "which element has the symbol fe",
+        "which element has symbol fe",
+        "element with symbol fe",
+        "what element is fe"
       ],
       "answer": "The chemical symbol for iron is Fe.",
       "domain": "chemistry"
@@ -39,7 +53,11 @@
       "aliases": [
         "chemical symbol for copper",
         "copper symbol",
-        "simbol chimic cupru"
+        "simbol chimic cupru",
+        "which element has the symbol cu",
+        "which element has symbol cu",
+        "element with symbol cu",
+        "what element is cu"
       ],
       "answer": "The chemical symbol for copper is Cu.",
       "domain": "chemistry"
