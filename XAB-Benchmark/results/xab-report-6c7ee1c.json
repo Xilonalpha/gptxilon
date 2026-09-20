@@ -1,0 +1,420 @@
+{
+  "benchmark": "XAB-1",
+  "version": "1.1.0",
+  "generated_at": "2026-09-20T15:49:04.801709+00:00",
+  "cases_sha256": "684985801be6bbb8191fdae286029e8dc355a810ffacf228fcbf1e0e5d73464e",
+  "outputs_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "results": [
+    {
+      "id": "FACT-001",
+      "category": "factuality",
+      "session_group": null,
+      "score": null,
+      "max": 2,
+      "status": "missing",
+      "evidence": ""
+    },
+    {
+      "id": "FACT-002",
+      "category": "factuality",
+      "session_group": null,
+      "score": null,
+      "max": 2,
+      "status": "missing",
+      "evidence": ""
+    },
+    {
+      "id": "FACT-003",
+      "category": "factuality",
+      "session_group": null,
+      "score": null,
+      "max": 2,
+      "status": "missing",
+      "evidence": ""
+    },
+    {
+      "id": "FACT-004",
+      "category": "factuality",
+      "session_group": null,
+      "score": null,
+      "max": 2,
+      "status": "missing",
+      "evidence": ""
+    },
+    {
+      "id": "FACT-005",
+      "category": "factuality",
+      "session_group": null,
+      "score": null,
+      "max": 2,
+      "status": "missing",
+      "evidence": ""
+    },
+    {
+      "id": "RES-001",
+      "category": "research",
+      "session_group": null,
+      "score": null,
+      "max": 2,
+      "status": "missing",
+      "evidence": ""
+    },
+    {
+      "id": "RES-002",
+      "category": "research",
+      "session_group": null,
+      "score": null,
+      "max": 2,
+      "status": "missing",
+      "evidence": ""
+    },
+    {
+      "id": "RES-003",
+      "category": "research",
+      "session_group": null,
+      "score": null,
+      "max": 2,
+      "status": "missing",
+      "evidence": ""
+    },
+    {
+      "id": "RES-004",
+      "category": "research",
+      "session_group": null,
+      "score": null,
+      "max": 2,
+      "status": "missing",
+      "evidence": ""
+    },
+    {
+      "id": "RES-005",
+      "category": "research",
+      "session_group": null,
+      "score": null,
+      "max": 2,
+      "status": "missing",
+      "evidence": ""
+    },
+    {
+      "id": "WEB-001",
+      "category": "web",
+      "session_group": null,
+      "score": null,
+      "max": 2,
+      "status": "missing",
+      "evidence": ""
+    },
+    {
+      "id": "WEB-002",
+      "category": "web",
+      "session_group": null,
+      "score": null,
+      "max": 2,
+      "status": "missing",
+      "evidence": ""
+    },
+    {
+      "id": "WEB-003",
+      "category": "web",
+      "session_group": null,
+      "score": null,
+      "max": 2,
+      "status": "missing",
+      "evidence": ""
+    },
+    {
+      "id": "WEB-004",
+      "category": "web",
+      "session_group": null,
+      "score": null,
+      "max": 2,
+      "status": "missing",
+      "evidence": ""
+    },
+    {
+      "id": "WEB-005",
+      "category": "web",
+      "session_group": null,
+      "score": null,
+      "max": 2,
+      "status": "missing",
+      "evidence": ""
+    },
+    {
+      "id": "REASON-001",
+      "category": "reasoning",
+      "session_group": null,
+      "score": null,
+      "max": 2,
+      "status": "missing",
+      "evidence": ""
+    },
+    {
+      "id": "REASON-002",
+      "category": "reasoning",
+      "session_group": null,
+      "score": null,
+      "max": 2,
+      "status": "missing",
+      "evidence": ""
+    },
+    {
+      "id": "REASON-003",
+      "category": "reasoning",
+      "session_group": null,
+      "score": null,
+      "max": 2,
+      "status": "missing",
+      "evidence": ""
+    },
+    {
+      "id": "REASON-004",
+      "category": "reasoning",
+      "session_group": null,
+      "score": null,
+      "max": 2,
+      "status": "missing",
+      "evidence": ""
+    },
+    {
+      "id": "REASON-005",
+      "category": "reasoning",
+      "session_group": null,
+      "score": null,
+      "max": 2,
+      "status": "missing",
+      "evidence": ""
+    },
+    {
+      "id": "CODE-001",
+      "category": "coding",
+      "session_group": null,
+      "score": null,
+      "max": 2,
+      "status": "missing",
+      "evidence": ""
+    },
+    {
+      "id": "CODE-002",
+      "category": "coding",
+      "session_group": null,
+      "score": null,
+      "max": 2,
+      "status": "missing",
+      "evidence": ""
+    },
+    {
+      "id": "CODE-003",
+      "category": "coding",
+      "session_group": null,
+      "score": null,
+      "max": 2,
+      "status": "missing",
+      "evidence": ""
+    },
+    {
+      "id": "CODE-004",
+      "category": "coding",
+      "session_group": null,
+      "score": null,
+      "max": 2,
+      "status": "missing",
+      "evidence": ""
+    },
+    {
+      "id": "CODE-005",
+      "category": "coding",
+      "session_group": null,
+      "score": null,
+      "max": 2,
+      "status": "missing",
+      "evidence": ""
+    },
+    {
+      "id": "MEM-001",
+      "category": "memory",
+      "session_group": "memory-orbit",
+      "score": null,
+      "max": 2,
+      "status": "missing",
+      "evidence": ""
+    },
+    {
+      "id": "MEM-002",
+      "category": "memory",
+      "session_group": "memory-orbit",
+      "score": null,
+      "max": 2,
+      "status": "missing",
+      "evidence": ""
+    },
+    {
+      "id": "MEM-003",
+      "category": "memory",
+      "session_group": "memory-orbit",
+      "score": null,
+      "max": 2,
+      "status": "missing",
+      "evidence": ""
+    },
+    {
+      "id": "MEM-004",
+      "category": "memory",
+      "session_group": null,
+      "score": null,
+      "max": 2,
+      "status": "missing",
+      "evidence": ""
+    },
+    {
+      "id": "MEM-005",
+      "category": "memory",
+      "session_group": null,
+      "score": null,
+      "max": 2,
+      "status": "missing",
+      "evidence": ""
+    },
+    {
+      "id": "AGENT-001",
+      "category": "agentic",
+      "session_group": null,
+      "score": null,
+      "max": 2,
+      "status": "missing",
+      "evidence": ""
+    },
+    {
+      "id": "AGENT-002",
+      "category": "agentic",
+      "session_group": null,
+      "score": null,
+      "max": 2,
+      "status": "missing",
+      "evidence": ""
+    },
+    {
+      "id": "AGENT-003",
+      "category": "agentic",
+      "session_group": null,
+      "score": null,
+      "max": 2,
+      "status": "missing",
+      "evidence": ""
+    },
+    {
+      "id": "AGENT-004",
+      "category": "agentic",
+      "session_group": null,
+      "score": null,
+      "max": 2,
+      "status": "missing",
+      "evidence": ""
+    },
+    {
+      "id": "AGENT-005",
+      "category": "agentic",
+      "session_group": null,
+      "score": null,
+      "max": 2,
+      "status": "missing",
+      "evidence": ""
+    }
+  ],
+  "categories": {
+    "agentic": {
+      "cases": 5,
+      "scored_cases": 0,
+      "complete": false,
+      "score": null,
+      "partial_score": null
+    },
+    "coding": {
+      "cases": 5,
+      "scored_cases": 0,
+      "complete": false,
+      "score": null,
+      "partial_score": null
+    },
+    "factuality": {
+      "cases": 5,
+      "scored_cases": 0,
+      "complete": false,
+      "score": null,
+      "partial_score": null
+    },
+    "memory": {
+      "cases": 5,
+      "scored_cases": 0,
+      "complete": false,
+      "score": null,
+      "partial_score": null
+    },
+    "reasoning": {
+      "cases": 5,
+      "scored_cases": 0,
+      "complete": false,
+      "score": null,
+      "partial_score": null
+    },
+    "research": {
+      "cases": 5,
+      "scored_cases": 0,
+      "complete": false,
+      "score": null,
+      "partial_score": null
+    },
+    "web": {
+      "cases": 5,
+      "scored_cases": 0,
+      "complete": false,
+      "score": null,
+      "partial_score": null
+    }
+  },
+  "overall": {
+    "cases": 35,
+    "scored_cases": 0,
+    "complete": false,
+    "score": null,
+    "partial_score": null,
+    "missing_case_ids": [
+      "FACT-001",
+      "FACT-002",
+      "FACT-003",
+      "FACT-004",
+      "FACT-005",
+      "RES-001",
+      "RES-002",
+      "RES-003",
+      "RES-004",
+      "RES-005",
+      "WEB-001",
+      "WEB-002",
+      "WEB-003",
+      "WEB-004",
+      "WEB-005",
+      "REASON-001",
+      "REASON-002",
+      "REASON-003",
+      "REASON-004",
+      "REASON-005",
+      "CODE-001",
+      "CODE-002",
+      "CODE-003",
+      "CODE-004",
+      "CODE-005",
+      "MEM-001",
+      "MEM-002",
+      "MEM-003",
+      "MEM-004",
+      "MEM-005",
+      "AGENT-001",
+      "AGENT-002",
+      "AGENT-003",
+      "AGENT-004",
+      "AGENT-005"
+    ],
+    "manual_review_case_ids": []
+  }
+}

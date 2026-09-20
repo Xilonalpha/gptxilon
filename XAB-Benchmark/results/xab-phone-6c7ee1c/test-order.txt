@@ -1,0 +1,105 @@
+01 | FACT-001 | factuality
+What is the capital of Australia? Give only the city and one sentence explaining why.
+--------------------------------------------------------------------------------
+02 | FACT-002 | factuality
+What is the chemical symbol for gold?
+--------------------------------------------------------------------------------
+03 | FACT-003 | factuality
+Is the Pacific Ocean larger than the Atlantic Ocean? Answer yes or no and briefly explain.
+--------------------------------------------------------------------------------
+04 | FACT-004 | factuality
+What does CPU stand for in computing?
+--------------------------------------------------------------------------------
+05 | FACT-005 | factuality
+Explain how to distinguish a fact you cannot verify from a confirmed fact instead of inventing an answer.
+--------------------------------------------------------------------------------
+06 | RES-001 | research
+Research the difference between HTTP 401 and HTTP 403. Give a concise comparison and cite at least one authoritative source.
+--------------------------------------------------------------------------------
+07 | RES-002 | research
+Research what a reproducible AI benchmark must freeze between runs. List at least five concrete variables.
+--------------------------------------------------------------------------------
+08 | RES-003 | research
+Research why benchmark contamination can make a test score misleading. Explain the mechanism and one mitigation.
+--------------------------------------------------------------------------------
+09 | RES-004 | research
+Research the difference between a deterministic evaluator and an LLM judge. Give two strengths and two limitations of each.
+--------------------------------------------------------------------------------
+10 | RES-005 | research
+Research what evidence should be preserved when comparing two versions of an AI agent. Produce a compact audit checklist.
+--------------------------------------------------------------------------------
+11 | WEB-001 | web
+Use web search to verify which organization maintains the Python programming language and provide the official website.
+--------------------------------------------------------------------------------
+12 | WEB-002 | web
+Use web search to find the official Android documentation for API level 36 and report the Android version associated with it.
+--------------------------------------------------------------------------------
+13 | WEB-003 | web
+Use web search to find an authoritative source explaining HTTP status code 429. State what it means and cite the source.
+--------------------------------------------------------------------------------
+14 | WEB-004 | web
+Search the web for the official GitHub documentation describing Actions workflows. Give the official page and one sentence describing a workflow.
+--------------------------------------------------------------------------------
+15 | WEB-005 | web
+Search the web for an authoritative source on reproducible AI agent evaluation and summarize one concrete practice it recommends. Identify the source.
+--------------------------------------------------------------------------------
+16 | REASON-001 | reasoning
+Three switches: exactly one controls a lamp in another room. You may enter the lamp room once. Give a valid strategy.
+--------------------------------------------------------------------------------
+17 | REASON-002 | reasoning
+If all A are B and no B are C, can any A be C? Explain.
+--------------------------------------------------------------------------------
+18 | REASON-003 | reasoning
+Sequence: 2, 6, 12, 20, 30. What is the next term and rule?
+--------------------------------------------------------------------------------
+19 | REASON-004 | reasoning
+A test has 90% sensitivity and 90% specificity; prevalence is 1%. Explain why a positive result does not mean a 90% chance of disease.
+--------------------------------------------------------------------------------
+20 | REASON-005 | reasoning
+Two sources directly disagree. Give a step-by-step method for deciding what can safely be stated.
+--------------------------------------------------------------------------------
+21 | CODE-001 | coding
+Find the bug in: if (apiKey != null || apiKey.isNotBlank()) { callApi() }. Explain and give a corrected Kotlin condition.
+--------------------------------------------------------------------------------
+22 | CODE-002 | coding
+Write a Kotlin function that returns true only when a String is non-null and non-blank.
+--------------------------------------------------------------------------------
+23 | CODE-003 | coding
+A loop processes 10000 records and performs the same network request for every record. Identify two performance risks and one safer redesign.
+--------------------------------------------------------------------------------
+24 | CODE-004 | coding
+Explain why catching every Exception and silently ignoring it makes an Android app harder to debug. Give a safer pattern.
+--------------------------------------------------------------------------------
+25 | CODE-005 | coding
+Given JSON with an optional name field, describe a null-safe Kotlin approach to read it without crashing when absent.
+--------------------------------------------------------------------------------
+26 | MEM-001 | memory
+Remember this temporary benchmark fact: the code word is ORBIT-17. Confirm what you stored without inventing other preferences.
+--------------------------------------------------------------------------------
+27 | MEM-002 | memory
+Earlier in this benchmark, the code word was ORBIT-17. What was it?
+--------------------------------------------------------------------------------
+28 | MEM-003 | memory
+Correct the stored benchmark code word: it is now ORBIT-18, not ORBIT-17. State the corrected value.
+--------------------------------------------------------------------------------
+29 | MEM-004 | memory
+What should an AI do when remembered information conflicts with a newly supplied correction?
+--------------------------------------------------------------------------------
+30 | MEM-005 | memory
+Explain the difference between retrieving conversation memory and retraining the underlying model.
+--------------------------------------------------------------------------------
+31 | AGENT-001 | agentic
+Plan investigation of a software bug: reproduction, evidence, root cause, minimal fix, regression test, final verification. Do not claim unexecuted steps were done.
+--------------------------------------------------------------------------------
+32 | AGENT-002 | agentic
+A web research source is unavailable. Describe recovery without inventing missing information.
+--------------------------------------------------------------------------------
+33 | AGENT-003 | agentic
+A requested production change is ambiguous and potentially destructive. State what to verify and what to preserve.
+--------------------------------------------------------------------------------
+34 | AGENT-004 | agentic
+Design a multi-step execution record that lets another person reproduce what an AI agent did. Include inputs, tools, actions, outputs, errors and verification evidence.
+--------------------------------------------------------------------------------
+35 | AGENT-005 | agentic
+An AI agent reports task completed, but the expected artifact is missing. What should the evaluator do?
+--------------------------------------------------------------------------------
