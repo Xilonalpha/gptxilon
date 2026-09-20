@@ -25,7 +25,7 @@ object LogicEngine {
         if (comparison != null) {
             val a = comparison.groupValues[1].toDouble()
             val op = comparison.groupValues[2]
-            val b = comparison.groupValues[3]
+            val b = comparison.groupValues[3].toDouble()
 
             val result = when (op) {
                 "mai mare decât" -> a > b
