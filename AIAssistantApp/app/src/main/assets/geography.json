@@ -609,6 +609,812 @@
       ],
       "answer": "The capital of Vietnam is Hanoi.",
       "domain": "geography"
+    },
+    {
+      "topic": "Atlantic Ocean",
+      "aliases": [
+        "what is the Atlantic Ocean",
+        "Atlantic Ocean definition",
+        "Atlantic Ocean meaning",
+        "ce este Oceanul Atlantic",
+        "definitie Oceanul Atlantic",
+        "care este Oceanul Atlantic"
+      ],
+      "answer": "Oceanul Atlantic este al doilea cel mai mare ocean al Pământului și se întinde între Americi, Europa și Africa.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Indian Ocean",
+      "aliases": [
+        "what is the Indian Ocean",
+        "Indian Ocean definition",
+        "Indian Ocean meaning",
+        "ce este Oceanul Indian",
+        "definitie Oceanul Indian",
+        "care este Oceanul Indian"
+      ],
+      "answer": "Oceanul Indian este oceanul situat în principal între Africa, Asia, Australia și Antarctica.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Arctic Ocean",
+      "aliases": [
+        "what is the Arctic Ocean",
+        "Arctic Ocean definition",
+        "Arctic Ocean meaning",
+        "ce este Oceanul Arctic",
+        "definitie Oceanul Arctic",
+        "care este Oceanul Arctic"
+      ],
+      "answer": "Oceanul Arctic este cel mai mic dintre oceanele lumii și înconjoară regiunea polară nordică.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Southern Ocean",
+      "aliases": [
+        "what is the Southern Ocean",
+        "Southern Ocean definition",
+        "Southern Ocean meaning",
+        "ce este Oceanul Antarctic",
+        "definitie Oceanul Antarctic",
+        "care este Oceanul Antarctic"
+      ],
+      "answer": "Oceanul Antarctic este oceanul care înconjoară Antarctica și este delimitat geografic la sud de celelalte oceane.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Mediterranean Sea",
+      "aliases": [
+        "what is the Mediterranean Sea",
+        "Mediterranean Sea definition",
+        "Mediterranean Sea meaning",
+        "ce este Marea Mediterana",
+        "definitie Marea Mediterana",
+        "care este Marea Mediterana"
+      ],
+      "answer": "Marea Mediterană este o mare aproape închisă între Europa, Africa și Asia, conectată cu Oceanul Atlantic prin strâmtoarea Gibraltar.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Black Sea",
+      "aliases": [
+        "what is the Black Sea",
+        "Black Sea definition",
+        "Black Sea meaning",
+        "ce este Marea Neagra",
+        "definitie Marea Neagra",
+        "care este Marea Neagra"
+      ],
+      "answer": "Marea Neagră este o mare intercontinentală situată între Europa de Est și Asia Mică.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Caspian Sea",
+      "aliases": [
+        "what is the Caspian Sea",
+        "Caspian Sea definition",
+        "Caspian Sea meaning",
+        "ce este Marea Caspica",
+        "definitie Marea Caspica",
+        "care este Marea Caspica"
+      ],
+      "answer": "Marea Caspică este cea mai mare întindere de apă interioară de pe Pământ, situată între Europa și Asia.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Red Sea",
+      "aliases": [
+        "what is the Red Sea",
+        "Red Sea definition",
+        "Red Sea meaning",
+        "ce este Marea Rosie",
+        "definitie Marea Rosie",
+        "care este Marea Rosie"
+      ],
+      "answer": "Marea Roșie este o mare între nord-estul Africii și Peninsula Arabică, conectată cu Oceanul Indian.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Caribbean Sea",
+      "aliases": [
+        "what is the Caribbean Sea",
+        "Caribbean Sea definition",
+        "Caribbean Sea meaning",
+        "ce este Marea Caraibilor",
+        "definitie Marea Caraibilor",
+        "care este Marea Caraibilor"
+      ],
+      "answer": "Marea Caraibilor este o mare tropicală a Oceanului Atlantic, situată între America Centrală, Antile și nordul Americii de Sud.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Baltic Sea",
+      "aliases": [
+        "what is the Baltic Sea",
+        "Baltic Sea definition",
+        "Baltic Sea meaning",
+        "ce este Marea Baltica",
+        "definitie Marea Baltica",
+        "care este Marea Baltica"
+      ],
+      "answer": "Marea Baltică este o mare din nordul Europei, aproape închisă și conectată cu Marea Nordului prin strâmtori daneze.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Danube River",
+      "aliases": [
+        "what is the Danube River",
+        "Danube River definition",
+        "Danube River meaning",
+        "ce este Dunarea",
+        "definitie Dunarea",
+        "care este Dunarea"
+      ],
+      "answer": "Dunărea este unul dintre marile fluvii ale Europei și se varsă în Marea Neagră prin Delta Dunării.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Nile River",
+      "aliases": [
+        "what is the Nile River",
+        "Nile River definition",
+        "Nile River meaning",
+        "ce este Nilul",
+        "definitie Nilul",
+        "care este Nilul"
+      ],
+      "answer": "Nilul este unul dintre cele mai importante fluvii ale Africii și curge spre nord până la Marea Mediterană.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Amazon River",
+      "aliases": [
+        "what is the Amazon River",
+        "Amazon River definition",
+        "Amazon River meaning",
+        "ce este Fluviul Amazon",
+        "definitie Fluviul Amazon",
+        "care este Fluviul Amazon"
+      ],
+      "answer": "Amazonul este un fluviu major al Americii de Sud și are cel mai mare debit de apă dintre fluviile lumii.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Mississippi River",
+      "aliases": [
+        "what is the Mississippi River",
+        "Mississippi River definition",
+        "Mississippi River meaning",
+        "ce este fluviul Mississippi",
+        "definitie fluviul Mississippi",
+        "care este fluviul Mississippi"
+      ],
+      "answer": "Fluviul Mississippi este unul dintre principalele sisteme fluviale ale Americii de Nord și se varsă în Golful Mexic.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Yangtze River",
+      "aliases": [
+        "what is the Yangtze River",
+        "Yangtze River definition",
+        "Yangtze River meaning",
+        "ce este fluviul Yangtze",
+        "definitie fluviul Yangtze",
+        "care este fluviul Yangtze"
+      ],
+      "answer": "Yangtze este cel mai lung fluviu din China și din Asia, vărsându-se în Marea Chinei de Est.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Ganges River",
+      "aliases": [
+        "what is the Ganges River",
+        "Ganges River definition",
+        "Ganges River meaning",
+        "ce este fluviul Gange",
+        "definitie fluviul Gange",
+        "care este fluviul Gange"
+      ],
+      "answer": "Gangele este un fluviu important din Asia de Sud, care curge prin India și Bangladesh.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Volga River",
+      "aliases": [
+        "what is the Volga River",
+        "Volga River definition",
+        "Volga River meaning",
+        "ce este fluviul Volga",
+        "definitie fluviul Volga",
+        "care este fluviul Volga"
+      ],
+      "answer": "Volga este cel mai lung fluviu din Europa și se varsă în Marea Caspică.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Rhine River",
+      "aliases": [
+        "what is the Rhine River",
+        "Rhine River definition",
+        "Rhine River meaning",
+        "ce este fluviul Rin",
+        "definitie fluviul Rin",
+        "care este fluviul Rin"
+      ],
+      "answer": "Rinul este un fluviu important al Europei Centrale și de Vest care se varsă în Marea Nordului.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Sahara Desert",
+      "aliases": [
+        "what is the Sahara Desert",
+        "Sahara Desert definition",
+        "Sahara Desert meaning",
+        "ce este Desertul Sahara",
+        "definitie Desertul Sahara",
+        "care este Desertul Sahara"
+      ],
+      "answer": "Sahara este cel mai mare deșert cald al lumii și ocupă o mare parte din nordul Africii.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Gobi Desert",
+      "aliases": [
+        "what is the Gobi Desert",
+        "Gobi Desert definition",
+        "Gobi Desert meaning",
+        "ce este Desertul Gobi",
+        "definitie Desertul Gobi",
+        "care este Desertul Gobi"
+      ],
+      "answer": "Deșertul Gobi este un deșert rece din Asia, întins în principal în Mongolia și nordul Chinei.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Arabian Desert",
+      "aliases": [
+        "what is the Arabian Desert",
+        "Arabian Desert definition",
+        "Arabian Desert meaning",
+        "ce este Desertul Arabiei",
+        "definitie Desertul Arabiei",
+        "care este Desertul Arabiei"
+      ],
+      "answer": "Deșertul Arabiei este o vastă regiune aridă din Peninsula Arabică.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Kalahari Desert",
+      "aliases": [
+        "what is the Kalahari Desert",
+        "Kalahari Desert definition",
+        "Kalahari Desert meaning",
+        "ce este Desertul Kalahari",
+        "definitie Desertul Kalahari",
+        "care este Desertul Kalahari"
+      ],
+      "answer": "Deșertul Kalahari este o regiune aridă și semiaridă din sudul Africii.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Atacama Desert",
+      "aliases": [
+        "what is the Atacama Desert",
+        "Atacama Desert definition",
+        "Atacama Desert meaning",
+        "ce este Desertul Atacama",
+        "definitie Desertul Atacama",
+        "care este Desertul Atacama"
+      ],
+      "answer": "Deșertul Atacama este o regiune extrem de aridă de pe coasta Pacificului din nordul statului Chile.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Amazon Rainforest",
+      "aliases": [
+        "what is the Amazon Rainforest",
+        "Amazon Rainforest definition",
+        "Amazon Rainforest meaning",
+        "ce este Padurea Amazoniana",
+        "definitie Padurea Amazoniana",
+        "care este Padurea Amazoniana"
+      ],
+      "answer": "Pădurea Amazoniană este cea mai mare pădure tropicală din lume și se află în principal în bazinul Amazonului.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Andes Mountains",
+      "aliases": [
+        "what are the Andes Mountains",
+        "Andes Mountains definition",
+        "Andes Mountains meaning",
+        "ce sunt Muntii Anzi",
+        "definitie Muntii Anzi",
+        "care sunt Muntii Anzi"
+      ],
+      "answer": "Munții Anzi formează un lanț muntos lung de-a lungul marginii vestice a Americii de Sud.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Alps",
+      "aliases": [
+        "what are the Alps",
+        "Alps definition",
+        "Alps meaning",
+        "ce sunt Alpii",
+        "definitie Alpii",
+        "care sunt Alpii"
+      ],
+      "answer": "Alpii sunt un mare lanț muntos european care se întinde prin mai multe țări, inclusiv Franța, Elveția, Italia și Austria.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Himalayas",
+      "aliases": [
+        "what are the Himalayas",
+        "Himalayas definition",
+        "Himalayas meaning",
+        "ce sunt Muntii Himalaya",
+        "definitie Muntii Himalaya",
+        "care sunt Muntii Himalaya"
+      ],
+      "answer": "Himalaya este un lanț muntos din Asia care include Everest, cel mai înalt vârf de pe Pământ.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Rocky Mountains",
+      "aliases": [
+        "what are the Rocky Mountains",
+        "Rocky Mountains definition",
+        "Rocky Mountains meaning",
+        "ce sunt Muntii Stancosi",
+        "definitie Muntii Stancosi",
+        "care sunt Muntii Stancosi"
+      ],
+      "answer": "Munții Stâncoși sunt un lanț muntos important din vestul Americii de Nord.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Carpathian Mountains",
+      "aliases": [
+        "what are the Carpathian Mountains",
+        "Carpathian Mountains definition",
+        "Carpathian Mountains meaning",
+        "ce sunt Muntii Carpati",
+        "definitie Muntii Carpati",
+        "care sunt Muntii Carpati"
+      ],
+      "answer": "Munții Carpați sunt un lanț muntos din Europa Centrală și de Est, care include arcul carpatic din România.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Pyrenees",
+      "aliases": [
+        "what are the Pyrenees",
+        "Pyrenees definition",
+        "Pyrenees meaning",
+        "ce sunt Pirineii",
+        "definitie Pirineii",
+        "care sunt Pirineii"
+      ],
+      "answer": "Pirineii formează lanțul muntos dintre Peninsula Iberică și restul Europei, între Spania și Franța.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Appalachian Mountains",
+      "aliases": [
+        "what are the Appalachian Mountains",
+        "Appalachian Mountains definition",
+        "Appalachian Mountains meaning",
+        "ce sunt Muntii Apalasi",
+        "definitie Muntii Apalasi",
+        "care sunt Muntii Apalasi"
+      ],
+      "answer": "Munții Apalași sunt un lanț muntos vechi din estul Americii de Nord.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Tibetan Plateau",
+      "aliases": [
+        "what is the Tibetan Plateau",
+        "Tibetan Plateau definition",
+        "Tibetan Plateau meaning",
+        "ce este Podisul Tibet",
+        "definitie Podisul Tibet",
+        "care este Podisul Tibet"
+      ],
+      "answer": "Podișul Tibet este o regiune foarte înaltă din Asia, situată în principal în sud-vestul Chinei.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Great Plains",
+      "aliases": [
+        "what are the Great Plains",
+        "Great Plains definition",
+        "Great Plains meaning",
+        "ce sunt Marile Campii",
+        "definitie Marile Campii",
+        "care sunt Marile Campii"
+      ],
+      "answer": "Marile Câmpii sunt o vastă regiune de câmpii din centrul Americii de Nord.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Great Barrier Reef",
+      "aliases": [
+        "what is the Great Barrier Reef",
+        "Great Barrier Reef definition",
+        "Great Barrier Reef meaning",
+        "ce este Marea Bariera de Corali",
+        "definitie Marea Bariera de Corali",
+        "care este Marea Bariera de Corali"
+      ],
+      "answer": "Marea Barieră de Corali este un vast sistem de recife de corali aflat în largul coastei Queenslandului, Australia.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Strait of Gibraltar",
+      "aliases": [
+        "what is the Strait of Gibraltar",
+        "Strait of Gibraltar definition",
+        "Strait of Gibraltar meaning",
+        "ce este Stramtoarea Gibraltar",
+        "definitie Stramtoarea Gibraltar",
+        "care este Stramtoarea Gibraltar"
+      ],
+      "answer": "Strâmtoarea Gibraltar este pasajul maritim care leagă Oceanul Atlantic de Marea Mediterană și separă Europa de Africa.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Bosporus",
+      "aliases": [
+        "what is the Bosporus",
+        "Bosporus definition",
+        "Bosporus meaning",
+        "ce este Bosforul",
+        "definitie Bosforul",
+        "care este Bosforul"
+      ],
+      "answer": "Bosforul este strâmtoarea care leagă Marea Neagră de Marea Marmara și separă Europa de Asia la Istanbul.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Suez Canal",
+      "aliases": [
+        "what is the Suez Canal",
+        "Suez Canal definition",
+        "Suez Canal meaning",
+        "ce este Canalul Suez",
+        "definitie Canalul Suez",
+        "care este Canalul Suez"
+      ],
+      "answer": "Canalul Suez este o cale navigabilă artificială din Egipt care leagă Marea Mediterană de Marea Roșie.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Panama Canal",
+      "aliases": [
+        "what is the Panama Canal",
+        "Panama Canal definition",
+        "Panama Canal meaning",
+        "ce este Canalul Panama",
+        "definitie Canalul Panama",
+        "care este Canalul Panama"
+      ],
+      "answer": "Canalul Panama este o cale navigabilă artificială care traversează Panama și leagă Oceanul Atlantic de Oceanul Pacific.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Bering Strait",
+      "aliases": [
+        "what is the Bering Strait",
+        "Bering Strait definition",
+        "Bering Strait meaning",
+        "ce este Stramtoarea Bering",
+        "definitie Stramtoarea Bering",
+        "care este Stramtoarea Bering"
+      ],
+      "answer": "Strâmtoarea Bering separă extremitatea estică a Asiei de extremitatea vestică a Americii de Nord.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Equator",
+      "aliases": [
+        "what is the Equator",
+        "Equator definition",
+        "Equator meaning",
+        "ce este Ecuatorul",
+        "definitie Ecuatorul",
+        "care este Ecuatorul"
+      ],
+      "answer": "Ecuatorul este cercul imaginar de latitudine 0° care împarte Pământul în emisfera nordică și sudică.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Prime Meridian",
+      "aliases": [
+        "what is the Prime Meridian",
+        "Prime Meridian definition",
+        "Prime Meridian meaning",
+        "ce este Meridianul Greenwich",
+        "definitie Meridianul Greenwich",
+        "care este Meridianul Greenwich"
+      ],
+      "answer": "Meridianul prim este meridianul de referință cu longitudinea 0°, utilizat pentru măsurarea longitudinii estice și vestice.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Tropic of Cancer",
+      "aliases": [
+        "what is the Tropic of Cancer",
+        "Tropic of Cancer definition",
+        "Tropic of Cancer meaning",
+        "ce este Tropicul Racului",
+        "definitie Tropicul Racului",
+        "care este Tropicul Racului"
+      ],
+      "answer": "Tropicul Racului este paralela aflată aproximativ la 23,5° latitudine nordică.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Tropic of Capricorn",
+      "aliases": [
+        "what is the Tropic of Capricorn",
+        "Tropic of Capricorn definition",
+        "Tropic of Capricorn meaning",
+        "ce este Tropicul Capricornului",
+        "definitie Tropicul Capricornului",
+        "care este Tropicul Capricornului"
+      ],
+      "answer": "Tropicul Capricornului este paralela aflată aproximativ la 23,5° latitudine sudică.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Arctic Circle",
+      "aliases": [
+        "what is the Arctic Circle",
+        "Arctic Circle definition",
+        "Arctic Circle meaning",
+        "ce este Cercul Polar Arctic",
+        "definitie Cercul Polar Arctic",
+        "care este Cercul Polar Arctic"
+      ],
+      "answer": "Cercul Polar Arctic este paralela aflată aproximativ la 66,5° latitudine nordică.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Antarctic Circle",
+      "aliases": [
+        "what is the Antarctic Circle",
+        "Antarctic Circle definition",
+        "Antarctic Circle meaning",
+        "ce este Cercul Polar Antarctic",
+        "definitie Cercul Polar Antarctic",
+        "care este Cercul Polar Antarctic"
+      ],
+      "answer": "Cercul Polar Antarctic este paralela aflată aproximativ la 66,5° latitudine sudică.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Northern Hemisphere",
+      "aliases": [
+        "what is the Northern Hemisphere",
+        "Northern Hemisphere definition",
+        "Northern Hemisphere meaning",
+        "ce este emisfera nordica",
+        "definitie emisfera nordica",
+        "care este emisfera nordica"
+      ],
+      "answer": "Emisfera nordică este jumătatea Pământului situată la nord de Ecuator.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Southern Hemisphere",
+      "aliases": [
+        "what is the Southern Hemisphere",
+        "Southern Hemisphere definition",
+        "Southern Hemisphere meaning",
+        "ce este emisfera sudica",
+        "definitie emisfera sudica",
+        "care este emisfera sudica"
+      ],
+      "answer": "Emisfera sudică este jumătatea Pământului situată la sud de Ecuator.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Eastern Hemisphere",
+      "aliases": [
+        "what is the Eastern Hemisphere",
+        "Eastern Hemisphere definition",
+        "Eastern Hemisphere meaning",
+        "ce este emisfera estica",
+        "definitie emisfera estica",
+        "care este emisfera estica"
+      ],
+      "answer": "Emisfera estică este partea Pământului aflată la est de meridianul prim și la vest de meridianul opus.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Western Hemisphere",
+      "aliases": [
+        "what is the Western Hemisphere",
+        "Western Hemisphere definition",
+        "Western Hemisphere meaning",
+        "ce este emisfera vestica",
+        "definitie emisfera vestica",
+        "care este emisfera vestica"
+      ],
+      "answer": "Emisfera vestică este partea Pământului aflată la vest de meridianul prim și la est de meridianul opus.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Latitude",
+      "aliases": [
+        "what is latitude",
+        "latitude definition",
+        "latitude meaning",
+        "ce este latitudinea",
+        "definitie latitudine",
+        "care este latitudinea"
+      ],
+      "answer": "Latitudinea măsoară distanța unghiulară față de Ecuator, spre nord sau spre sud.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Longitude",
+      "aliases": [
+        "what is longitude",
+        "longitude definition",
+        "longitude meaning",
+        "ce este longitudinea",
+        "definitie longitudine",
+        "care este longitudinea"
+      ],
+      "answer": "Longitudinea măsoară distanța unghiulară față de meridianul prim, spre est sau spre vest.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Time Zone",
+      "aliases": [
+        "what is a time zone",
+        "time zone definition",
+        "time zone meaning",
+        "ce este un fus orar",
+        "definitie fus orar",
+        "care este fusul orar"
+      ],
+      "answer": "Un fus orar este o regiune în care se utilizează aceeași oră oficială sau un sistem de timp coordonat.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Map Scale",
+      "aliases": [
+        "what is map scale",
+        "map scale definition",
+        "map scale meaning",
+        "ce este scara hartii",
+        "definitie scara hartii",
+        "care este scara hartii"
+      ],
+      "answer": "Scara hărții exprimă raportul dintre o distanță măsurată pe hartă și distanța corespunzătoare din teren.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Population Density",
+      "aliases": [
+        "what is population density",
+        "population density definition",
+        "population density meaning",
+        "ce este densitatea populatiei",
+        "definitie densitatea populatiei",
+        "care este densitatea populatiei"
+      ],
+      "answer": "Densitatea populației reprezintă numărul de locuitori raportat la o unitate de suprafață.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Urbanization",
+      "aliases": [
+        "what is urbanization",
+        "urbanization definition",
+        "urbanization meaning",
+        "ce este urbanizarea",
+        "definitie urbanizare",
+        "care este urbanizarea"
+      ],
+      "answer": "Urbanizarea este procesul prin care populația și activitățile se concentrează tot mai mult în zone urbane.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Migration",
+      "aliases": [
+        "what is migration",
+        "migration definition",
+        "migration meaning",
+        "ce este migratia",
+        "definitie migratie",
+        "care este migratia"
+      ],
+      "answer": "Migrația este deplasarea oamenilor dintr-un loc în altul, temporar sau permanent.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Delta",
+      "aliases": [
+        "what is a river delta",
+        "river delta definition",
+        "river delta meaning",
+        "ce este o delta",
+        "definitie delta fluviala",
+        "care este o delta fluviala"
+      ],
+      "answer": "O deltă este o formă de relief creată la vărsarea unui râu, unde sedimentele se depun și cursul se poate ramifica.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Estuary",
+      "aliases": [
+        "what is an estuary",
+        "estuary definition",
+        "estuary meaning",
+        "ce este un estuar",
+        "definitie estuar",
+        "care este un estuar"
+      ],
+      "answer": "Un estuar este o gură de vărsare largă a unui râu, influențată de maree și de amestecul dintre apa dulce și apa sărată.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Archipelago",
+      "aliases": [
+        "what is an archipelago",
+        "archipelago definition",
+        "archipelago meaning",
+        "ce este un arhipelag",
+        "definitie arhipelag",
+        "care este un arhipelag"
+      ],
+      "answer": "Un arhipelag este un grup sau lanț de insule situate relativ apropiat unele de altele.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Peninsula",
+      "aliases": [
+        "what is a peninsula",
+        "peninsula definition",
+        "peninsula meaning",
+        "ce este o peninsula",
+        "definitie peninsula",
+        "care este o peninsula"
+      ],
+      "answer": "O peninsulă este o porțiune de uscat înconjurată de apă pe trei laturi și legată de uscatul principal.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Isthmus",
+      "aliases": [
+        "what is an isthmus",
+        "isthmus definition",
+        "isthmus meaning",
+        "ce este un istm",
+        "definitie istm",
+        "care este un istm"
+      ],
+      "answer": "Un istm este o fâșie îngustă de uscat care leagă două suprafețe mari de uscat și separă două întinderi de apă.",
+      "domain": "geography"
+    },
+    {
+      "topic": "Archipelago Country",
+      "aliases": [
+        "what is an archipelago country",
+        "archipelago country definition",
+        "archipelago country meaning",
+        "ce este o tara arhipelag",
+        "definitie tara arhipelag",
+        "care este o tara arhipelag"
+      ],
+      "answer": "O țară-arhipelag este un stat al cărui teritoriu este format în principal dintr-un grup de insule, precum Indonezia sau Filipine.",
+      "domain": "geography"
     }
   ]
 }

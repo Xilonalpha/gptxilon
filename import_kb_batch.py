@@ -5,433 +5,289 @@ import os
 import shutil
 import sys
 from datetime import datetime
-import unicodedata
+from unicodedata import normalize as u_normalize
 
-BASE = "AIAssistantApp/app/src/main/assets"
-INDEX_PATH = os.path.join(BASE, "knowledge_index.json")
-BATCH_PATH = "knowledge_expansion/history_batch_001.json"
-
+ROOT = os.path.dirname(os.path.abspath(__file__))
+INDEX_PATH = os.path.join(
+    ROOT,
+    "AIAssistantApp",
+    "app",
+    "src",
+    "main",
+    "assets",
+    "knowledge_index.json"
+)
 
 def norm(text):
-    text = str(text).strip().lower()
-    text = unicodedata.normalize("NFKD", text)
-    text = "".join(c for c in text if not unicodedata.combining(c))
-    return " ".join(text.split())
+    text = u_normalize("NFKD", str(text))
+    text = "".join(c for c in text if not (0x300 <= ord(c) <= 0x36F))
+    text = text.lower()
+    return "".join(c if c.isalnum() or c.isspace() else " " for c in text).strip()
 
+def atomic_write(path, data):
+    tmp = path + ".tmp"
+    with open(tmp, "w", encoding="utf-8") as f:
+        json.dump(data, f, ensure_ascii=False, indent=2)
+        f.write("\n")
+    os.replace(tmp, path)
 
 def load_json(path):
     with open(path, "r", encoding="utf-8") as f:
         return json.load(f)
 
+def main():
+    if len(sys.argv) != 2:
+        print("Usage: python import_kb_batch.py <batch.json>")
+        sys.exit(1)
 
-def save_json(path, data):
-    tmp = path + ".tmp"
+    batch_path = os.path.abspath(sys.argv[1])
 
-    with open(tmp, "w", encoding="utf-8") as f:
-        json.dump(data, f, ensure_ascii=False, indent=2)
-        f.write("\n")
+    if not os.path.isfile(batch_path):
+        print(f"ERROR: batch file not found: {batch_path}")
+        sys.exit(1)
 
-    os.replace(tmp, path)
+    index = load_json(INDEX_PATH)
+    raw_batch = load_json(batch_path)
 
+    if isinstance(raw_batch, dict) and "entries" in raw_batch:
+        batch = raw_batch["entries"]
+    elif isinstance(raw_batch, list):
+        batch = raw_batch
+    else:
+        print("ERROR: batch must be a JSON list or object with 'entries'.")
+        sys.exit(1)
 
-print("=" * 72)
-print("KNOWLEDGE BATCH IMPORTER")
-print("=" * 72)
+    if not batch:
+        print("ERROR: batch is empty.")
+        sys.exit(1)
 
-if not os.path.exists(INDEX_PATH):
-    print("ERROR: knowledge_index.json not found")
-    sys.exit(1)
+    domains = {str(x.get("domain", "")).strip() for x in batch}
+    if len(domains) != 1:
+        print(f"ERROR: batch must contain exactly one domain. Found: {sorted(domains)}")
+        sys.exit(1)
 
-if not os.path.exists(BATCH_PATH):
-    print(f"ERROR: batch not found: {BATCH_PATH}")
-    sys.exit(1)
+    domain = next(iter(domains))
+    if not domain:
+        print("ERROR: batch entries have no domain.")
+        sys.exit(1)
 
+    dataset = None
+    for item in index.get("datasets", []):
+        if item.get("domain") == domain:
+            dataset = item
+            break
 
-index = load_json(INDEX_PATH)
-batch = load_json(BATCH_PATH)
+    if dataset is None:
+        print(f"ERROR: no dataset registered for domain: {domain}")
+        sys.exit(1)
 
-if not isinstance(batch, list):
-    batch = batch.get("entries", [])
+    dataset_path = os.path.join(
+        ROOT,
+        "AIAssistantApp",
+        "app",
+        "src",
+        "main",
+        "assets",
+        dataset["file"]
+    )
 
-if not isinstance(batch, list):
-    print("ERROR: batch must be a JSON array or contain 'entries'")
-    sys.exit(1)
+    if not os.path.isfile(dataset_path):
+        print(f"ERROR: dataset file not found: {dataset_path}")
+        sys.exit(1)
 
-print(f"Batch entries: {len(batch)}")
+    dataset_data = load_json(dataset_path)
 
-if len(batch) != 59:
-    print(f"ERROR: expected exactly 59 entries, found {len(batch)}")
-    sys.exit(1)
+    if isinstance(dataset_data, dict) and isinstance(dataset_data.get("entries"), list):
+        current = dataset_data["entries"]
+        dataset_is_wrapped = True
+    elif isinstance(dataset_data, list):
+        current = dataset_data
+        dataset_is_wrapped = False
+    else:
+        print(f"ERROR: unsupported dataset JSON structure: {dataset_path}")
+        sys.exit(1)
 
+    existing_topics = {}
+    existing_aliases = {}
 
-# ------------------------------------------------------------------
-# Locate history dataset
-# ------------------------------------------------------------------
+    for entry in current:
+        topic_key = norm(entry.get("topic", ""))
+        if topic_key:
+            existing_topics.setdefault(topic_key, []).append(entry.get("topic", ""))
 
-history_dataset = None
+        for alias in entry.get("aliases", []):
+            alias_key = norm(alias)
+            if alias_key:
+                existing_aliases.setdefault(alias_key, []).append(alias)
 
-for dataset in index.get("datasets", []):
-    if dataset.get("domain") == "history":
-        history_dataset = dataset
-        break
+    duplicate_aliases = {
+        key: values
+        for key, values in existing_aliases.items()
+        if len(values) > 1
+    }
 
-if history_dataset is None:
-    print("ERROR: history dataset not found")
-    sys.exit(1)
+    print("=" * 72)
+    print("KNOWLEDGE BATCH IMPORTER")
+    print("=" * 72)
+    print(f"Batch entries: {len(batch)}")
+    print(f"Domain: {domain}")
+    print(f"Dataset: {dataset_path}")
+    print(f"Existing entries: {len(current)}")
+    print(f"Pre-existing normalized alias duplicates: {len(duplicate_aliases)}")
 
-history_file = history_dataset.get("file")
+    for key in sorted(duplicate_aliases):
+        print(f"PRE-EXISTING DUPLICATE: '{key}'")
 
-if not history_file:
-    print("ERROR: history dataset has no file")
-    sys.exit(1)
+    batch_topics = set()
+    batch_aliases = set()
 
-history_path = os.path.join(BASE, history_file)
+    for i, entry in enumerate(batch, 1):
+        required = ["topic", "aliases", "answer", "domain"]
 
-if not os.path.exists(history_path):
-    print(f"ERROR: history file not found: {history_path}")
-    sys.exit(1)
+        for field in required:
+            if field not in entry:
+                print(f"ERROR: entry {i} missing field: {field}")
+                sys.exit(1)
 
-print(f"History file: {history_path}")
+        if entry["domain"] != domain:
+            print(f"ERROR: entry {i} has inconsistent domain.")
+            sys.exit(1)
 
+        topic_key = norm(entry["topic"])
 
-# ------------------------------------------------------------------
-# Load current history
-# ------------------------------------------------------------------
+        if topic_key in existing_topics:
+            print(f"ERROR: new topic already exists: {entry['topic']}")
+            sys.exit(1)
 
-history_data = load_json(history_path)
+        if topic_key in batch_topics:
+            print(f"ERROR: duplicate topic inside batch: {entry['topic']}")
+            sys.exit(1)
 
-if isinstance(history_data, list):
-    history_entries = history_data
-    history_is_list = True
-else:
-    history_entries = history_data.get("entries", [])
-    history_is_list = False
+        batch_topics.add(topic_key)
 
-if not isinstance(history_entries, list):
-    print("ERROR: history dataset has invalid structure")
-    sys.exit(1)
+        local_aliases = set()
 
-print(f"Existing history entries: {len(history_entries)}")
+        for alias in entry["aliases"]:
+            alias_key = norm(alias)
 
+            if not alias_key:
+                print(f"ERROR: empty alias in entry: {entry['topic']}")
+                sys.exit(1)
 
-# ------------------------------------------------------------------
-# Build existing indexes
-# ------------------------------------------------------------------
+            if alias_key in existing_aliases:
+                print(
+                    f"ERROR: new alias already exists: "
+                    f"'{alias}' in topic '{entry['topic']}'"
+                )
+                sys.exit(1)
 
-existing_topics = {}
-existing_aliases = {}
+            if alias_key in batch_aliases:
+                print(
+                    f"ERROR: duplicate alias inside batch: "
+                    f"'{alias}'"
+                )
+                sys.exit(1)
 
-preexisting_alias_duplicates = {}
+            if alias_key in local_aliases:
+                print(
+                    f"ERROR: duplicate alias inside entry: "
+                    f"'{alias}'"
+                )
+                sys.exit(1)
 
-for entry in history_entries:
+            local_aliases.add(alias_key)
+            batch_aliases.add(alias_key)
 
-    topic = norm(entry.get("topic", ""))
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
 
-    if topic:
-        if topic in existing_topics:
-            print(
-                f"WARNING: pre-existing duplicate topic: "
-                f"{entry.get('topic')}"
-            )
+    dataset_backup = dataset_path + f".backup_{timestamp}"
+    index_backup = INDEX_PATH + f".backup_{timestamp}"
 
-        existing_topics.setdefault(
-            topic,
-            entry.get("topic", "")
-        )
+    shutil.copy2(dataset_path, dataset_backup)
+    shutil.copy2(INDEX_PATH, index_backup)
 
-    for alias in entry.get("aliases", []):
+    before_count = len(current)
 
-        a = norm(alias)
+    try:
+        current.extend(batch)
 
-        if not a:
-            continue
-
-        if a in existing_aliases:
-            old_topic, old_alias = existing_aliases[a]
-
-            preexisting_alias_duplicates.setdefault(
-                a,
-                []
-            ).append(
-                (old_topic, old_alias)
-            )
-
-            preexisting_alias_duplicates[a].append(
-                (entry.get("topic", ""), alias)
-            )
-
+        if dataset_is_wrapped:
+            dataset_data["entries"] = current
+            atomic_write(dataset_path, dataset_data)
         else:
-            existing_aliases[a] = (
-                entry.get("topic", ""),
-                alias
-            )
+            atomic_write(dataset_path, current)
 
+        dataset["entries"] = len(current)
+        atomic_write(INDEX_PATH, index)
 
-if preexisting_alias_duplicates:
-    print(
-        f"Pre-existing normalized alias duplicates: "
-        f"{len(preexisting_alias_duplicates)}"
-    )
+        verify_dataset_raw = load_json(dataset_path)
+        verify_index = load_json(INDEX_PATH)
 
-    for alias, matches in preexisting_alias_duplicates.items():
-        print(
-            f"  PRE-EXISTING DUPLICATE: {alias!r}"
+        if isinstance(verify_dataset_raw, dict) and isinstance(verify_dataset_raw.get("entries"), list):
+            verify_dataset = verify_dataset_raw["entries"]
+        elif isinstance(verify_dataset_raw, list):
+            verify_dataset = verify_dataset_raw
+        else:
+            raise RuntimeError("Post-import dataset structure is invalid.")
+
+        topics_after = [
+            norm(x.get("topic", ""))
+            for x in verify_dataset
+        ]
+
+        aliases_after = {}
+        for entry in verify_dataset:
+            for alias in entry.get("aliases", []):
+                key = norm(alias)
+                aliases_after.setdefault(key, 0)
+                aliases_after[key] += 1
+
+        for entry in batch:
+            topic_key = norm(entry["topic"])
+
+            if topics_after.count(topic_key) != 1:
+                raise RuntimeError(
+                    f"New topic verification failed: {entry['topic']}"
+                )
+
+            for alias in entry["aliases"]:
+                alias_key = norm(alias)
+
+                if aliases_after.get(alias_key, 0) != 1:
+                    raise RuntimeError(
+                        f"New alias verification failed: {alias}"
+                    )
+
+        index_dataset = next(
+            x for x in verify_index["datasets"]
+            if x.get("domain") == domain
         )
 
+        if index_dataset.get("entries") != len(verify_dataset):
+            raise RuntimeError("Index entry count verification failed.")
 
-# ------------------------------------------------------------------
-# Validate the NEW batch only
-# ------------------------------------------------------------------
+    except Exception as exc:
+        print(f"ERROR DURING IMPORT: {exc}")
+        print("Rolling back dataset and index...")
 
-batch_topics = set()
-batch_aliases = set()
-
-for i, entry in enumerate(batch, start=1):
-
-    prefix = f"ENTRY {i}"
-
-    if not isinstance(entry, dict):
-        print(f"ERROR: {prefix} is not an object")
-        sys.exit(1)
-
-    for field in ["topic", "aliases", "answer", "domain"]:
-        if field not in entry:
-            print(
-                f"ERROR: {prefix} missing field '{field}'"
-            )
-            sys.exit(1)
-
-    if entry.get("domain") != "history":
-        print(
-            f"ERROR: {prefix} '{entry.get('topic')}' "
-            f"has domain '{entry.get('domain')}', "
-            f"expected 'history'"
-        )
-        sys.exit(1)
-
-    topic = norm(entry.get("topic", ""))
-
-    if not topic:
-        print(f"ERROR: {prefix} has empty topic")
-        sys.exit(1)
-
-    if topic in existing_topics:
-        print(
-            f"ERROR: new topic already exists: "
-            f"{entry.get('topic')}"
-        )
-        sys.exit(1)
-
-    if topic in batch_topics:
-        print(
-            f"ERROR: duplicate topic inside batch: "
-            f"{entry.get('topic')}"
-        )
-        sys.exit(1)
-
-    batch_topics.add(topic)
-
-    aliases = entry.get("aliases", [])
-
-    if not isinstance(aliases, list) or len(aliases) < 6:
-        print(
-            f"ERROR: {prefix} '{entry.get('topic')}' "
-            f"must have at least 6 aliases"
-        )
-        sys.exit(1)
-
-    local_aliases = set()
-
-    for alias in aliases:
-
-        a = norm(alias)
-
-        if not a:
-            print(
-                f"ERROR: empty alias in "
-                f"'{entry.get('topic')}'"
-            )
-            sys.exit(1)
-
-        if a in local_aliases:
-            print(
-                f"ERROR: duplicate alias inside "
-                f"'{entry.get('topic')}': {alias}"
-            )
-            sys.exit(1)
-
-        local_aliases.add(a)
-
-        # Existing aliases are forbidden for NEW entries.
-        if a in existing_aliases:
-            old_topic, old_alias = existing_aliases[a]
-
-            print(
-                f"ERROR: new alias already exists in KB: "
-                f"'{alias}' -> '{old_topic}'"
-            )
-            sys.exit(1)
-
-        if a in batch_aliases:
-            print(
-                f"ERROR: alias duplicated inside batch: "
-                f"'{alias}'"
-            )
-            sys.exit(1)
-
-        batch_aliases.add(a)
-
-
-print("Pre-import validation: PASSED")
-
-
-# ------------------------------------------------------------------
-# Backup
-# ------------------------------------------------------------------
-
-timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-
-history_backup = history_path + f".backup_{timestamp}"
-index_backup = INDEX_PATH + f".backup_{timestamp}"
-
-shutil.copy2(history_path, history_backup)
-shutil.copy2(INDEX_PATH, index_backup)
-
-print(f"History backup: {history_backup}")
-print(f"Index backup:   {index_backup}")
-
-
-# ------------------------------------------------------------------
-# Import
-# ------------------------------------------------------------------
-
-new_history_entries = history_entries + batch
-
-if history_is_list:
-    new_history_data = new_history_entries
-else:
-    new_history_data = dict(history_data)
-    new_history_data["entries"] = new_history_entries
-
-
-new_index = dict(index)
-new_datasets = []
-
-for dataset in index.get("datasets", []):
-
-    d = dict(dataset)
-
-    if d.get("domain") == "history":
-        d["entries"] = len(new_history_entries)
-
-    new_datasets.append(d)
-
-new_index["datasets"] = new_datasets
-
-
-# Atomic writes
-save_json(history_path, new_history_data)
-save_json(INDEX_PATH, new_index)
-
-
-# ------------------------------------------------------------------
-# Post-import verification
-# ------------------------------------------------------------------
-
-verify_history = load_json(history_path)
-
-if isinstance(verify_history, list):
-    verify_entries = verify_history
-else:
-    verify_entries = verify_history.get("entries", [])
-
-
-expected_count = len(history_entries) + len(batch)
-
-if len(verify_entries) != expected_count:
-
-    print(
-        f"ERROR: post-import count mismatch. "
-        f"Expected {expected_count}, "
-        f"found {len(verify_entries)}"
-    )
-
-    shutil.copy2(history_backup, history_path)
-    shutil.copy2(index_backup, INDEX_PATH)
-
-    print("ROLLBACK COMPLETED")
-    sys.exit(1)
-
-
-# Verify every NEW topic exists exactly once.
-final_topics = {}
-
-for entry in verify_entries:
-
-    topic = norm(entry.get("topic", ""))
-
-    if topic:
-        final_topics.setdefault(topic, 0)
-        final_topics[topic] += 1
-
-
-for topic in batch_topics:
-
-    if final_topics.get(topic, 0) != 1:
-
-        print(
-            f"ERROR: imported topic verification failed: "
-            f"{topic}"
-        )
-
-        shutil.copy2(history_backup, history_path)
+        shutil.copy2(dataset_backup, dataset_path)
         shutil.copy2(index_backup, INDEX_PATH)
 
-        print("ROLLBACK COMPLETED")
+        print("ROLLBACK COMPLETE")
         sys.exit(1)
 
+    print()
+    print("IMPORT SUCCESSFUL")
+    print(f"Domain: {domain}")
+    print(f"Imported entries: {len(batch)}")
+    print(f"Entries before:   {before_count}")
+    print(f"Entries after:    {len(current)}")
+    print(f"New aliases:      {len(batch_aliases)}")
+    print("Pre-existing duplicates preserved.")
+    print("New topic verification: PASSED")
+    print("New alias verification: PASSED")
+    print("Index verification: PASSED")
+    print("Backups preserved.")
 
-# Verify every NEW alias exists exactly once.
-final_aliases = {}
-
-for entry in verify_entries:
-
-    for alias in entry.get("aliases", []):
-
-        a = norm(alias)
-
-        if a:
-            final_aliases.setdefault(a, 0)
-            final_aliases[a] += 1
-
-
-for alias in batch_aliases:
-
-    if final_aliases.get(alias, 0) != 1:
-
-        print(
-            f"ERROR: imported alias verification failed: "
-            f"{alias}"
-        )
-
-        shutil.copy2(history_backup, history_path)
-        shutil.copy2(INDEX_PATH, INDEX_PATH)
-
-        print("ROLLBACK COMPLETED")
-        sys.exit(1)
-
-
-print()
-print("=" * 72)
-print("IMPORT SUCCESSFUL")
-print("=" * 72)
-print(f"Imported entries: {len(batch)}")
-print(f"History before:   {len(history_entries)}")
-print(f"History after:    {len(verify_entries)}")
-print(f"New aliases:      {len(batch_aliases)}")
-print()
-print("Pre-existing duplicates preserved.")
-print("New topic verification: PASSED")
-print("New alias verification: PASSED")
-print("Backups preserved.")
-print("=" * 72)
+if __name__ == "__main__":
+    main()
