@@ -376,6 +376,18 @@
             android:textSize="18sp"
             android:contentDescription="Dictare vocală" />
 
+        <Button
+            android:id="@+id/btnVoice"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:layout_marginStart="4dp"
+            android:padding="0dp"
+            android:text="🔇"
+            android:textSize="18sp"
+            android:contentDescription="Răspuns vocal" />
+
         <EditText
             android:id="@+id/etMessage"
             android:layout_width="0dp"

@@ -5,8 +5,6 @@ import android.app.Activity
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
-import android.speech.RecognizerIntent
-import android.speech.tts.TextToSpeech
 import android.widget.EditText
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
@@ -39,7 +37,7 @@ class MainActivity : AppCompatActivity() {
     private var currentWorkspace: WorkspaceManager.Workspace? = null
     private var pendingAttachment: Attachment? = null
     private var lastCodeBlocks: List<Pair<String, String>> = emptyList()
-    private var tts: TextToSpeech? = null
+    private lateinit var voiceEngine: VoiceEngine
     private var sessionSaved = false
 
     private val exportLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { r ->
@@ -57,9 +55,6 @@ class MainActivity : AppCompatActivity() {
     private val attachmentLauncher = registerForActivityResult(ActivityResultContracts.OpenDocument()) { uri ->
         if (uri != null) thread { val a=FileIntelligence.read(this,uri); runOnUiThread { pendingAttachment=a; binding.tvAttachment.text=if(a!=null) "📎 ${a.name}" else "Atașamentul nu a putut fi citit"; toast(if(a!=null) "Fișier pregătit pentru AI" else "Fișier invalid") } }
     }
-    private val speechLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { r ->
-        if (r.resultCode == Activity.RESULT_OK) r.data?.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS)?.firstOrNull()?.let { binding.etMessage.setText(it); binding.etMessage.setSelection(it.length) }
-    }
     private val notificationPermission = registerForActivityResult(ActivityResultContracts.RequestPermission()) { }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -73,14 +68,35 @@ class MainActivity : AppCompatActivity() {
         personaIndex=getSharedPreferences("ai_prefs",MODE_PRIVATE).getInt("persona",0)
         binding.etApiKey.setText(if(apiKey.isBlank()) "" else "••••••••••••••••")
         if(Build.VERSION.SDK_INT>=33) notificationPermission.launch(Manifest.permission.POST_NOTIFICATIONS)
-        tts=TextToSpeech(this){ if(it==TextToSpeech.SUCCESS) tts?.language=Locale.getDefault() }
+        voiceEngine = VoiceEngine(
+            this,
+            onPartial = { text ->
+                runOnUiThread {
+                    binding.etMessage.setText(text)
+                    binding.etMessage.setSelection(text.length)
+                }
+            },
+            onFinal = { text ->
+                runOnUiThread {
+                    binding.etMessage.setText(text)
+                    binding.etMessage.setSelection(text.length)
+                    sendMessage()
+                }
+            },
+            onState = { state ->
+                runOnUiThread {
+                    binding.tvInputStatus.visibility = android.view.View.VISIBLE
+                    binding.tvInputStatus.text = state
+                }
+            }
+        )
         adapter.addMessage(ChatMessage("Salut! Sunt AI Assistant Pro — Intelligence Edition.\n\n🧠 Memory + Knowledge Graph\n🔎 Verification + confidence\n🤖 Agent Mode\n📁 File/Vision Intelligence\n🛰️ AI Watcher\n🧩 Workspaces + Project Builder\n🚀 Supreme Power Engine\n\nApasă 📎 pentru fișiere, ⚡ pentru Agent sau 🧠 pentru Intelligence Core.",false))
         wireActions()
     }
 
     private fun wireActions() {
         adapter.onFeedback={position,positive-> val msgs=adapter.getMessages(); val u=msgs.take(position).lastOrNull{it.isUser}?.text ?: ""; brain.learnFromFeedback(u,msgs[position].text,positive); adapter.markRated(position); toast("🧠 Feedback învățat") }
-        adapter.onSpeak={text-> tts?.stop(); tts?.speak(text.take(3500),TextToSpeech.QUEUE_FLUSH,null,"ai_reply") }
+        adapter.onSpeak={text-> voiceEngine.speakNow(text) }
         binding.btnSaveKey.setOnClickListener {
             val typed=binding.etApiKey.text.toString().trim()
 
@@ -107,7 +123,26 @@ class MainActivity : AppCompatActivity() {
         binding.btnZip.setOnClickListener { treeLauncher.launch(null) }
         binding.btnAttach.setOnClickListener { attachmentLauncher.launch(arrayOf("*/*")) }
         binding.btnWatcher.setOnClickListener { showWatcherDialog() }
-        binding.btnMic.setOnClickListener { try { speechLauncher.launch(Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH).apply{putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL,RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);putExtra(RecognizerIntent.EXTRA_LANGUAGE,Locale.getDefault().toLanguageTag())}) } catch(_:Exception){toast("Recunoașterea vocală nu este disponibilă")} }
+        binding.btnMic.setOnClickListener {
+            if (
+                androidx.core.content.ContextCompat.checkSelfPermission(
+                    this,
+                    Manifest.permission.RECORD_AUDIO
+                ) != android.content.pm.PackageManager.PERMISSION_GRANTED
+            ) {
+                requestPermissions(
+                    arrayOf(Manifest.permission.RECORD_AUDIO),
+                    7001
+                )
+            } else {
+                voiceEngine.startListening()
+            }
+        }
+
+        binding.btnVoice.setOnClickListener {
+            val enabled = voiceEngine.toggleVoiceReplies()
+            binding.btnVoice.text = if (enabled) "🔊" else "🔇"
+        }
         binding.btnSend.setOnClickListener { sendMessage() }
         binding.btnChipNew.setOnClickListener { saveCurrentSession();adapter.setMessages(emptyList());lastCodeBlocks=emptyList();pendingAttachment=null;binding.tvAttachment.text="";toast("✚ Workspace conversațional nou") }
         binding.btnChipNews.setOnClickListener { binding.etMessage.setText("Caută cele mai importante știri de astăzi, verifică sursele și semnalează conflictele.");sendMessage() }
@@ -225,7 +260,21 @@ class MainActivity : AppCompatActivity() {
                 val fact=if(collectedEvidence.isNotEmpty()) FactCheckEngine.check(reply.text,collectedEvidence) else null
                 val factLine=fact?.let{"\n\n🔎 Fact Check: ${it.supported} multi-source • ${it.weak} limited • ${it.conflict} conflict • ${it.unknown} unknown"} ?: ""
                 val decorated=reply.text+"\n\n🔎 Evidence: ${evidence.label} ${evidence.confidence}%\n${evidence.explanation}"+factLine
-                runOnUiThread { adapter.updateLastMessage(decorated,reply.sources,reply.tokens);currentWorkspace?.let{workspaces.appendMessage(it,ChatMessage(decorated,false,reply.sources))};binding.recyclerView.scrollToPosition(adapter.itemCount-1) }
+                runOnUiThread {
+                    adapter.updateLastMessage(
+                        decorated,
+                        reply.sources,
+                        reply.tokens
+                    )
+                    currentWorkspace?.let {
+                        workspaces.appendMessage(
+                            it,
+                            ChatMessage(decorated,false,reply.sources)
+                        )
+                    }
+                    binding.recyclerView.scrollToPosition(adapter.itemCount-1)
+                    voiceEngine.speak(reply.text)
+                }
             }catch(e:Exception){runOnUiThread{adapter.updateLastMessage("⚠️ ${e.message ?: "Eroare necunoscută"}");binding.recyclerView.scrollToPosition(adapter.itemCount-1)}}
         }
     }
@@ -276,7 +325,10 @@ class MainActivity : AppCompatActivity() {
     private fun buildTranscript()=buildString{append("# AI Assistant Pro Intelligence Edition\n\n");adapter.getMessages().forEach{append(if(it.isUser)"**Tu:** " else "**AI:** ").append(it.text).append("\n\n");if(it.sources.isNotEmpty())append("Surse: ").append(it.sources.joinToString(", ")).append("\n\n---\n\n")}}
     private fun toast(s:String)=Toast.makeText(this,s,Toast.LENGTH_SHORT).show()
     override fun onPause(){super.onPause();saveCurrentSession()}
-    override fun onDestroy(){tts?.stop();tts?.shutdown();super.onDestroy()}
+    override fun onDestroy(){
+        voiceEngine.shutdown()
+        super.onDestroy()
+    }
 }
 
 object RouteEngine {
