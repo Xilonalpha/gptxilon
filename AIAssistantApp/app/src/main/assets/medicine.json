@@ -1,5 +1,434 @@
 {
   "version": 1,
   "domain": "medicine",
-  "entries": []
+  "entries": [
+    {
+      "topic": "Cell",
+      "aliases": [
+        "what is a cell",
+        "what are cells",
+        "celula"
+      ],
+      "answer": "A cell is the basic structural and functional unit of living organisms.",
+      "domain": "medicine"
+    },
+    {
+      "topic": "Tissue",
+      "aliases": [
+        "what is tissue",
+        "what are tissues",
+        "ce este un tesut",
+        "ce este un țesut",
+        "tesut"
+      ],
+      "answer": "A tissue is a group of similar cells organized to perform a specific function.",
+      "domain": "medicine"
+    },
+    {
+      "topic": "Organ",
+      "aliases": [
+        "what is an organ",
+        "what are organs",
+        "ce este un organ",
+        "organ biologic"
+      ],
+      "answer": "An organ is a body structure composed of different tissues that work together to perform specific functions.",
+      "domain": "medicine"
+    },
+    {
+      "topic": "Human body",
+      "aliases": [
+        "what is the human body",
+        "human body",
+        "corpul uman",
+        "ce este corpul uman"
+      ],
+      "answer": "The human body is an organized biological system made of cells, tissues, organs, and organ systems.",
+      "domain": "medicine"
+    },
+    {
+      "topic": "Heart",
+      "aliases": [
+        "what is the heart",
+        "heart function",
+        "ce este inima",
+        "functia inimii",
+        "funcția inimii"
+      ],
+      "answer": "The heart is a muscular organ that pumps blood through the circulatory system.",
+      "domain": "medicine"
+    },
+    {
+      "topic": "Lungs",
+      "aliases": [
+        "what are the lungs",
+        "lung function",
+        "ce sunt plamanii",
+        "ce sunt plămânii",
+        "functia plamanilor",
+        "funcția plămânilor"
+      ],
+      "answer": "The lungs are organs of the respiratory system where oxygen enters the blood and carbon dioxide is removed.",
+      "domain": "medicine"
+    },
+    {
+      "topic": "Brain",
+      "aliases": [
+        "what is the brain",
+        "brain function",
+        "ce este creierul",
+        "functia creierului",
+        "funcția creierului"
+      ],
+      "answer": "The brain is the central organ of the nervous system and coordinates many functions including perception, movement, memory, and cognition.",
+      "domain": "medicine"
+    },
+    {
+      "topic": "Nervous system",
+      "aliases": [
+        "what is the nervous system",
+        "nervous system",
+        "sistemul nervos",
+        "ce este sistemul nervos"
+      ],
+      "answer": "The nervous system is a network of the brain, spinal cord, and nerves that coordinates communication and control throughout the body.",
+      "domain": "medicine"
+    },
+    {
+      "topic": "Circulatory system",
+      "aliases": [
+        "what is the circulatory system",
+        "circulatory system",
+        "sistemul circulator",
+        "sistem circulator"
+      ],
+      "answer": "The circulatory system transports blood, oxygen, nutrients, hormones, and waste products throughout the body.",
+      "domain": "medicine"
+    },
+    {
+      "topic": "Respiratory system",
+      "aliases": [
+        "what is the respiratory system",
+        "respiratory system",
+        "sistemul respirator",
+        "ce este sistemul respirator"
+      ],
+      "answer": "The respiratory system exchanges gases between the body and the environment, supplying oxygen and removing carbon dioxide.",
+      "domain": "medicine"
+    },
+    {
+      "topic": "Digestive system",
+      "aliases": [
+        "what is the digestive system",
+        "digestive system",
+        "sistemul digestiv",
+        "ce este sistemul digestiv"
+      ],
+      "answer": "The digestive system breaks food down into substances that can be absorbed and used by the body.",
+      "domain": "medicine"
+    },
+    {
+      "topic": "Immune system",
+      "aliases": [
+        "what is the immune system",
+        "immune system",
+        "sistemul imunitar",
+        "ce este sistemul imunitar"
+      ],
+      "answer": "The immune system is a network of cells, tissues, organs, and molecules that helps protect the body from pathogens and abnormal cells.",
+      "domain": "medicine"
+    },
+    {
+      "topic": "DNA",
+      "aliases": [
+        "dna in medicine"
+      ],
+      "answer": "DNA is the molecule that stores genetic information used for development, function, and reproduction of organisms.",
+      "domain": "medicine"
+    },
+    {
+      "topic": "RNA",
+      "aliases": [
+        "rna in medicine"
+      ],
+      "answer": "RNA is a nucleic acid involved in processes such as gene expression and protein synthesis.",
+      "domain": "medicine"
+    },
+    {
+      "topic": "Gene",
+      "aliases": [
+        "gene definition"
+      ],
+      "answer": "A gene is a segment of genetic material that contains information contributing to a biological function or product.",
+      "domain": "medicine"
+    },
+    {
+      "topic": "Chromosome",
+      "aliases": [
+        "chromosome definition",
+        "cromozom"
+      ],
+      "answer": "A chromosome is a DNA-containing structure that carries genetic information.",
+      "domain": "medicine"
+    },
+    {
+      "topic": "Hormone",
+      "aliases": [
+        "what is a hormone",
+        "hormone definition",
+        "ce este un hormon",
+        "hormon"
+      ],
+      "answer": "A hormone is a chemical messenger produced by cells or glands that regulates functions in other cells or tissues.",
+      "domain": "medicine"
+    },
+    {
+      "topic": "Insulin",
+      "aliases": [
+        "what is insulin",
+        "insulin function",
+        "ce este insulina",
+        "functia insulinei",
+        "funcția insulinei"
+      ],
+      "answer": "Insulin is a hormone produced by pancreatic beta cells that helps regulate blood glucose levels.",
+      "domain": "medicine"
+    },
+    {
+      "topic": "Blood",
+      "aliases": [
+        "what is blood",
+        "blood function",
+        "ce este sangele",
+        "ce este sângele"
+      ],
+      "answer": "Blood is a connective tissue that transports gases, nutrients, hormones, immune cells, and waste products through the body.",
+      "domain": "medicine"
+    },
+    {
+      "topic": "Red blood cell",
+      "aliases": [
+        "what is a red blood cell",
+        "red blood cell",
+        "ce este o hematie",
+        "globula rosie",
+        "globulă roșie"
+      ],
+      "answer": "A red blood cell is a blood cell specialized for transporting oxygen, mainly through the protein hemoglobin.",
+      "domain": "medicine"
+    },
+    {
+      "topic": "White blood cell",
+      "aliases": [
+        "what is a white blood cell",
+        "white blood cell",
+        "ce este o globula alba",
+        "ce este o globulă albă"
+      ],
+      "answer": "A white blood cell is an immune-system cell involved in defending the body against pathogens and abnormal cells.",
+      "domain": "medicine"
+    },
+    {
+      "topic": "Platelet",
+      "aliases": [
+        "what is a platelet",
+        "platelets",
+        "ce este o trombocita",
+        "ce este o trombocită",
+        "trombocite"
+      ],
+      "answer": "A platelet is a blood component that helps form clots and contributes to stopping bleeding.",
+      "domain": "medicine"
+    },
+    {
+      "topic": "Hemoglobin",
+      "aliases": [
+        "what is hemoglobin",
+        "hemoglobin function",
+        "ce este hemoglobina"
+      ],
+      "answer": "Hemoglobin is a protein in red blood cells that binds oxygen and contributes to its transport in blood.",
+      "domain": "medicine"
+    },
+    {
+      "topic": "Neuron",
+      "aliases": [
+        "what is a neuron",
+        "neuron definition",
+        "ce este un neuron",
+        "neuron"
+      ],
+      "answer": "A neuron is a specialized cell that communicates information through electrical and chemical signals.",
+      "domain": "medicine"
+    },
+    {
+      "topic": "Synapse",
+      "aliases": [
+        "what is a synapse",
+        "synapse definition",
+        "ce este o sinapsa",
+        "ce este o sinapsă"
+      ],
+      "answer": "A synapse is a junction through which a neuron communicates with another cell, commonly using chemical neurotransmitters or electrical signals.",
+      "domain": "medicine"
+    },
+    {
+      "topic": "Bacteria",
+      "aliases": [
+        "bacteria in medicine",
+        "bacterii"
+      ],
+      "answer": "Bacteria are microscopic single-celled organisms. Some are harmless or beneficial, while others can cause infectious disease.",
+      "domain": "medicine"
+    },
+    {
+      "topic": "Virus",
+      "aliases": [
+        "virus definition",
+        "virus"
+      ],
+      "answer": "A virus is an infectious biological entity that requires a host cell to reproduce.",
+      "domain": "medicine"
+    },
+    {
+      "topic": "Antibody",
+      "aliases": [
+        "what is an antibody",
+        "antibody definition",
+        "ce este un anticorp",
+        "anticorp"
+      ],
+      "answer": "An antibody is a protein produced by certain immune cells that specifically binds to an antigen.",
+      "domain": "medicine"
+    },
+    {
+      "topic": "Antigen",
+      "aliases": [
+        "what is an antigen",
+        "antigen definition",
+        "ce este un antigen",
+        "antigen"
+      ],
+      "answer": "An antigen is a molecule or molecular structure that can be recognized by components of the immune system.",
+      "domain": "medicine"
+    },
+    {
+      "topic": "Vaccine",
+      "aliases": [
+        "what is a vaccine",
+        "vaccine definition",
+        "ce este un vaccin",
+        "vaccin"
+      ],
+      "answer": "A vaccine is a biological preparation designed to stimulate an immune response that can provide protection against a specific infectious agent or disease.",
+      "domain": "medicine"
+    },
+    {
+      "topic": "Pathogen",
+      "aliases": [
+        "what is a pathogen",
+        "pathogen definition",
+        "ce este un patogen",
+        "patogen"
+      ],
+      "answer": "A pathogen is a biological agent capable of causing disease in a host.",
+      "domain": "medicine"
+    },
+    {
+      "topic": "Inflammation",
+      "aliases": [
+        "what is inflammation",
+        "inflammation definition",
+        "ce este inflamatia",
+        "ce este inflamația"
+      ],
+      "answer": "Inflammation is a biological response of tissues to harmful stimuli and is part of the body's immune and repair processes.",
+      "domain": "medicine"
+    },
+    {
+      "topic": "Metabolism",
+      "aliases": [
+        "what is metabolism",
+        "metabolism definition",
+        "ce este metabolismul",
+        "metabolism"
+      ],
+      "answer": "Metabolism is the collection of chemical reactions that occur in cells to maintain life, obtain energy, and build or break down molecules.",
+      "domain": "medicine"
+    },
+    {
+      "topic": "Homeostasis",
+      "aliases": [
+        "what is homeostasis",
+        "homeostasis definition",
+        "ce este homeostazia",
+        "homeostazie"
+      ],
+      "answer": "Homeostasis is the regulation of internal conditions within ranges compatible with normal biological function.",
+      "domain": "medicine"
+    },
+    {
+      "topic": "Enzyme",
+      "aliases": [
+        "what is an enzyme",
+        "enzyme definition",
+        "ce este o enzima",
+        "ce este o enzimă"
+      ],
+      "answer": "An enzyme is a biological catalyst that increases the rate of a chemical reaction without being consumed by the reaction.",
+      "domain": "medicine"
+    },
+    {
+      "topic": "Protein",
+      "aliases": [
+        "protein definition"
+      ],
+      "answer": "A protein is a biological macromolecule made of amino acids that performs structural, catalytic, transport, signaling, and other functions.",
+      "domain": "medicine"
+    },
+    {
+      "topic": "Antibiotic",
+      "aliases": [
+        "what is an antibiotic",
+        "antibiotic definition",
+        "ce este un antibiotic",
+        "antibiotic"
+      ],
+      "answer": "An antibiotic is a substance used to inhibit or kill susceptible bacteria. Antibiotics do not directly treat viral infections.",
+      "domain": "medicine"
+    },
+    {
+      "topic": "Anatomy",
+      "aliases": [
+        "what is anatomy",
+        "anatomy definition",
+        "ce este anatomia",
+        "anatomie"
+      ],
+      "answer": "Anatomy is the scientific study of the structure of organisms and their body parts.",
+      "domain": "medicine"
+    },
+    {
+      "topic": "Physiology",
+      "aliases": [
+        "what is physiology",
+        "physiology definition",
+        "ce este fiziologia",
+        "fiziologie"
+      ],
+      "answer": "Physiology is the scientific study of how living organisms and their parts function.",
+      "domain": "medicine"
+    },
+    {
+      "topic": "Epidemiology",
+      "aliases": [
+        "what is epidemiology",
+        "epidemiology definition",
+        "ce este epidemiologia",
+        "epidemiologie"
+      ],
+      "answer": "Epidemiology studies the distribution and determinants of health-related conditions in populations.",
+      "domain": "medicine"
+    }
+  ]
 }

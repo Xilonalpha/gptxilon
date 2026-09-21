@@ -1,5 +1,451 @@
 {
   "version": 1,
   "domain": "engineering",
-  "entries": []
+  "entries": [
+    {
+      "topic": "Engineering",
+      "aliases": [
+        "what is engineering",
+        "engineering definition",
+        "ce este ingineria",
+        "inginerie"
+      ],
+      "answer": "Engineering is the application of mathematics, science, and technical knowledge to design, build, analyze, and improve systems and technologies.",
+      "domain": "engineering"
+    },
+    {
+      "topic": "Mechanical engineering",
+      "aliases": [
+        "what is mechanical engineering",
+        "mechanical engineering",
+        "inginerie mecanica",
+        "inginerie mecanică"
+      ],
+      "answer": "Mechanical engineering focuses on the design, analysis, manufacturing, and operation of mechanical systems and machines.",
+      "domain": "engineering"
+    },
+    {
+      "topic": "Electrical engineering",
+      "aliases": [
+        "what is electrical engineering",
+        "electrical engineering",
+        "inginerie electrica",
+        "inginerie electrică"
+      ],
+      "answer": "Electrical engineering deals with electrical systems, circuits, power, electronics, and electromagnetic technologies.",
+      "domain": "engineering"
+    },
+    {
+      "topic": "Civil engineering",
+      "aliases": [
+        "what is civil engineering",
+        "civil engineering",
+        "inginerie civila",
+        "inginerie civilă"
+      ],
+      "answer": "Civil engineering deals with the design, construction, and maintenance of infrastructure such as buildings, bridges, roads, and water systems.",
+      "domain": "engineering"
+    },
+    {
+      "topic": "Chemical engineering",
+      "aliases": [
+        "what is chemical engineering",
+        "chemical engineering",
+        "inginerie chimica",
+        "inginerie chimică"
+      ],
+      "answer": "Chemical engineering applies chemistry, physics, mathematics, and engineering principles to industrial processes and materials.",
+      "domain": "engineering"
+    },
+    {
+      "topic": "Aerospace engineering",
+      "aliases": [
+        "what is aerospace engineering",
+        "aerospace engineering",
+        "inginerie aerospatiala",
+        "inginerie aerospațială"
+      ],
+      "answer": "Aerospace engineering concerns the design, analysis, manufacture, and operation of aircraft and spacecraft.",
+      "domain": "engineering"
+    },
+    {
+      "topic": "Computer engineering",
+      "aliases": [
+        "what is computer engineering",
+        "computer engineering",
+        "inginerie informatica",
+        "inginerie informatică"
+      ],
+      "answer": "Computer engineering combines electrical engineering and computer science to design computer hardware and integrated hardware-software systems.",
+      "domain": "engineering"
+    },
+    {
+      "topic": "Control engineering",
+      "aliases": [
+        "what is control engineering",
+        "control engineering",
+        "ingineria sistemelor de control"
+      ],
+      "answer": "Control engineering develops systems that regulate the behavior of machines and processes using feedback and control algorithms.",
+      "domain": "engineering"
+    },
+    {
+      "topic": "Robotics",
+      "aliases": [
+        "what is robotics",
+        "robotics definition",
+        "ce este robotica"
+      ],
+      "answer": "Robotics is an engineering field concerned with the design, construction, control, and application of robots.",
+      "domain": "engineering"
+    },
+    {
+      "topic": "Robot",
+      "aliases": [
+        "what is a robot",
+        "robot definition",
+        "ce este un robot"
+      ],
+      "answer": "A robot is a programmable machine capable of carrying out physical or computational tasks with varying degrees of autonomy.",
+      "domain": "engineering"
+    },
+    {
+      "topic": "Machine",
+      "aliases": [
+        "what is a machine",
+        "machine definition",
+        "ce este o masina",
+        "ce este o mașină"
+      ],
+      "answer": "A machine is a system of components that uses energy and mechanical principles to perform useful work.",
+      "domain": "engineering"
+    },
+    {
+      "topic": "Engine",
+      "aliases": [
+        "what is an engine",
+        "engine definition",
+        "ce este un motor",
+        "motor"
+      ],
+      "answer": "An engine is a device that converts an available form of energy into mechanical work or useful motion.",
+      "domain": "engineering"
+    },
+    {
+      "topic": "Motor",
+      "aliases": [
+        "what is an electric motor",
+        "electric motor",
+        "motor electric",
+        "ce este un motor electric"
+      ],
+      "answer": "An electric motor converts electrical energy into mechanical motion through electromagnetic interactions.",
+      "domain": "engineering"
+    },
+    {
+      "topic": "Generator",
+      "aliases": [
+        "what is an electrical generator",
+        "generator definition",
+        "ce este un generator electric",
+        "generator electric"
+      ],
+      "answer": "An electrical generator converts mechanical energy into electrical energy, commonly through electromagnetic induction.",
+      "domain": "engineering"
+    },
+    {
+      "topic": "Transformer",
+      "aliases": [
+        "what is an electrical transformer",
+        "transformer definition",
+        "ce este un transformator",
+        "transformator"
+      ],
+      "answer": "An electrical transformer transfers electrical energy between circuits using electromagnetic induction and can change AC voltage levels.",
+      "domain": "engineering"
+    },
+    {
+      "topic": "Circuit",
+      "aliases": [
+        "what is an electrical circuit",
+        "electrical circuit",
+        "ce este un circuit electric",
+        "circuit electric"
+      ],
+      "answer": "An electrical circuit is an interconnected path through which electric current can flow.",
+      "domain": "engineering"
+    },
+    {
+      "topic": "Resistor",
+      "aliases": [
+        "what is a resistor",
+        "resistor definition",
+        "ce este o rezistenta",
+        "ce este o rezistență"
+      ],
+      "answer": "A resistor is an electrical component that opposes current and dissipates electrical energy, commonly as heat.",
+      "domain": "engineering"
+    },
+    {
+      "topic": "Capacitor",
+      "aliases": [
+        "what is a capacitor",
+        "capacitor definition",
+        "ce este un condensator",
+        "condensator"
+      ],
+      "answer": "A capacitor is an electrical component that stores energy in an electric field.",
+      "domain": "engineering"
+    },
+    {
+      "topic": "Inductor",
+      "aliases": [
+        "what is an inductor",
+        "inductor definition",
+        "ce este o bobina",
+        "ce este o bobină"
+      ],
+      "answer": "An inductor is an electrical component that stores energy in a magnetic field when current flows through it.",
+      "domain": "engineering"
+    },
+    {
+      "topic": "Semiconductor",
+      "aliases": [
+        "what is a semiconductor",
+        "semiconductor definition",
+        "ce este un semiconductor"
+      ],
+      "answer": "A semiconductor is a material whose electrical conductivity lies between that of typical conductors and insulators and can be controlled by composition and conditions.",
+      "domain": "engineering"
+    },
+    {
+      "topic": "Diode",
+      "aliases": [
+        "what is a diode",
+        "diode definition",
+        "ce este o dioda",
+        "ce este o diodă"
+      ],
+      "answer": "A diode is a semiconductor device that primarily allows current to flow more readily in one direction than the other.",
+      "domain": "engineering"
+    },
+    {
+      "topic": "Transistor",
+      "aliases": [
+        "what is a transistor",
+        "transistor definition",
+        "ce este un tranzistor",
+        "tranzistor"
+      ],
+      "answer": "A transistor is a semiconductor device used for switching or amplifying electrical signals.",
+      "domain": "engineering"
+    },
+    {
+      "topic": "Sensor",
+      "aliases": [
+        "what is a sensor",
+        "sensor definition",
+        "ce este un senzor",
+        "senzor"
+      ],
+      "answer": "A sensor is a device that detects a physical or chemical quantity and converts it into a measurable signal.",
+      "domain": "engineering"
+    },
+    {
+      "topic": "Actuator",
+      "aliases": [
+        "what is an actuator",
+        "actuator definition",
+        "ce este un actuator",
+        "actuator"
+      ],
+      "answer": "An actuator is a device that converts an input signal or energy into physical movement or another controlled action.",
+      "domain": "engineering"
+    },
+    {
+      "topic": "Feedback control",
+      "aliases": [
+        "what is feedback control",
+        "feedback control system",
+        "control cu reactie",
+        "control cu reacție"
+      ],
+      "answer": "Feedback control uses measurements of a system's output to adjust its input and reduce the difference between the desired and actual behavior.",
+      "domain": "engineering"
+    },
+    {
+      "topic": "Stress",
+      "aliases": [
+        "what is mechanical stress",
+        "stress in engineering",
+        "ce este tensiunea mecanica",
+        "ce este tensiunea mecanică"
+      ],
+      "answer": "Mechanical stress is the internal force per unit area that develops in a material when external forces act on it.",
+      "domain": "engineering"
+    },
+    {
+      "topic": "Strain",
+      "aliases": [
+        "what is strain in engineering",
+        "mechanical strain",
+        "ce este deformarea mecanica",
+        "ce este deformarea mecanică"
+      ],
+      "answer": "Mechanical strain describes the relative deformation of a material caused by applied forces.",
+      "domain": "engineering"
+    },
+    {
+      "topic": "Torque",
+      "aliases": [
+        "what is torque",
+        "torque definition",
+        "ce este cuplul",
+        "cuplu mecanic"
+      ],
+      "answer": "Torque is the rotational effect of a force about an axis and depends on the force and its lever arm.",
+      "domain": "engineering"
+    },
+    {
+      "topic": "Power",
+      "aliases": [
+        "what is mechanical power",
+        "power in engineering",
+        "ce este puterea mecanica",
+        "ce este puterea mecanică"
+      ],
+      "answer": "Power is the rate at which work is done or energy is transferred.",
+      "domain": "engineering"
+    },
+    {
+      "topic": "Efficiency",
+      "aliases": [
+        "what is engineering efficiency",
+        "efficiency definition",
+        "ce este randamentul",
+        "randament"
+      ],
+      "answer": "Efficiency is the ratio of useful output energy or work to the total input energy or work.",
+      "domain": "engineering"
+    },
+    {
+      "topic": "Thermodynamics",
+      "aliases": [
+        "what is thermodynamics",
+        "thermodynamics definition",
+        "ce este termodinamica",
+        "termodinamica"
+      ],
+      "answer": "Thermodynamics studies energy, heat, work, temperature, and the transformations between these quantities in physical systems.",
+      "domain": "engineering"
+    },
+    {
+      "topic": "Fluid mechanics",
+      "aliases": [
+        "what is fluid mechanics",
+        "fluid mechanics definition",
+        "ce este mecanica fluidelor",
+        "mecanica fluidelor"
+      ],
+      "answer": "Fluid mechanics studies the behavior of liquids and gases and the forces acting on them.",
+      "domain": "engineering"
+    },
+    {
+      "topic": "Material science",
+      "aliases": [
+        "what is materials science",
+        "materials science definition",
+        "ce este stiinta materialelor",
+        "ce este știința materialelor"
+      ],
+      "answer": "Materials science studies the relationship between the structure, properties, processing, and performance of materials.",
+      "domain": "engineering"
+    },
+    {
+      "topic": "Nanotechnology",
+      "aliases": [
+        "what is nanotechnology",
+        "nanotechnology definition",
+        "ce este nanotehnologia",
+        "nanotehnologie"
+      ],
+      "answer": "Nanotechnology involves understanding and manipulating matter at very small scales, typically around 1 to 100 nanometers.",
+      "domain": "engineering"
+    },
+    {
+      "topic": "CAD",
+      "aliases": [
+        "what is cad",
+        "computer aided design",
+        "computer-aided design",
+        "ce este CAD"
+      ],
+      "answer": "CAD, or computer-aided design, uses computer software to create, modify, analyze, and document technical designs.",
+      "domain": "engineering"
+    },
+    {
+      "topic": "3D printing",
+      "aliases": [
+        "what is 3d printing",
+        "3d printing definition",
+        "ce este imprimarea 3d",
+        "imprimare 3d"
+      ],
+      "answer": "3D printing is an additive manufacturing process that builds physical objects layer by layer from digital designs.",
+      "domain": "engineering"
+    },
+    {
+      "topic": "Additive manufacturing",
+      "aliases": [
+        "what is additive manufacturing",
+        "additive manufacturing definition",
+        "fabricatie aditiva",
+        "fabricație aditivă"
+      ],
+      "answer": "Additive manufacturing creates objects by adding material layer by layer according to a digital model.",
+      "domain": "engineering"
+    },
+    {
+      "topic": "Structural engineering",
+      "aliases": [
+        "what is structural engineering",
+        "structural engineering",
+        "inginerie structurala",
+        "inginerie structurală"
+      ],
+      "answer": "Structural engineering focuses on designing structures so they can safely resist expected loads and environmental effects.",
+      "domain": "engineering"
+    },
+    {
+      "topic": "Systems engineering",
+      "aliases": [
+        "what is systems engineering",
+        "systems engineering definition",
+        "ingineria sistemelor"
+      ],
+      "answer": "Systems engineering coordinates requirements, architecture, integration, verification, and lifecycle considerations for complex systems.",
+      "domain": "engineering"
+    },
+    {
+      "topic": "Safety engineering",
+      "aliases": [
+        "what is safety engineering",
+        "safety engineering definition",
+        "ingineria sigurantei",
+        "ingineria siguranței"
+      ],
+      "answer": "Safety engineering applies engineering methods to identify, reduce, and control hazards in systems and processes.",
+      "domain": "engineering"
+    },
+    {
+      "topic": "Renewable energy engineering",
+      "aliases": [
+        "what is renewable energy engineering",
+        "renewable energy engineering",
+        "ingineria energiilor regenerabile"
+      ],
+      "answer": "Renewable energy engineering applies engineering principles to technologies that generate or use energy from renewable sources such as sunlight, wind, water, and geothermal heat.",
+      "domain": "engineering"
+    }
+  ]
 }

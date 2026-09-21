@@ -10,7 +10,7 @@
     {
       "domain": "chemistry",
       "file": "chemistry.json",
-      "entries": 37
+      "entries": 39
     },
     {
       "domain": "physics",
@@ -50,12 +50,12 @@
     {
       "domain": "medicine",
       "file": "medicine.json",
-      "entries": 0
+      "entries": 40
     },
     {
       "domain": "engineering",
       "file": "engineering.json",
-      "entries": 0
+      "entries": 41
     },
     {
       "domain": "earth_science",
