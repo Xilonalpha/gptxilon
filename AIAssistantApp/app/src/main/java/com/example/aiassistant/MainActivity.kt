@@ -130,10 +130,7 @@ class MainActivity : AppCompatActivity() {
                     Manifest.permission.RECORD_AUDIO
                 ) != android.content.pm.PackageManager.PERMISSION_GRANTED
             ) {
-                requestPermissions(
-                    arrayOf(Manifest.permission.RECORD_AUDIO),
-                    7001
-                )
+                microphonePermission.launch(Manifest.permission.RECORD_AUDIO)
             } else {
                 voiceEngine.startListening()
             }
