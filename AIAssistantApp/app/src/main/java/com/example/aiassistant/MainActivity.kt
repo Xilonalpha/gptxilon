@@ -56,6 +56,13 @@ class MainActivity : AppCompatActivity() {
         if (uri != null) thread { val a=FileIntelligence.read(this,uri); runOnUiThread { pendingAttachment=a; binding.tvAttachment.text=if(a!=null) "📎 ${a.name}" else "Atașamentul nu a putut fi citit"; toast(if(a!=null) "Fișier pregătit pentru AI" else "Fișier invalid") } }
     }
     private val notificationPermission = registerForActivityResult(ActivityResultContracts.RequestPermission()) { }
+    private val microphonePermission = registerForActivityResult(ActivityResultContracts.RequestPermission()) { granted ->
+        if (granted) {
+            voiceEngine.startListening()
+        } else {
+            toast("Permisiunea pentru microfon a fost refuzată")
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
