@@ -1,0 +1,769 @@
+[
+  {
+    "topic": "Neolithic Revolution",
+    "aliases": [
+      "what is the Neolithic Revolution",
+      "what was the Neolithic Revolution",
+      "Neolithic Revolution definition",
+      "ce este revolutia neolitica",
+      "ce a fost revolutia neolitica",
+      "ce inseamna revolutia neolitica"
+    ],
+    "answer": "The Neolithic Revolution was the long transition from mobile hunter-gatherer societies toward agriculture, animal domestication, and more permanent settlements. It began in different regions at different times, starting roughly 10,000 years ago in parts of Southwest Asia.",
+    "domain": "history"
+  },
+  {
+    "topic": "Sumer",
+    "aliases": [
+      "what was Sumer",
+      "what was the Sumerian civilization",
+      "Sumer civilization definition",
+      "ce a fost Sumerul",
+      "ce a fost civilizatia sumeriana",
+      "unde a aparut civilizatia sumeriana"
+    ],
+    "answer": "Sumer was an ancient civilization in southern Mesopotamia, in present-day Iraq. It developed independent city-states and is associated with early urbanization, cuneiform writing, complex administration, and major advances in mathematics and engineering.",
+    "domain": "history"
+  },
+  {
+    "topic": "Akkadian Empire",
+    "aliases": [
+      "what was the Akkadian Empire",
+      "what was the Akkadian civilization",
+      "Akkadian Empire definition",
+      "ce a fost Imperiul Akkadian",
+      "ce a fost civilizatia akkadiana",
+      "cine a fondat Imperiul Akkadian"
+    ],
+    "answer": "The Akkadian Empire was an ancient Mesopotamian empire traditionally associated with Sargon of Akkad. It emerged in the 24th century BCE and brought many Mesopotamian city-states under centralized rule.",
+    "domain": "history"
+  },
+  {
+    "topic": "Code of Hammurabi",
+    "aliases": [
+      "what is the Code of Hammurabi",
+      "what was the Code of Hammurabi",
+      "Hammurabi code definition",
+      "ce este Codul lui Hammurabi",
+      "ce a fost Codul lui Hammurabi",
+      "cine a creat Codul lui Hammurabi"
+    ],
+    "answer": "The Code of Hammurabi is a collection of laws issued under the Babylonian king Hammurabi in the 18th century BCE. It contains rules concerning property, trade, family relationships, labor, and penalties.",
+    "domain": "history"
+  },
+  {
+    "topic": "Phoenicians",
+    "aliases": [
+      "what were the Phoenicians",
+      "Phoenicians definition",
+      "Phoenicians history",
+      "ce sunt fenicienii",
+      "definitie fenicieni",
+      "istoria fenicienilor"
+    ],
+    "answer": "The Phoenicians were a group of ancient Semitic-speaking maritime communities centered along the eastern Mediterranean coast, especially in present-day Lebanon and parts of Syria and Israel. They were known for trade, seafaring, and an alphabet that influenced later writing systems.",
+    "domain": "history"
+  },
+  {
+    "topic": "Minoan Civilization",
+    "aliases": [
+      "what was the Minoan civilization",
+      "what were the Minoans",
+      "Minoan civilization definition",
+      "ce a fost civilizatia minoica",
+      "ce au fost minoicii",
+      "definitia civilizatiei minoice"
+    ],
+    "answer": "The Minoan civilization flourished on Crete and nearby Aegean islands during the Bronze Age. It is known for large palace complexes, maritime trade, distinctive art, and writing systems including Linear A.",
+    "domain": "history"
+  },
+  {
+    "topic": "Mycenaean Civilization",
+    "aliases": [
+      "what was the Mycenaean civilization",
+      "what were the Mycenaeans",
+      "Mycenaean civilization definition",
+      "ce a fost civilizatia miceniana",
+      "ce au fost micenienii",
+      "definitia civilizatiei miceniene"
+    ],
+    "answer": "The Mycenaean civilization was a Bronze Age civilization centered on mainland Greece. It developed fortified palace centers, used Linear B writing, and flourished during the Late Bronze Age before its major palace centers declined around the end of the second millennium BCE.",
+    "domain": "history"
+  },
+  {
+    "topic": "Polis",
+    "aliases": [
+      "what was a Greek polis",
+      "what is a polis in ancient Greece",
+      "polis definition ancient Greece",
+      "ce era o polis greceasca",
+      "ce este polisul in Grecia antica",
+      "ce inseamna polis in Grecia antica"
+    ],
+    "answer": "A polis was an independent city-state in ancient Greece. A polis normally included an urban center and its surrounding territory and had its own political institutions, laws, and civic community.",
+    "domain": "history"
+  },
+  {
+    "topic": "Athenian Democracy",
+    "aliases": [
+      "what was Athenian democracy",
+      "how did Athenian democracy work",
+      "Athenian democracy definition",
+      "ce a fost democratia ateniana",
+      "cum functiona democratia ateniana",
+      "ce inseamna democratia ateniana"
+    ],
+    "answer": "Athenian democracy was a form of direct political participation developed in Athens, especially during the 5th century BCE. Eligible male citizens could participate directly in the Assembly and other institutions, while women, enslaved people, and resident foreigners were excluded from citizenship.",
+    "domain": "history"
+  },
+  {
+    "topic": "Sparta",
+    "aliases": [
+      "what was Sparta",
+      "what was Spartan society",
+      "Sparta ancient Greece definition",
+      "ce a fost Sparta",
+      "cum era societatea spartana",
+      "unde era Sparta antica"
+    ],
+    "answer": "Sparta was a Greek city-state in the Peloponnese known for its highly militarized social system, distinctive political institutions, and dominant role in parts of ancient Greek history. Spartan society depended heavily on the labor of the helot population.",
+    "domain": "history"
+  },
+  {
+    "topic": "Persian Wars",
+    "aliases": [
+      "what were the Persian Wars",
+      "who fought in the Persian Wars",
+      "Persian Wars definition",
+      "ce au fost razboaiele medice",
+      "cine a luptat in razboaiele medice",
+      "ce au fost razboaiele persane"
+    ],
+    "answer": "The Persian Wars were a series of conflicts in the early 5th century BCE between the Achaemenid Persian Empire and several Greek city-states. Major episodes included the battles of Marathon, Thermopylae, Salamis, and Plataea.",
+    "domain": "history"
+  },
+  {
+    "topic": "Peloponnesian War",
+    "aliases": [
+      "what was the Peloponnesian War",
+      "who fought the Peloponnesian War",
+      "Peloponnesian War definition",
+      "ce a fost razboiul peloponesiac",
+      "cine a luptat in razboiul peloponesiac",
+      "de ce a avut loc razboiul peloponesiac"
+    ],
+    "answer": "The Peloponnesian War was a major conflict in ancient Greece from 431 to 404 BCE, fought primarily between Athens and its allies and Sparta and its allies. Sparta and its coalition ultimately defeated Athens.",
+    "domain": "history"
+  },
+  {
+    "topic": "Alexander the Great",
+    "aliases": [
+      "who was Alexander the Great",
+      "what did Alexander the Great conquer",
+      "Alexander the Great definition",
+      "cine a fost Alexandru cel Mare",
+      "ce a facut Alexandru cel Mare",
+      "ce teritorii a cucerit Alexandru cel Mare"
+    ],
+    "answer": "Alexander III of Macedon, known as Alexander the Great, was a Macedonian king who ruled from 336 to 323 BCE. He conquered the Persian Empire and territories extending into Egypt and northwestern India, creating a large but short-lived empire.",
+    "domain": "history"
+  },
+  {
+    "topic": "Hellenistic Period",
+    "aliases": [
+      "what was the Hellenistic period",
+      "when was the Hellenistic period",
+      "Hellenistic period definition",
+      "ce a fost perioada elenistica",
+      "cand a fost perioada elenistica",
+      "ce inseamna perioada elenistica"
+    ],
+    "answer": "The Hellenistic period refers broadly to the era from the death of Alexander the Great in 323 BCE to the Roman conquest of the Ptolemaic kingdom in 30 BCE. Greek language and culture spread widely and interacted with local traditions across the eastern Mediterranean and Near East.",
+    "domain": "history"
+  },
+  {
+    "topic": "Punic Wars",
+    "aliases": [
+      "what were the Punic Wars",
+      "who fought the Punic Wars",
+      "Punic Wars definition",
+      "ce au fost razboaiele punice",
+      "cine a luptat in razboaiele punice",
+      "ce au fost razboaiele dintre Roma si Cartagina"
+    ],
+    "answer": "The Punic Wars were three major wars fought between Rome and Carthage from 264 to 146 BCE. Rome ultimately destroyed Carthage and became the dominant power in the western Mediterranean.",
+    "domain": "history"
+  },
+  {
+    "topic": "Roman Republic",
+    "aliases": [
+      "what was the Roman Republic",
+      "how did the Roman Republic work",
+      "Roman Republic definition",
+      "ce a fost Republica Romana",
+      "cum functiona Republica Romana",
+      "cand a existat Republica Romana"
+    ],
+    "answer": "The Roman Republic was the political system that governed Rome traditionally from 509 BCE until the establishment of the Roman Empire. Its institutions included elected magistrates, the Senate, and popular assemblies, with political power distributed unevenly among social groups.",
+    "domain": "history"
+  },
+  {
+    "topic": "Roman Senate",
+    "aliases": [
+      "what was the Roman Senate",
+      "what did the Roman Senate do",
+      "Roman Senate definition",
+      "ce era Senatul Roman",
+      "ce facea Senatul Roman",
+      "care era rolul Senatului Roman"
+    ],
+    "answer": "The Roman Senate was a major political institution in ancient Rome. During the Republic it was composed mainly of aristocratic members and exercised substantial influence over finance, foreign affairs, administration, and public policy.",
+    "domain": "history"
+  },
+  {
+    "topic": "Julius Caesar",
+    "aliases": [
+      "who was Julius Caesar",
+      "what did Julius Caesar do",
+      "Julius Caesar definition",
+      "cine a fost Iulius Cezar",
+      "ce a facut Iulius Cezar",
+      "de ce este important Iulius Cezar"
+    ],
+    "answer": "Julius Caesar was a Roman general and politician who played a central role in the transformation of the Roman Republic. His victories in Gaul and subsequent civil war with Pompey greatly increased his political power; he was assassinated in 44 BCE.",
+    "domain": "history"
+  },
+  {
+    "topic": "Augustus",
+    "aliases": [
+      "what was Augustus",
+      "Augustus definition",
+      "Augustus meaning",
+      "ce este Augustus",
+      "definitie Augustus",
+      "istoria lui Augustus"
+    ],
+    "answer": "Augustus was the title adopted by Octavian, the first Roman emperor. He ruled from 27 BCE until 14 CE and established a durable imperial political system after the conflicts that ended the Roman Republic.",
+    "domain": "history"
+  },
+  {
+    "topic": "Pax Romana",
+    "aliases": [
+      "what was the Pax Romana",
+      "when was the Pax Romana",
+      "Pax Romana definition",
+      "ce a fost Pax Romana",
+      "cand a fost Pax Romana",
+      "ce inseamna Pax Romana"
+    ],
+    "answer": "Pax Romana is a modern term for a long period of relative internal stability across much of the Roman Empire, conventionally associated with the period beginning under Augustus and lasting roughly two centuries, although warfare continued at the empire's frontiers.",
+    "domain": "history"
+  },
+  {
+    "topic": "Romanization",
+    "aliases": [
+      "what was Romanization",
+      "how did Romanization work",
+      "Romanization Roman Empire definition",
+      "ce a fost romanizarea",
+      "cum a functionat romanizarea",
+      "ce inseamna romanizarea in Imperiul Roman"
+    ],
+    "answer": "Romanization describes processes through which Roman institutions, practices, languages, material culture, and forms of identity spread and interacted with local cultures across territories under Roman rule. The process varied greatly between regions.",
+    "domain": "history"
+  },
+  {
+    "topic": "Edict of Milan",
+    "aliases": [
+      "what was the Edict of Milan",
+      "when was the Edict of Milan",
+      "Edict of Milan definition",
+      "ce a fost Edictul de la Milano",
+      "cand a fost Edictul de la Milano",
+      "ce prevedea Edictul de la Milano"
+    ],
+    "answer": "The Edict of Milan was an agreement associated with Constantine and Licinius in 313 CE that established a policy of religious tolerance in the Roman Empire and allowed Christians and others to practice their religions openly.",
+    "domain": "history"
+  },
+  {
+    "topic": "Fall of the Western Roman Empire",
+    "aliases": [
+      "what caused the fall of the Western Roman Empire",
+      "when did the Western Roman Empire fall",
+      "Western Roman Empire fall definition",
+      "ce a cauzat caderea Imperiului Roman de Apus",
+      "cand a cazut Imperiul Roman de Apus",
+      "de ce a cazut Imperiul Roman de Apus"
+    ],
+    "answer": "The Western Roman Empire lost political control over its western territories through a long process involving political instability, civil wars, economic pressures, military challenges, and the settlement and expansion of various Germanic kingdoms. The deposition of Romulus Augustulus in 476 CE is conventionally used as a symbolic endpoint.",
+    "domain": "history"
+  },
+  {
+    "topic": "Byzantine Empire",
+    "aliases": [
+      "what was the Byzantine Empire",
+      "what was Byzantium",
+      "Byzantine Empire definition",
+      "ce a fost Imperiul Bizantin",
+      "ce a fost Bizantul",
+      "unde a existat Imperiul Bizantin"
+    ],
+    "answer": "The Byzantine Empire is the modern term commonly used for the eastern Roman Empire and its medieval continuation. Its capital was Constantinople, and Greek language and culture became increasingly dominant while Roman political and legal traditions remained important.",
+    "domain": "history"
+  },
+  {
+    "topic": "Justinian I",
+    "aliases": [
+      "who was Justinian I",
+      "what did Justinian I accomplish",
+      "Justinian I definition",
+      "cine a fost Iustinian I",
+      "ce a realizat Iustinian I",
+      "de ce este important Iustinian I"
+    ],
+    "answer": "Justinian I was Byzantine emperor from 527 to 565 CE. His reign included military campaigns to recover former western Roman territories, major building projects such as Hagia Sophia, and the compilation of Roman laws known as the Corpus Juris Civilis.",
+    "domain": "history"
+  },
+  {
+    "topic": "Hagia Sophia",
+    "aliases": [
+      "what is Hagia Sophia",
+      "when was Hagia Sophia built",
+      "what is the history of Hagia Sophia",
+      "ce este Hagia Sophia",
+      "cand a fost construita Hagia Sophia",
+      "care este istoria Hagiei Sophia"
+    ],
+    "answer": "Hagia Sophia is a monumental building in Constantinople, present-day Istanbul, completed under Emperor Justinian I in the 6th century. It served as a major Christian cathedral, later as a mosque, museum, and again as a mosque.",
+    "domain": "history"
+  },
+  {
+    "topic": "Feudalism",
+    "aliases": [
+      "what was feudalism",
+      "how did feudalism work",
+      "feudalism definition",
+      "ce a fost feudalismul",
+      "cum functiona feudalismul",
+      "ce inseamna feudalism"
+    ],
+    "answer": "Feudalism is a term historically used to describe certain political, military, economic, and social relationships in medieval Europe involving landholding, obligations, and personal ties between lords and vassals. Historians debate the usefulness and scope of the term.",
+    "domain": "history"
+  },
+  {
+    "topic": "Magna Carta",
+    "aliases": [
+      "what was the Magna Carta",
+      "when was the Magna Carta signed",
+      "Magna Carta definition",
+      "ce a fost Magna Carta",
+      "cand a fost semnata Magna Carta",
+      "de ce este importanta Magna Carta"
+    ],
+    "answer": "Magna Carta was a charter issued in England in 1215 and reissued in later forms. It imposed certain limits on royal authority and established protections for particular rights and legal procedures, becoming an important reference in later constitutional history.",
+    "domain": "history"
+  },
+  {
+    "topic": "Black Death",
+    "aliases": [
+      "what was the Black Death",
+      "when was the Black Death",
+      "Black Death definition",
+      "ce a fost Moartea Neagra",
+      "cand a avut loc Moartea Neagra",
+      "ce a fost ciuma din secolul al XIV-lea"
+    ],
+    "answer": "The Black Death was a devastating pandemic that reached Europe in the mid-14th century and caused very large population losses across Europe, North Africa, and parts of Asia. It was associated primarily with the bacterium Yersinia pestis.",
+    "domain": "history"
+  },
+  {
+    "topic": "Hundred Years War",
+    "aliases": [
+      "what was the Hundred Years War",
+      "when was the Hundred Years War",
+      "Hundred Years War definition",
+      "ce a fost Razboiul de O Suta de Ani",
+      "cand a avut loc Razboiul de O Suta de Ani",
+      "cine a luptat in Razboiul de O Suta de Ani"
+    ],
+    "answer": "The Hundred Years' War was a series of conflicts between England and France, conventionally dated from 1337 to 1453. Dynastic claims, territorial disputes, and political competition were major causes, and the conflict included several distinct phases rather than continuous fighting.",
+    "domain": "history"
+  },
+  {
+    "topic": "Renaissance Humanism",
+    "aliases": [
+      "what was Renaissance humanism",
+      "what is Renaissance humanism",
+      "Renaissance humanism definition",
+      "ce a fost umanismul renascentist",
+      "ce este umanismul renascentist",
+      "ce inseamna umanismul Renasterii"
+    ],
+    "answer": "Renaissance humanism was an intellectual movement that emphasized the study of classical Greek and Roman texts, rhetoric, history, literature, and moral philosophy. It influenced education and scholarship in Europe from the late medieval period into the Renaissance.",
+    "domain": "history"
+  },
+  {
+    "topic": "Printing Press",
+    "aliases": [
+      "what was the printing press",
+      "who developed the European printing press",
+      "printing press history definition",
+      "ce a fost tiparul",
+      "cine a dezvoltat tiparul european",
+      "care a fost impactul tiparului"
+    ],
+    "answer": "The printing press using movable metal type was developed in Europe in the 15th century and is strongly associated with Johannes Gutenberg. It enabled books and other texts to be reproduced more rapidly and contributed to the wider circulation of information.",
+    "domain": "history"
+  },
+  {
+    "topic": "Protestant Reformation",
+    "aliases": [
+      "what was the Protestant Reformation",
+      "when did the Protestant Reformation begin",
+      "Protestant Reformation definition",
+      "ce a fost Reforma Protestanta",
+      "cand a inceput Reforma Protestanta",
+      "ce a declansat Reforma Protestanta"
+    ],
+    "answer": "The Protestant Reformation was a 16th-century movement that challenged aspects of Western Christianity and the authority and practices of the Roman Catholic Church. It led to the formation of several Protestant traditions and major political and religious changes in Europe.",
+    "domain": "history"
+  },
+  {
+    "topic": "Thirty Years War",
+    "aliases": [
+      "what was the Thirty Years War",
+      "when was the Thirty Years War",
+      "Thirty Years War definition",
+      "ce a fost Razboiul de Treizeci de Ani",
+      "cand a avut loc Razboiul de Treizeci de Ani",
+      "cine a luptat in Razboiul de Treizeci de Ani"
+    ],
+    "answer": "The Thirty Years' War was a major European conflict fought from 1618 to 1648, beginning within the Holy Roman Empire and expanding into a wider struggle involving several European powers. It ended with the Peace of Westphalia.",
+    "domain": "history"
+  },
+  {
+    "topic": "Scientific Revolution",
+    "aliases": [
+      "what was the Scientific Revolution",
+      "when was the Scientific Revolution",
+      "Scientific Revolution definition",
+      "ce a fost Revolutia Stiintifica",
+      "cand a avut loc Revolutia Stiintifica",
+      "ce inseamna Revolutia Stiintifica"
+    ],
+    "answer": "The Scientific Revolution was a period of major changes in European scientific thought and practice from roughly the 16th through the 17th centuries. Figures such as Copernicus, Kepler, Galileo, and Newton contributed to new mathematical and observational approaches to understanding nature.",
+    "domain": "history"
+  },
+  {
+    "topic": "Enlightenment",
+    "aliases": [
+      "what was the Enlightenment",
+      "when was the Enlightenment",
+      "Enlightenment definition history",
+      "ce a fost Iluminismul",
+      "cand a avut loc Iluminismul",
+      "ce inseamna Iluminismul"
+    ],
+    "answer": "The Enlightenment was an intellectual movement prominent in Europe and the Atlantic world during the 17th and 18th centuries. Many Enlightenment thinkers emphasized reason, empirical inquiry, political liberty, religious tolerance, and criticism of inherited authority.",
+    "domain": "history"
+  },
+  {
+    "topic": "American Revolution",
+    "aliases": [
+      "what was the American Revolution",
+      "when was the American Revolution",
+      "American Revolution definition",
+      "ce a fost Revolutia Americana",
+      "cand a avut loc Revolutia Americana",
+      "de ce a inceput Revolutia Americana"
+    ],
+    "answer": "The American Revolution was the political and military struggle through which thirteen British colonies in North America declared independence and established the United States. The conflict began in the 1770s and culminated in British recognition of American independence in the Treaty of Paris of 1783.",
+    "domain": "history"
+  },
+  {
+    "topic": "French Revolution",
+    "aliases": [
+      "what was the French Revolution",
+      "when did the French Revolution begin",
+      "French Revolution definition",
+      "ce a fost Revolutia Franceza",
+      "cand a inceput Revolutia Franceza",
+      "de ce a inceput Revolutia Franceza"
+    ],
+    "answer": "The French Revolution began in 1789 and transformed France's political and social order. It ended the monarchy in 1792, experienced periods of radical political change and violence, and eventually contributed to the rise of Napoleon Bonaparte.",
+    "domain": "history"
+  },
+  {
+    "topic": "Industrial Revolution",
+    "aliases": [
+      "what was the Industrial Revolution",
+      "when was the Industrial Revolution",
+      "Industrial Revolution definition",
+      "ce a fost Revolutia Industriala",
+      "cand a avut loc Revolutia Industriala",
+      "ce a schimbat Revolutia Industriala"
+    ],
+    "answer": "The Industrial Revolution was a period of rapid technological, economic, and social transformation associated initially with Britain from the late 18th century and later with other regions. Mechanized production, factories, steam power, and changing transport systems were important features.",
+    "domain": "history"
+  },
+  {
+    "topic": "Congress of Vienna",
+    "aliases": [
+      "what was the Congress of Vienna",
+      "when was the Congress of Vienna",
+      "Congress of Vienna definition",
+      "ce a fost Congresul de la Viena",
+      "cand a avut loc Congresul de la Viena",
+      "ce a decis Congresul de la Viena"
+    ],
+    "answer": "The Congress of Vienna was a diplomatic conference held in 1814–1815 after the Napoleonic Wars. European powers negotiated territorial arrangements and a balance-of-power settlement intended to stabilize Europe.",
+    "domain": "history"
+  },
+  {
+    "topic": "Latin American Wars of Independence",
+    "aliases": [
+      "what were the Latin American wars of independence",
+      "when did Latin American independence movements occur",
+      "Latin American independence definition",
+      "ce au fost razboaiele de independenta din America Latina",
+      "cand au avut loc miscarile de independenta din America Latina",
+      "cum s-a produs independenta Americii Latine"
+    ],
+    "answer": "The Latin American wars of independence were a series of conflicts in the late 18th and early 19th centuries through which many Spanish and Portuguese American territories gained independence. Leaders included Simón Bolívar and José de San Martín, among others.",
+    "domain": "history"
+  },
+  {
+    "topic": "Unification of Italy",
+    "aliases": [
+      "what was the unification of Italy",
+      "when was Italy unified",
+      "Italian unification definition",
+      "ce a fost unificarea Italiei",
+      "cand s-a unificat Italia",
+      "cum s-a realizat unificarea Italiei"
+    ],
+    "answer": "The unification of Italy was the 19th-century political process that brought many Italian states into the Kingdom of Italy. Key figures included Cavour, Giuseppe Garibaldi, Giuseppe Mazzini, and Victor Emmanuel II. The Kingdom of Italy was proclaimed in 1861, while Rome was incorporated in 1870.",
+    "domain": "history"
+  },
+  {
+    "topic": "Unification of Germany",
+    "aliases": [
+      "what was the unification of Germany",
+      "when was Germany unified",
+      "German unification definition",
+      "ce a fost unificarea Germaniei",
+      "cand s-a unificat Germania",
+      "cum s-a realizat unificarea Germaniei"
+    ],
+    "answer": "German unification was the 19th-century political process that resulted in the creation of the German Empire in 1871. Prussia and its statesman Otto von Bismarck played central roles, and wars with Denmark, Austria, and France were important stages.",
+    "domain": "history"
+  },
+  {
+    "topic": "Scramble for Africa",
+    "aliases": [
+      "what was the Scramble for Africa",
+      "when was the Scramble for Africa",
+      "Scramble for Africa definition",
+      "ce a fost impartirea Africii",
+      "cand a avut loc impartirea Africii",
+      "ce a fost cursa pentru colonizarea Africii"
+    ],
+    "answer": "The Scramble for Africa was the rapid expansion and consolidation of European colonial control over much of Africa during the late 19th and early 20th centuries. European powers used military force, diplomacy, economic pressure, and administrative systems to establish colonies and protectorates.",
+    "domain": "history"
+  },
+  {
+    "topic": "Meiji Restoration",
+    "aliases": [
+      "what was the Meiji Restoration",
+      "when was the Meiji Restoration",
+      "Meiji Restoration definition",
+      "ce a fost Restauratia Meiji",
+      "cand a avut loc Restauratia Meiji",
+      "ce a schimbat Restauratia Meiji"
+    ],
+    "answer": "The Meiji Restoration refers to the political transformation that began in Japan in 1868, when power was formally restored to the emperor and the Tokugawa shogunate ended. It was followed by rapid state modernization, industrialization, military reform, and institutional change.",
+    "domain": "history"
+  },
+  {
+    "topic": "World War I Causes",
+    "aliases": [
+      "what caused World War I",
+      "why did World War I begin",
+      "causes of World War I",
+      "ce a cauzat Primul Razboi Mondial",
+      "de ce a inceput Primul Razboi Mondial",
+      "care au fost cauzele Primului Razboi Mondial"
+    ],
+    "answer": "The causes of World War I included militarism, alliance systems, imperial competition, nationalism, and political tensions in Europe. The assassination of Archduke Franz Ferdinand in Sarajevo in June 1914 triggered the immediate crisis that led to general war.",
+    "domain": "history"
+  },
+  {
+    "topic": "Treaty of Versailles",
+    "aliases": [
+      "what was the Treaty of Versailles",
+      "when was the Treaty of Versailles signed",
+      "Treaty of Versailles definition",
+      "ce a fost Tratatul de la Versailles",
+      "cand a fost semnat Tratatul de la Versailles",
+      "ce prevedea Tratatul de la Versailles"
+    ],
+    "answer": "The Treaty of Versailles was signed in 1919 and formally ended the state of war between Germany and the Allied powers after World War I. It imposed territorial, military, financial, and political provisions on Germany and established the League of Nations framework.",
+    "domain": "history"
+  },
+  {
+    "topic": "Russian Revolution",
+    "aliases": [
+      "what was the Russian Revolution",
+      "when did the Russian Revolution happen",
+      "Russian Revolution definition",
+      "ce a fost Revolutia Rusa",
+      "cand a avut loc Revolutia Rusa",
+      "ce s-a intamplat in Revolutia Rusa"
+    ],
+    "answer": "The Russian Revolution refers to the revolutionary upheavals of 1917 that ended the Romanov monarchy and later brought the Bolsheviks to power. The February Revolution and October Revolution were distinct phases of the political crisis.",
+    "domain": "history"
+  },
+  {
+    "topic": "League of Nations",
+    "aliases": [
+      "what was the League of Nations",
+      "when was the League of Nations created",
+      "League of Nations definition",
+      "ce a fost Liga Natiunilor",
+      "cand a fost creata Liga Natiunilor",
+      "care era scopul Ligii Natiunilor"
+    ],
+    "answer": "The League of Nations was an international organization created after World War I to promote collective security and cooperation among states. It began operating in 1920 and was dissolved in 1946, with many of its functions transferred to the United Nations.",
+    "domain": "history"
+  },
+  {
+    "topic": "World War II Causes",
+    "aliases": [
+      "what caused World War II",
+      "why did World War II begin",
+      "causes of World War II",
+      "ce a cauzat Al Doilea Razboi Mondial",
+      "de ce a inceput Al Doilea Razboi Mondial",
+      "care au fost cauzele celui de-al Doilea Razboi Mondial"
+    ],
+    "answer": "The causes of World War II included unresolved tensions after World War I, expansionist policies by Nazi Germany, Fascist Italy, and militarist Japan, failures of collective security, and the breakdown of international diplomacy. Germany's invasion of Poland in September 1939 led Britain and France to declare war.",
+    "domain": "history"
+  },
+  {
+    "topic": "D-Day",
+    "aliases": [
+      "what was D-Day",
+      "when was D-Day",
+      "D-Day definition",
+      "ce a fost Ziua Z",
+      "cand a avut loc debarcarea din Normandia",
+      "ce s-a intamplat in Normandia in 1944"
+    ],
+    "answer": "D-Day refers to 6 June 1944, when Allied forces launched the Normandy landings in German-occupied France during World War II. The operation established a major Allied foothold in Western Europe and began the liberation of France.",
+    "domain": "history"
+  },
+  {
+    "topic": "United Nations Founding",
+    "aliases": [
+      "what is the United Nations founding",
+      "United Nations definition",
+      "United Nations history",
+      "definitie fondarea Organizatiei Natiunilor Unite",
+      "care este fondarea Organizatiei Natiunilor Unite",
+      "istoria fondarii Organizatiei Natiunilor Unite"
+    ],
+    "answer": "The United Nations was established in 1945 after World War II. Its founding Charter entered into force on 24 October 1945, creating an international organization intended to promote international cooperation, peace, and security.",
+    "domain": "history"
+  },
+  {
+    "topic": "Cold War",
+    "aliases": [
+      "what was the Cold War",
+      "when was the Cold War",
+      "Cold War definition",
+      "ce a fost Razboiul Rece",
+      "cand a fost Razboiul Rece",
+      "ce inseamna Razboiul Rece"
+    ],
+    "answer": "The Cold War was a prolonged geopolitical rivalry between the United States and the Soviet Union and their respective allies after World War II. It involved military alliances, ideological competition, nuclear deterrence, proxy conflicts, economic competition, and political influence without a direct full-scale war between the two superpowers.",
+    "domain": "history"
+  },
+  {
+    "topic": "Berlin Wall",
+    "aliases": [
+      "what was the Berlin Wall",
+      "what happened to the Berlin Wall",
+      "Berlin Wall definition",
+      "ce a fost Zidul Berlinului",
+      "ce s-a intamplat cu Zidul Berlinului",
+      "definitia Zidului Berlinului"
+    ],
+    "answer": "The Berlin Wall was a fortified barrier constructed by East Germany in 1961 around West Berlin to restrict movement from East Germany into West Berlin. It became a major symbol of the Cold War and was opened in November 1989.",
+    "domain": "history"
+  },
+  {
+    "topic": "European Union Origins",
+    "aliases": [
+      "what were the origins of the European Union",
+      "how was the European Union created",
+      "European Union origins definition",
+      "care au fost originile Uniunii Europene",
+      "cum a fost creata Uniunea Europeana",
+      "cum a aparut Uniunea Europeana"
+    ],
+    "answer": "The European Union developed from post-World War II European integration projects. The European Coal and Steel Community was established in 1951, followed by the European Economic Community in 1957; the European Union itself was established by the Maastricht Treaty, which entered into force in 1993.",
+    "domain": "history"
+  },
+  {
+    "topic": "Decolonization",
+    "aliases": [
+      "what was decolonization",
+      "when did decolonization occur",
+      "decolonization definition",
+      "ce a fost decolonizarea",
+      "cand a avut loc decolonizarea",
+      "ce inseamna decolonizarea"
+    ],
+    "answer": "Decolonization was the historical process through which many territories in Asia, Africa, the Middle East, and elsewhere ended formal colonial rule and became independent states, especially during the period after World War II.",
+    "domain": "history"
+  },
+  {
+    "topic": "Cuban Missile Crisis",
+    "aliases": [
+      "what was the Cuban Missile Crisis",
+      "when was the Cuban Missile Crisis",
+      "Cuban Missile Crisis definition",
+      "ce a fost Criza Rachetelor din Cuba",
+      "cand a avut loc Criza Rachetelor din Cuba",
+      "ce s-a intamplat in Criza Rachetelor din Cuba"
+    ],
+    "answer": "The Cuban Missile Crisis was a major Cold War confrontation in October 1962 after the Soviet Union deployed nuclear missiles to Cuba. The United States imposed a naval quarantine, and the crisis ended through negotiations that included the removal of Soviet missiles from Cuba.",
+    "domain": "history"
+  },
+  {
+    "topic": "Moon Landing",
+    "aliases": [
+      "when did humans first land on the Moon",
+      "what was Apollo 11",
+      "what happened during the first Moon landing",
+      "cand au ajuns oamenii pentru prima data pe Luna",
+      "ce a fost Apollo 11",
+      "cand a avut loc prima aselenizare"
+    ],
+    "answer": "Apollo 11 was the first crewed mission to land humans on the Moon. NASA's mission landed on 20 July 1969, and astronauts Neil Armstrong and Buzz Aldrin walked on the lunar surface while Michael Collins remained in lunar orbit.",
+    "domain": "history"
+  },
+  {
+    "topic": "Dissolution of the Soviet Union",
+    "aliases": [
+      "what caused the dissolution of the Soviet Union",
+      "when did the Soviet Union dissolve",
+      "how did the Soviet Union dissolve",
+      "ce a cauzat destramarea Uniunii Sovietice",
+      "cand s-a destramat Uniunea Sovietica",
+      "cum s-a destramat Uniunea Sovietica"
+    ],
+    "answer": "The Soviet Union formally dissolved in December 1991 after a period of political and economic crisis, reform under Mikhail Gorbachev, growing nationalist movements, and the weakening of central authority. Its fifteen constituent republics became independent states.",
+    "domain": "history"
+  }
+]
