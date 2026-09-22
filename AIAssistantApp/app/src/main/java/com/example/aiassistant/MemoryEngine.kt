@@ -3,14 +3,18 @@ package com.example.aiassistant
 class MemoryEngine(
     private val brain: Brain,
     private val intelligence: IntelligenceEngine,
-    private val geminiLearning: GeminiLearningEngine? = null
+    private val geminiLearning: GeminiLearningEngine? = null,
+    private val webMemory: WebKnowledgeMemory? = null
 ) {
+
     fun observe(
         userText: String,
         aiText: String,
-        geminiResponse: AiResponse? = null
+        geminiResponse: AiResponse? = null,
+        webEvidence: List<WebEvidence> = emptyList()
     ) {
         val normalized = userText.trim()
+
         if (normalized.isBlank()) return
 
         Regex(
@@ -44,24 +48,49 @@ class MemoryEngine(
             )
         }
 
-        /*
-         * Învățarea specială Gemini se activează numai când există
-         * un AiResponse real venit de la Gemini.
-         *
-         * Răspunsurile offline/web fallback nu intră în această memorie.
-         */
         if (geminiResponse != null) {
-            geminiLearning?.learn(normalized, geminiResponse)
+            geminiLearning?.learn(
+                normalized,
+                geminiResponse
+            )
         }
 
-        brain.observe(normalized, aiText)
+        if (webEvidence.isNotEmpty()) {
+            webMemory?.learn(
+                normalized,
+                webEvidence
+            )
+        }
+
+        brain.observe(
+            normalized,
+            aiText
+        )
     }
 
-    fun context(query: String): String {
-        val graph = intelligence.graphText(query).take(4500)
-        val learned = geminiLearning?.context(query).orEmpty().take(2500)
+    fun context(
+        query: String
+    ): String {
+
+        val graph =
+            intelligence
+                .graphText(query)
+                .take(3500)
+
+        val learned =
+            geminiLearning
+                ?.context(query)
+                .orEmpty()
+                .take(1800)
+
+        val web =
+            webMemory
+                ?.context(query)
+                .orEmpty()
+                .take(2500)
 
         return buildString {
+
             if (graph.isNotBlank()) {
                 append(graph)
             }
@@ -70,6 +99,12 @@ class MemoryEngine(
                 if (isNotEmpty()) append("\n\n")
                 append(learned)
             }
+
+            if (web.isNotBlank()) {
+                if (isNotEmpty()) append("\n\n")
+                append(web)
+            }
+
         }.take(7000)
     }
 
@@ -79,5 +114,7 @@ class MemoryEngine(
             "• Project/preferences memory\n" +
             "• Temporal updates\n" +
             "• Confidence + source metadata\n\n" +
-            geminiLearning?.dashboard().orEmpty()
+            geminiLearning?.dashboard().orEmpty() +
+            "\n\n" +
+            webMemory?.dashboard().orEmpty()
 }

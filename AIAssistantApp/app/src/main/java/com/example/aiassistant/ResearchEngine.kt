@@ -3,8 +3,13 @@ package com.example.aiassistant
 import java.net.URI
 import java.util.LinkedHashMap
 import java.util.Locale
+import java.util.concurrent.Callable
+import java.util.concurrent.Executors
 
-class ResearchEngine(private val web: WebFallbackEngine) {
+class ResearchEngine(
+    private val web: WebFallbackEngine,
+    private val webMemory: WebKnowledgeMemory? = null
+) {
 
     data class Report(
         val answer: String,
@@ -13,10 +18,13 @@ class ResearchEngine(private val web: WebFallbackEngine) {
         val engines: List<String>
     )
 
+    private val executor = Executors.newFixedThreadPool(5)
+
     fun research(
         query: String,
         deep: Boolean = true
     ): Report {
+
         val q = query.trim()
 
         if (q.isBlank()) {
@@ -29,16 +37,34 @@ class ResearchEngine(private val web: WebFallbackEngine) {
         }
 
         val queries = buildQueries(q, deep)
-        val all = mutableListOf<WebEvidence>()
+
+        val tasks = queries.map { candidate ->
+            Callable {
+                try {
+                    web.ask(candidate)
+                } catch (_: Exception) {
+                    null
+                }
+            }
+        }
+
+        val results = try {
+            executor.invokeAll(tasks)
+                .mapNotNull {
+                    try {
+                        it.get()
+                    } catch (_: Exception) {
+                        null
+                    }
+                }
+        } catch (_: Exception) {
+            emptyList()
+        }
+
         val engines = linkedSetOf<String>()
+        val all = mutableListOf<WebEvidence>()
 
-        for (candidate in queries) {
-            val result = try {
-                web.ask(candidate)
-            } catch (_: Exception) {
-                null
-            } ?: continue
-
+        results.forEach { result ->
             engines += result.enginesTried
             all += result.evidence
         }
@@ -72,6 +98,11 @@ class ResearchEngine(private val web: WebFallbackEngine) {
             )
             .take(if (deep) 20 else 12)
 
+        webMemory?.learn(
+            q,
+            evidence
+        )
+
         val reasoning =
             EvidenceReasoningEngine.analyze(
                 q,
@@ -96,6 +127,7 @@ class ResearchEngine(private val web: WebFallbackEngine) {
         q: String,
         deep: Boolean
     ): List<String> {
+
         val list = mutableListOf(q)
 
         if (deep) {
@@ -186,13 +218,7 @@ class ResearchEngine(private val web: WebFallbackEngine) {
         append("📚 SURSE ANALIZATE\n")
 
         evidence
-            .take(
-                if (evidence.size > 8) {
-                    12
-                } else {
-                    evidence.size
-                }
-            )
+            .take(if (evidence.size > 8) 12 else evidence.size)
             .forEachIndexed { index, item ->
 
                 append("[")
@@ -214,20 +240,17 @@ class ResearchEngine(private val web: WebFallbackEngine) {
             }
 
         append(
-            "📌 Metodă: sunt acceptate doar pagini publice " +
-                "cu URL extern, conținut suficient și care nu " +
-                "sunt pagini ale motoarelor de căutare, cookie, " +
-                "privacy, terms sau login. Sursele sunt deduplicate " +
-                "și evaluate euristic după acoperirea termenilor, " +
-                "diversitatea domeniilor, semnale de conflict și " +
-                "disponibilitatea conținutului. Scorurile nu reprezintă " +
-                "o dovadă matematică."
+            "📌 Metodă: sursele sunt deduplicate și evaluate " +
+                "euristic. Scorurile nu reprezintă o dovadă " +
+                "matematică. Informațiile sunt memorate împreună " +
+                "cu sursa originală."
         )
     }
 
     private fun isUsableEvidence(
         item: WebEvidence
     ): Boolean {
+
         val uri = try {
             URI(item.url)
         } catch (_: Exception) {
@@ -269,7 +292,7 @@ class ResearchEngine(private val web: WebFallbackEngine) {
             item.title + " " +
                 item.snippet + " " +
                 item.content
-        ).lowercase(Locale.ROOT)
+            ).lowercase(Locale.ROOT)
 
         val noise = listOf(
             "before you continue to google",
@@ -283,9 +306,7 @@ class ResearchEngine(private val web: WebFallbackEngine) {
             "terms of service"
         )
 
-        if (
-            noise.count { text.contains(it) } >= 2
-        ) {
+        if (noise.count { text.contains(it) } >= 2) {
             return false
         }
 
@@ -295,6 +316,7 @@ class ResearchEngine(private val web: WebFallbackEngine) {
     private fun sourceQuality(
         item: WebEvidence
     ): Int {
+
         val host = try {
             URI(item.url)
                 .host

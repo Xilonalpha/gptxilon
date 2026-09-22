@@ -89,35 +89,62 @@ class WebFallbackEngine(private val activity: Activity) {
             )
         }
 
-        val evidence = mutableListOf<WebEvidence>()
+        val evidence = java.util.Collections.synchronizedList(
+            mutableListOf<WebEvidence>()
+        )
 
-        for (hit in selected) {
-            val page = loadPage(
-                hit.url,
-                15_000L
-            )
+        val executor = java.util.concurrent.Executors.newFixedThreadPool(5)
 
-            if (page.isBlank()) continue
+        try {
+            val tasks = selected.map { hit ->
+                java.util.concurrent.Callable {
+                    val page = loadPage(
+                        hit.url,
+                        15_000L
+                    )
 
-            val finalUrl = jsonField(page, "url")
-                .ifBlank { hit.url }
-                .trim()
+                    if (page.isBlank()) {
+                        return@Callable null
+                    }
 
-            if (!isUsefulResultUrl(finalUrl)) continue
+                    val finalUrl = jsonField(page, "url")
+                        .ifBlank { hit.url }
+                        .trim()
 
-            val text = extractReadableText(page)
+                    if (!isUsefulResultUrl(finalUrl)) {
+                        return@Callable null
+                    }
 
-            if (text.length < 180) continue
+                    val text = extractReadableText(page)
 
-            if (isNoiseContent(text, hit.title)) continue
+                    if (text.length < 180) {
+                        return@Callable null
+                    }
 
-            evidence += WebEvidence(
-                title = hit.title.ifBlank { finalUrl },
-                url = finalUrl,
-                snippet = hit.snippet,
-                content = text.take(12_000),
-                source = hit.engine
-            )
+                    if (isNoiseContent(text, hit.title)) {
+                        return@Callable null
+                    }
+
+                    WebEvidence(
+                        title = hit.title.ifBlank { finalUrl },
+                        url = finalUrl,
+                        snippet = hit.snippet,
+                        content = text.take(12_000),
+                        source = hit.engine
+                    )
+                }
+            }
+
+            executor.invokeAll(tasks).forEach { future ->
+                try {
+                    future.get()?.let {
+                        evidence += it
+                    }
+                } catch (_: Exception) {
+                }
+            }
+        } finally {
+            executor.shutdownNow()
         }
 
         if (evidence.isEmpty()) {
